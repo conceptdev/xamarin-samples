@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView
+        android:text="Name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/NameTextView"
+        android:textSize="24dip" />
+    <TextView
+        android:text="Department"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DepartmentTextView"
+        android:paddingBottom="40dip" />
+    <Button
+        android:text="Call Work"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/CallWorkButton" />
+    <Button
+        android:text="Call Cell"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/CallCellButton" />
+    <Button
+        android:text="Email"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/EmailButton" />
+</LinearLayout>
