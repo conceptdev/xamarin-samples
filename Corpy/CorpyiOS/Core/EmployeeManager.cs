@@ -8,10 +8,9 @@ namespace Corpy {
 		public EmployeeManager ()
 		{
 		}
-		
 		public static bool HasDataAlready {
 			get {
-				return EmployeeDatabase.CountTable() > 0;
+				return EmployeeDatabase.HasData;
 			}
 		}
 		public static void UpdateFromFile(string xml)
@@ -19,22 +18,21 @@ namespace Corpy {
 			var employees = LoadFromXmlFile (xml);
 			SaveToSQLite (employees);
 		}
-	
 		static List<Employee> LoadFromXmlFile (string xmlFilename)
 		{
+			var xmlString = System.IO.File.ReadAllText(xmlFilename);
 			XmlSerializer serializer = new XmlSerializer (typeof(List<Employee>));
-			System.IO.Stream stream = new System.IO.FileStream (xmlFilename, System.IO.FileMode.Open);
-			object o = serializer.Deserialize (stream);
-			stream.Close ();
-			return (List<Employee>)o;	
+			System.IO.TextReader reader = new System.IO.StringReader(xmlString);
+			object o = serializer.Deserialize(reader);
+			reader.Close();
+			return (List<Employee>)o;
 		}
 		static void SaveToSQLite (List<Employee> employees) {
-			EmployeeDatabase.SaveItems(employees);
+			EmployeeDatabase.SaveItems<Employee>(employees);
 		}
-
 		public static List<Employee> GetAll()
 		{
-			return EmployeeDatabase.GetItems ().ToList();
+			return EmployeeDatabase.GetItems<Employee> ().ToList();
 		}
 	}
 }

@@ -5,8 +5,11 @@ using MonoTouch.Foundation;
 
 namespace Corpy {
 	public class RootViewSource : UITableViewSource {
+
 		List<Employee> employees;
+
 		NSString cellIdentifier = new NSString("EmployeeCell"); // set in Storyboard
+
 		public RootViewSource ()
 		{
 			employees = EmployeeManager.GetAll();
@@ -17,7 +20,7 @@ namespace Corpy {
 			var employee = employees[indexPath.Row];
 			var cell = tableView.DequeueReusableCell(cellIdentifier);
 			
-			cell.TextLabel.Text = employee.Firstname;
+			cell.TextLabel.Text = employee.NameFormatted;
 			cell.DetailTextLabel.Text = employee.Department;
 			
 			return cell;

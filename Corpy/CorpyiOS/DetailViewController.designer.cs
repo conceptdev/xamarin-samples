@@ -8,9 +8,21 @@ using MonoTouch.Foundation;
 
 namespace Corpy
 {
-	[Register ("EmployeeViewController")]
-	partial class EmployeeViewController
+	[Register ("DetailViewController")]
+	partial class DetailViewController
 	{
+		[Outlet]
+		MonoTouch.UIKit.UILabel detailDescriptionLabel { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIButton ShowMapButton { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIImageView EmployeeImageView { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIButton CallCellButton { get; set; }
+
 		[Outlet]
 		MonoTouch.UIKit.UILabel NameLabel { get; set; }
 
@@ -21,9 +33,6 @@ namespace Corpy
 		MonoTouch.UIKit.UIButton CallWorkButton { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UIButton CallCellButton { get; set; }
-
-		[Outlet]
 		MonoTouch.UIKit.UIButton EmailButton { get; set; }
 
 		[Outlet]
@@ -31,6 +40,26 @@ namespace Corpy
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (detailDescriptionLabel != null) {
+				detailDescriptionLabel.Dispose ();
+				detailDescriptionLabel = null;
+			}
+
+			if (ShowMapButton != null) {
+				ShowMapButton.Dispose ();
+				ShowMapButton = null;
+			}
+
+			if (EmployeeImageView != null) {
+				EmployeeImageView.Dispose ();
+				EmployeeImageView = null;
+			}
+
+			if (CallCellButton != null) {
+				CallCellButton.Dispose ();
+				CallCellButton = null;
+			}
+
 			if (NameLabel != null) {
 				NameLabel.Dispose ();
 				NameLabel = null;
@@ -44,11 +73,6 @@ namespace Corpy
 			if (CallWorkButton != null) {
 				CallWorkButton.Dispose ();
 				CallWorkButton = null;
-			}
-
-			if (CallCellButton != null) {
-				CallCellButton.Dispose ();
-				CallCellButton = null;
 			}
 
 			if (EmailButton != null) {

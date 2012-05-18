@@ -14,19 +14,19 @@ namespace Corpy
 			
 			// Custom initialization
 		}
+		
 
 		public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
 		{
 			Console.WriteLine ("PrepareForSegue:" + segue.Identifier);
 			if (segue.Identifier == "EmployeeSegue") { // set in Storyboard
-				var employeeScreen = segue.DestinationViewController as EmployeeViewController;
+				var employeeScreen = segue.DestinationViewController as DetailViewController;
 				if (employeeScreen != null) {
 					var source = TableView.Source as RootViewSource;
 					var rowPath = TableView.IndexPathForSelectedRow;
 					var item = source.GetItem(rowPath.Row);
 					employeeScreen.DetailItem = item;
-				} else 
-					Console.WriteLine ("couldn't find the view :-(");
+				} else Console.WriteLine ("couldn't find");
 			}
 		}
 

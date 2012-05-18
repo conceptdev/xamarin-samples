@@ -3,13 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>Corpy</string>
+	<string>Corpy2</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.xamarin.samples.corpy</string>
+	<string>com.xamarin.samples.corpy2</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>MinimumOSVersion</key>
-	<string>5.0</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>

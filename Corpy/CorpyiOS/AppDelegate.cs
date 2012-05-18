@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
+
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
@@ -17,9 +18,8 @@ namespace Corpy
 		{
 			if (!EmployeeManager.HasDataAlready) {
 				// only happens when the database is empty (or wasn't there); use local file update
-				Console.WriteLine ("Load seed data");
-				var appdir = NSBundle.MainBundle.ResourcePath;
-				var seedDataFilename = Path.Combine (appdir, "Data","Employees.xml");
+				var seedDataFilename = Path.Combine (NSBundle.MainBundle.BundlePath
+													, "Data","Employees.xml");
 				EmployeeManager.UpdateFromFile(seedDataFilename);
 				NSFileManager.SetSkipBackupAttribute (EmployeeDatabase.DatabaseFilePath, true);
 			}

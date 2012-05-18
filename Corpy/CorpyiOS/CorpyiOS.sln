@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corpy", "Corpy.csproj", "{6A93A863-3730-4599-916A-5D9EAD260D37}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorpyiOS", "CorpyiOS.csproj", "{7002F292-FB05-4010-ADAD-841199529C77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,16 +11,16 @@ Global
 		Release|iPhone = Release|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6A93A863-3730-4599-916A-5D9EAD260D37}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{6A93A863-3730-4599-916A-5D9EAD260D37}.Debug|iPhone.Build.0 = Debug|iPhone
-		{6A93A863-3730-4599-916A-5D9EAD260D37}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{6A93A863-3730-4599-916A-5D9EAD260D37}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{6A93A863-3730-4599-916A-5D9EAD260D37}.Release|iPhone.ActiveCfg = Release|iPhone
-		{6A93A863-3730-4599-916A-5D9EAD260D37}.Release|iPhone.Build.0 = Release|iPhone
-		{6A93A863-3730-4599-916A-5D9EAD260D37}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{6A93A863-3730-4599-916A-5D9EAD260D37}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{7002F292-FB05-4010-ADAD-841199529C77}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{7002F292-FB05-4010-ADAD-841199529C77}.Debug|iPhone.Build.0 = Debug|iPhone
+		{7002F292-FB05-4010-ADAD-841199529C77}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{7002F292-FB05-4010-ADAD-841199529C77}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{7002F292-FB05-4010-ADAD-841199529C77}.Release|iPhone.ActiveCfg = Release|iPhone
+		{7002F292-FB05-4010-ADAD-841199529C77}.Release|iPhone.Build.0 = Release|iPhone
+		{7002F292-FB05-4010-ADAD-841199529C77}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{7002F292-FB05-4010-ADAD-841199529C77}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Corpy.csproj
+		StartupItem = CorpyiOS.csproj
 	EndGlobalSection
 EndGlobal

@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6A93A863-3730-4599-916A-5D9EAD260D37}</ProjectGuid>
+    <ProjectGuid>{7002F292-FB05-4010-ADAD-841199529C77}</ProjectGuid>
     <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>Corpy</RootNamespace>
-    <AssemblyName>Corpy</AssemblyName>
+    <AssemblyName>Corpy2</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,6 +23,7 @@
     <MtouchDebug>true</MtouchDebug>
     <MtouchProfiling>true</MtouchProfiling>
     <MtouchLink>None</MtouchLink>
+    <MtouchI18n />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -45,6 +46,7 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <MtouchProfiling>true</MtouchProfiling>
+    <IpaPackageName />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -71,15 +73,16 @@
     <Compile Include="RootViewController.designer.cs">
       <DependentUpon>RootViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Core\SQLiteClient.cs" />
-    <Compile Include="Core\Employee.cs" />
-    <Compile Include="Core\EmployeeManager.cs" />
-    <Compile Include="Core\EmployeeDatabase.cs" />
-    <Compile Include="RootViewSource.cs" />
-    <Compile Include="EmployeeViewController.cs" />
-    <Compile Include="EmployeeViewController.designer.cs">
-      <DependentUpon>EmployeeViewController.cs</DependentUpon>
+    <Compile Include="DetailViewController.cs" />
+    <Compile Include="DetailViewController.designer.cs">
+      <DependentUpon>DetailViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Core\Employee.cs" />
+    <Compile Include="Core\EmployeeDatabase.cs" />
+    <Compile Include="Core\EmployeeManager.cs" />
+    <Compile Include="Core\SQLiteClient.cs" />
+    <Compile Include="RootViewSource.cs" />
+    <Compile Include="Core\SQLiteCrudDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
