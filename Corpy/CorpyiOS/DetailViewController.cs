@@ -43,32 +43,37 @@ namespace Corpy
 
 				NameLabel.Text = DetailItem.NameFormatted;
 				DepartmentLabel.Text = DetailItem.Department;
-				ShowMapButton.Alpha = 0f;
-				ShowMapButton.TouchUpInside += (sender, e) => {
-					// Address has been hardcoded 
-					var u = new NSUrl("http://maps.google.com/maps?q=" + "401 Van Ness Ave, San Francisco, USA".Replace(" ","%20"));
-					UIApplication.SharedApplication.OpenUrl (u);
-				};
+
 				CallCellButton.TouchUpInside += (sender, e) => {
-					var u = new NSUrl("tel:" + DetailItem.Mobile);
+					var u = new NSUrl ("tel:" + DetailItem.Mobile);
 					UIApplication.SharedApplication.OpenUrl (u);
 				};
 
 				CallWorkButton.TouchUpInside += (sender, e) => {
-					var u = new NSUrl("tel:" + DetailItem.Work);
+					var u = new NSUrl ("tel:" + DetailItem.Work);
 					UIApplication.SharedApplication.OpenUrl (u);
 				};
 				EmailButton.TouchUpInside += (sender, e) => {
-					var u = new NSUrl("mailto:" + DetailItem.Email);
+					var u = new NSUrl ("mailto:" + DetailItem.Email);
 					UIApplication.SharedApplication.OpenUrl (u);
 				};
 				TweetButton.TouchUpInside += (sender, e) => {
 					if (TWTweetComposeViewController.CanSendTweet) {
-						var tvc = new TWTweetComposeViewController();
-						tvc.SetInitialText("@" + DetailItem.Firstname + " ");
-						this.PresentModalViewController(tvc, true);
+						var tvc = new TWTweetComposeViewController ();
+						tvc.SetInitialText ("@" + DetailItem.Firstname + " ");
+						this.PresentModalViewController (tvc, true);
 					}
 				};
+				
+				
+				#region demo of map, optional
+				ShowMapButton.Alpha = 0f;
+				ShowMapButton.TouchUpInside += (sender, e) => {
+					// Address has been hardcoded 
+					var u = new NSUrl ("http://maps.google.com/maps?q=" + "401 Van Ness Ave, San Francisco, USA".Replace (" ", "%20"));
+					UIApplication.SharedApplication.OpenUrl (u);
+				};
+				#endregion
 			}
 		}
 		
