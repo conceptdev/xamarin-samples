@@ -40,7 +40,10 @@ namespace PaintCode
 			// create a new window instance based on the screen size
 			window = new UIWindow (UIScreen.MainScreen.Bounds);
 			
-			news = new NewsDialogViewController();
+			//news = new NewsDialogViewController();
+
+			news = new DrawingViewController();
+
 			news.View.AutoresizingMask = UIViewAutoresizing.All;
 			news.View.Frame = new System.Drawing.RectangleF(0
 						, UIApplication.SharedApplication.StatusBarFrame.Height
