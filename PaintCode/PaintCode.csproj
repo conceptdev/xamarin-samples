@@ -72,6 +72,8 @@
     <Compile Include="NewsElement.cs" />
     <Compile Include="DrawingView.cs" />
     <Compile Include="DrawingViewController.cs" />
+    <Compile Include="BadgeElement.cs" />
+    <Compile Include="GlassButton.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

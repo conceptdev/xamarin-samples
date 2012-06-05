@@ -11,9 +11,9 @@ namespace PaintCode
 
 		//RootElement root;
 		List<Tuple<DateTime,string>> newsItems = new List<Tuple<DateTime, string>> {
-			new Tuple<DateTime, string> (new DateTime(2012,05,05), "Headline 1"),
-			new Tuple<DateTime, string> (new DateTime(2012,05,05), "Headline 2"),
-			new Tuple<DateTime, string> (new DateTime(2012,05,05), "Headline 3")
+			new Tuple<DateTime, string> (new DateTime(2012,07,04), "Fireworks"),
+			new Tuple<DateTime, string> (new DateTime(2012,05,01), "S-O-S"),
+			new Tuple<DateTime, string> (new DateTime(2012,02,29), "Is it a leap year?")
 };
 
 		public NewsDialogViewController () : base (UITableViewStyle.Plain, null)

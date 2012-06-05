@@ -10,14 +10,20 @@ namespace PaintCode
 		}
 
 		UIView drawing;
+		UIButton glassButton;
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
-			drawing = new DrawingView();
-			drawing.Frame = new System.Drawing.RectangleF(0,0,320,640);
-			View.AddSubview (drawing);			
+			drawing = new DrawingView ();
+			drawing.Frame = new System.Drawing.RectangleF (0, 0, 320, 640);
+			
+			glassButton = new GlassButton (new System.Drawing.RectangleF (10, 200, 300, 40));
+			glassButton.SetTitle ("Glass Button", UIControlState.Normal);
+			
+			View.AddSubview (drawing);
+			View.AddSubview (glassButton);
 		}
 	}
 }
