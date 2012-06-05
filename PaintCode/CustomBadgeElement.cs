@@ -26,41 +26,72 @@ namespace PaintCode {
 		}
 		public static UIImage MakeCalendarBadge (UIImage template, string smallText, string bigText)
 		{
-			using (var cs = CGColorSpace.CreateDeviceRGB ()){
-				using (var context = new CGBitmapContext (IntPtr.Zero, 59, 58, 8, 59*4, cs, CGImageAlphaInfo.PremultipliedLast)){
-					//context.ScaleCTM (0.5f, -1);
-					context.TranslateCTM (0, 0);
-					context.DrawImage (new RectangleF (0, 0, 59, 58), template.CGImage);
-					context.SetFillColor (0, 0, 0, 1);
-					
-					// The _small_ string
-					context.SelectFont ("Helvetica-Bold", 14f, CGTextEncoding.MacRoman);
-					
-					// Pretty lame way of measuring strings, as documented:
-					var start = context.TextPosition.X;					
-					context.SetTextDrawingMode (CGTextDrawingMode.Invisible);
-					context.ShowText (smallText);
-					var width = context.TextPosition.X - start;
-					
-					context.SetTextDrawingMode (CGTextDrawingMode.Fill);
-					context.ShowTextAtPoint ((59-width)/2, 10, smallText); // was 46
-					
-					// The BIG string
-					context.SelectFont ("Helvetica-Bold", 32, CGTextEncoding.MacRoman);					
-					start = context.TextPosition.X;
-					context.SetTextDrawingMode (CGTextDrawingMode.Invisible);
-					context.ShowText (bigText);
-					width = context.TextPosition.X - start;
-					
-					context.SetFillColor (0, 0, 0, 1);
-					context.SetTextDrawingMode (CGTextDrawingMode.Fill);
-					context.ShowTextAtPoint ((59-width)/2, 25, bigText);	// was 9
-					
-					context.StrokePath ();
-				
-					return UIImage.FromImage (context.ToImage ());
-				}
-			}
+
+			UIGraphics.BeginImageContext (new SizeF (42, 42));
+
+			// ------------- START PAINTCODE ----------------
+
+//// General Declarations
+var colorSpace = CGColorSpace.CreateDeviceRGB();
+var context = UIGraphics.GetCurrentContext ();
+
+
+
+
+//// Gradient Declarations
+var calendarGradientColors = new CGColor [] {UIColor.DarkGray.CGColor, UIColor.FromRGBA(0.72f, 0.72f, 0.72f, 1.00f).CGColor, UIColor.White.CGColor};
+var calendarGradientLocations = new float [] {0, 0.04f, 0.86f};
+var calendarGradient = new CGGradient(colorSpace, calendarGradientColors, calendarGradientLocations);
+
+//// Shadow Declarations
+var shadow = UIColor.DarkGray.CGColor;
+var shadowOffset = new SizeF(2, 2);
+var shadowBlurRadius = 2;
+
+//// Abstracted Graphic Attributes
+var monthContent = "MAR";
+var dayContent = "24";
+var dayFont = UIFont.FromName("Helvetica-Bold", 24);
+
+
+//// Rounded Rectangle Drawing
+var roundedRectanglePath = UIBezierPath.FromRoundedRect(new RectangleF(2.5f, 2.5f, 37, 36), 4);
+context.SaveState();
+context.SetShadowWithColor(shadowOffset, shadowBlurRadius, shadow);
+context.BeginTransparencyLayer(null);
+roundedRectanglePath.AddClip();
+context.DrawLinearGradient(calendarGradient, new PointF(21, 38.5f), new PointF(21, 2.5f), 0);
+context.EndTransparencyLayer();
+context.RestoreState();
+
+UIColor.DarkGray.SetStroke();
+roundedRectanglePath.LineWidth = 1;
+roundedRectanglePath.Stroke();
+
+
+//// Month Drawing
+var monthRect = new RectangleF(4, 25, 34, 15);
+UIColor.Black.SetFill();
+new NSString(monthContent).DrawString(monthRect, UIFont.FromName("Helvetica-Bold", 9), UILineBreakMode.WordWrap, UITextAlignment.Center);
+
+
+//// Day Drawing
+var dayRect = new RectangleF(-6, 1, 54, 31);
+UIColor.Black.SetFill();
+new NSString(dayContent).DrawString(dayRect, dayFont, UILineBreakMode.WordWrap, UITextAlignment.Center);
+
+
+
+
+
+
+
+			// ------------- END PAINTCODE ----------------
+
+			var converted = UIGraphics.GetImageFromCurrentImageContext ();
+			UIGraphics.EndImageContext ();
+			return converted;
+
 		}
 	}
 }

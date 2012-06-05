@@ -19,7 +19,8 @@ namespace PaintCode
 	    }
 	    public override void Draw (RectangleF bounds, CGContext context, UIView view)
 	    {
-			UIColor.White.SetFill();
+			
+
 
 //// General Declarations
 var colorSpace = CGColorSpace.CreateDeviceRGB();
