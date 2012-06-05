@@ -87,6 +87,13 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="UnitTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\CorpyiOS.csproj">
+      <Project>{7002F292-FB05-4010-ADAD-841199529C77}</Project>
+      <Name>CorpyiOS</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

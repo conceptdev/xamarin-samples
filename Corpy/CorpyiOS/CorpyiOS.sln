@@ -3,14 +3,30 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorpyiOS", "CorpyiOS.csproj", "{7002F292-FB05-4010-ADAD-841199529C77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{5E23FBB4-BAF0-4FB4-8ECA-13972FD30BF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
 		Release|iPhoneSimulator = Release|iPhoneSimulator
 		Debug|iPhone = Debug|iPhone
 		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E23FBB4-BAF0-4FB4-8ECA-13972FD30BF9}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{5E23FBB4-BAF0-4FB4-8ECA-13972FD30BF9}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{5E23FBB4-BAF0-4FB4-8ECA-13972FD30BF9}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{5E23FBB4-BAF0-4FB4-8ECA-13972FD30BF9}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{5E23FBB4-BAF0-4FB4-8ECA-13972FD30BF9}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{5E23FBB4-BAF0-4FB4-8ECA-13972FD30BF9}.Debug|iPhone.Build.0 = Debug|iPhone
+		{5E23FBB4-BAF0-4FB4-8ECA-13972FD30BF9}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{5E23FBB4-BAF0-4FB4-8ECA-13972FD30BF9}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{5E23FBB4-BAF0-4FB4-8ECA-13972FD30BF9}.Release|iPhone.ActiveCfg = Release|iPhone
+		{5E23FBB4-BAF0-4FB4-8ECA-13972FD30BF9}.Release|iPhone.Build.0 = Release|iPhone
+		{5E23FBB4-BAF0-4FB4-8ECA-13972FD30BF9}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{5E23FBB4-BAF0-4FB4-8ECA-13972FD30BF9}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{7002F292-FB05-4010-ADAD-841199529C77}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{7002F292-FB05-4010-ADAD-841199529C77}.Debug|iPhone.Build.0 = Debug|iPhone
 		{7002F292-FB05-4010-ADAD-841199529C77}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
