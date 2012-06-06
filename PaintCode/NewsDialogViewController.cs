@@ -30,7 +30,11 @@ namespace PaintCode
 													, published.ToString ("MMM").ToUpper ()
 													, published.ToString ("dd"));
 				var badgeRow = new BadgeElement (image, item.Item2);
-//				var badgeRow = new NewsElement (item.Item2);
+
+				badgeRow.Tapped += () => {
+					var dv = new DrawingViewController ();
+					NavigationController.PushViewController (dv, true);
+				};
 			 	section.Add (badgeRow);
 			}
 			Root = new RootElement ("News") { section };
