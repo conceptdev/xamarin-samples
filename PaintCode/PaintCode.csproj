@@ -23,6 +23,7 @@
     <MtouchDebug>true</MtouchDebug>
     <MtouchProfiling>true</MtouchProfiling>
     <MtouchLink>None</MtouchLink>
+    <MtouchI18n />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -67,10 +68,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="NewsDialogViewController.cs" />
-    <Compile Include="CustomBadgeElement.cs" />
-    <Compile Include="DrawingView.cs" />
-    <Compile Include="DrawingViewController.cs" />
+    <Compile Include="Calendar\CustomBadgeElement.cs" />
+    <Compile Include="LineArt\DrawingViewController.cs" />
+    <Compile Include="Calendar\NewsDialogViewController.cs" />
+    <Compile Include="LineArt\DrawingView.cs" />
+    <Compile Include="BlueButton\BlueButton.cs" />
+    <Compile Include="BlueButton\BlueButtonViewController.cs" />
+    <Compile Include="GlossyButton\GlossyButton.cs" />
+    <Compile Include="GlossyButton\GlossyButtonViewController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="LineArt\" />
+    <Folder Include="Calendar\" />
+    <Folder Include="BlueButton\" />
+    <Folder Include="GlossyButton\" />
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.png" />
+    <Content Include="Default%402x.png" />
+    <Content Include="Images\Icons\114_icon.png" />
+    <Content Include="Images\Icons\29_icon.png" />
+    <Content Include="Images\Icons\50_icon.png" />
+    <Content Include="Images\Icons\512_icon.png" />
+    <Content Include="Images\Icons\57_icon.png" />
+    <Content Include="Images\Icons\58_icon.png" />
+    <Content Include="Images\Icons\72_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork" />
+  </ItemGroup>
 </Project>

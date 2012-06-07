@@ -1,5 +1,6 @@
 using System;
 using MonoTouch.UIKit;
+using System.Drawing;
 
 namespace PaintCode
 {
@@ -10,8 +11,8 @@ namespace PaintCode
 		}
 
 		UIView drawing;
-		UIButton glassButton;
-
+		UITextView text;
+		
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
@@ -20,6 +21,13 @@ namespace PaintCode
 			drawing.Frame = new System.Drawing.RectangleF (0, 0, 320, 640);
 			
 			View.AddSubview (drawing);
+			
+			
+			text = new UITextView (new Rectangle (10, 100, 300, 300));
+			text.Font = UIFont.SystemFontOfSize (14f);
+			text.Text = "Xamarin Shapes Example\n\n"+
+				"These are a few random shapes drawn with PaintCode and rendered in a UIView";
+			View.AddSubview (text);
 		}
 	}
 }

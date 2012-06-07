@@ -30,7 +30,9 @@ namespace PaintCode
 			navCtrlr = new UINavigationController ();
 			
 			news = new NewsDialogViewController ();
-
+			news = new BlueButtonViewController ();
+			news = new GlossyButtonViewController ();
+			
 			//news.View.AutoresizingMask = UIViewAutoresizing.All;
 			news.View.Frame = new System.Drawing.RectangleF (0
 						, UIApplication.SharedApplication.StatusBarFrame.Height
