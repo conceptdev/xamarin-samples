@@ -49,7 +49,7 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Tasky.Core\DL\SQLite.Implementation.cs">
+    <Compile Include="..\Tasky.Core.Portable\DL\SQLite.Implementation.cs">
       <Link>DL\SQLite.Implementation.cs</Link>
     </Compile>
     <Compile Include="Application.cs" />
