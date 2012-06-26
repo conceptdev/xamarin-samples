@@ -71,6 +71,9 @@
     <Compile Include="AL\EditingSource.cs" />
     <Compile Include="AL\TaskDialog.cs" />
     <Compile Include="AL\LocalizableBindingContext.cs" />
+    <Compile Include="..\Tasky.Core.Portable\DL\SQLite.Implementation.cs">
+      <Link>DL\SQLite.Implementation.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(ProgramFiles)\MSBuild\MonoTouch\Novell.MonoTouch.Common.targets" Condition="'$(windir)' != '' " />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -84,6 +87,7 @@
     <Folder Include="en.lproj\" />
     <Folder Include="es.lproj\" />
     <Folder Include="ja.lproj\" />
+    <Folder Include="DL\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\Icons\29_icon.png" />
@@ -102,9 +106,9 @@
     <Content Include="ja.lproj\Localizable.strings" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Tasky.Core\Tasky.Core.iOS.csproj">
-      <Project>{3A95B215-DC1A-4A51-A2FD-AB811103F1CE}</Project>
-      <Name>Tasky.Core.iOS</Name>
+    <ProjectReference Include="..\Tasky.Core.Portable\Tasky.Core.Portable.csproj">
+      <Project>{dbecb1bb-1cb3-4726-aba3-f3cd716b6d86}</Project>
+      <Name>Tasky.Core.Portable</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
