@@ -43,14 +43,14 @@ namespace Tasky.Screens.iPhone.Home {
 			currentTask.Name = taskDialog.Name;
 			currentTask.Notes = taskDialog.Notes;
 			currentTask.Done = taskDialog.Done;
-			BL.Managers.TaskManager.SaveTask(currentTask);
+			AppDelegate.Current.TaskMgr.SaveTask(currentTask);
 			NavigationController.PopViewControllerAnimated (true);
 			context.Dispose (); // per documentation
 		}
 		public void DeleteTask ()
 		{
 			if (currentTask.ID >= 0)
-				BL.Managers.TaskManager.DeleteTask (currentTask.ID);
+				AppDelegate.Current.TaskMgr.DeleteTask (currentTask.ID);
 			NavigationController.PopViewControllerAnimated (true);
 		}
 
@@ -66,7 +66,7 @@ namespace Tasky.Screens.iPhone.Home {
 		
 		protected void PopulateTable ()
 		{
-			tasks = BL.Managers.TaskManager.GetTasks ().ToList ();
+			tasks = AppDelegate.Current.TaskMgr.GetTasks ().ToList ();
 			var newTask = MonoTouch.Foundation.NSBundle.MainBundle.LocalizedString ("<new task>", "<new task>");
 			Root = new RootElement ("Tasky") {
 				new Section() {
@@ -86,7 +86,7 @@ namespace Tasky.Screens.iPhone.Home {
 		}
 		public void DeleteTaskRow(int rowId)
 		{
-			BL.Managers.TaskManager.DeleteTask(tasks[rowId].ID);
+			AppDelegate.Current.TaskMgr.DeleteTask(tasks[rowId].ID);
 		}
 	}
 }
