@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskyAndroid", "TaskyAndroid\TaskyAndroid.csproj", "{82F04C1E-2F0D-4396-ADC3-BC9EADEE8E7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasky.Core.Portable", "Tasky.Core.Portable\Tasky.Core.Portable.csproj", "{DBECB1BB-1CB3-4726-ABA3-F3CD716B6D86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82F04C1E-2F0D-4396-ADC3-BC9EADEE8E7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82F04C1E-2F0D-4396-ADC3-BC9EADEE8E7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82F04C1E-2F0D-4396-ADC3-BC9EADEE8E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82F04C1E-2F0D-4396-ADC3-BC9EADEE8E7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBECB1BB-1CB3-4726-ABA3-F3CD716B6D86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBECB1BB-1CB3-4726-ABA3-F3CD716B6D86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBECB1BB-1CB3-4726-ABA3-F3CD716B6D86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBECB1BB-1CB3-4726-ABA3-F3CD716B6D86}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = TaskyAndroid\TaskyAndroid.csproj
+	EndGlobalSection
+EndGlobal
