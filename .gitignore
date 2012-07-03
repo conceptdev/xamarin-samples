@@ -13,3 +13,7 @@
 */*/*/bin/*
 */*/*/obj/*
 *_ReSharper.*/
+
+*/*/Resource.designer.cs
+*/*/*/Resource.designer.cs
+*/*/*/*/Resource.designer.cs
