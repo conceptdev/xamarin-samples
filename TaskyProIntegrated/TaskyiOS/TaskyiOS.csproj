@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{08FAE550-E302-4022-A871-17E0462E99F3}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Tasky</RootNamespace>
+    <AssemblyName>Tasky</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="mscorlib" />
+    <Reference Include="monotouch" />
+    <Reference Include="MonoTouch.Dialog-1" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="..\Tasky.Core\About.txt">
+      <Link>Tasky.Core\About.txt</Link>
+    </None>
+    <None Include="..\Tasky.Core\Tasky.Core.csproj">
+      <Link>Tasky.Core\Tasky.Core.csproj</Link>
+    </None>
+    <None Include="..\Tasky.Core\BL\About.txt">
+      <Link>Tasky.Core\BL\About.txt</Link>
+    </None>
+    <None Include="..\Tasky.Core\DAL\About.txt">
+      <Link>Tasky.Core\DAL\About.txt</Link>
+    </None>
+    <None Include="..\Tasky.Core\DL\About.txt">
+      <Link>Tasky.Core\DL\About.txt</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="AL\EditingSource.cs" />
+    <Compile Include="AL\TaskDialog.cs" />
+    <Compile Include="AL\LocalizableBindingContext.cs" />
+    <Compile Include="..\Tasky.Core\BL\Task.cs">
+      <Link>Tasky.Core\BL\Task.cs</Link>
+    </Compile>
+    <Compile Include="..\Tasky.Core\BL\Contracts\BusinessEntityBase.cs">
+      <Link>Tasky.Core\BL\Contracts\BusinessEntityBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Tasky.Core\BL\Contracts\IBusinessEntity.cs">
+      <Link>Tasky.Core\BL\Contracts\IBusinessEntity.cs</Link>
+    </Compile>
+    <Compile Include="..\Tasky.Core\BL\Managers\TaskManager.cs">
+      <Link>Tasky.Core\BL\Managers\TaskManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Tasky.Core\DAL\TaskRepository.cs">
+      <Link>Tasky.Core\DAL\TaskRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\Tasky.Core\DL\SQLite.cs">
+      <Link>Tasky.Core\DL\SQLite.cs</Link>
+    </Compile>
+    <Compile Include="..\Tasky.Core\DL\TaskDatabase.cs">
+      <Link>Tasky.Core\DL\TaskDatabase.cs</Link>
+    </Compile>
+    <Compile Include="Screens\controller_iPhone.cs" />
+  </ItemGroup>
+  <Import Project="$(ProgramFiles)\MSBuild\MonoTouch\Novell.MonoTouch.Common.targets" Condition="'$(windir)' != '' " />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Images\Icons\29_icon.png" />
+    <Content Include="Images\Icons\50_icon.png" />
+    <Content Include="Images\Icons\57_icon.png" />
+    <Content Include="Images\Icons\58_icon.png" />
+    <Content Include="Images\Icons\72_icon.png" />
+    <Content Include="Images\Icons\114_icon.png" />
+    <Content Include="Images\Icons\512_icon.png" />
+    <Content Include="Default-Landscape~ipad.png" />
+    <Content Include="Default-Portrait~ipad.png" />
+    <Content Include="Default.png" />
+    <Content Include="Default%402x.png" />
+    <Content Include="en.lproj\Localizable.strings" />
+    <Content Include="es.lproj\Localizable.strings" />
+    <Content Include="ja.lproj\Localizable.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tasky.Core\" />
+    <Folder Include="Screens\" />
+  </ItemGroup>
+</Project>
