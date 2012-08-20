@@ -6,7 +6,7 @@ using MonoTouch.UIKit;
 
 namespace NonConsumables {
 	public class InAppPurchaseManager : SKProductsRequestDelegate {
-		public static NSString InAppPurchaseManagerProductsFetchedNotification = new NSString("InAppPurchaseControllerProductsFetchedNotification");
+		public static NSString InAppPurchaseManagerProductsFetchedNotification = new NSString("InAppPurchaseManagerProductsFetchedNotification");
 		public static NSString InAppPurchaseManagerTransactionFailedNotification  = new NSString("InAppPurchaseManagerTransactionFailedNotification");
 		public static NSString InAppPurchaseManagerTransactionSucceededNotification  = new NSString("InAppPurchaseManagerTransactionSucceededNotification");
 		

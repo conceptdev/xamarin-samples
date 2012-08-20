@@ -15,14 +15,14 @@ namespace Consumables {
 		List<string> products;
 		bool pricesLoaded = false;
 
-		NSObject priceObserver;
+		NSObject priceObserver, succeededObserver, failedObserver;
 		
 		InAppPurchaseManager iap;
 		
 		public ConsumableViewController () : base()
 		{
 			// two products for sale on this page
-			products = new List<string>() {Buy5ProductId, Buy10ProductId};
+			products = new List<string>() { Buy5ProductId, Buy10ProductId };
 			iap = new InAppPurchaseManager();
 		}
 	
@@ -141,15 +141,24 @@ namespace Consumables {
 
 			balanceLabel.Text = CreditManager.Balance() + " monkey credits";
 
-			priceObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseManager.InAppPurchaseManagerTransactionSucceededNotification, 
+			succeededObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseManager.InAppPurchaseManagerTransactionSucceededNotification, 
 			(notification) => {
 				balanceLabel.Text = CreditManager.Balance() + " monkey credits";
+			});
+			failedObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseManager.InAppPurchaseManagerTransactionFailedNotification, 
+			                                                                  (notification) => {
+				// TODO: 
+				Console.WriteLine ("Transaction Failed");
 			});
 		}
 		public override void ViewWillDisappear (bool animated)
 		{
 			// remove the observer when the view isn't visible
 			NSNotificationCenter.DefaultCenter.RemoveObserver (priceObserver);
+
+			NSNotificationCenter.DefaultCenter.RemoveObserver (succeededObserver);
+			NSNotificationCenter.DefaultCenter.RemoveObserver (failedObserver);
+
 			base.ViewWillDisappear (animated);
 		}
 	}
