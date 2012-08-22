@@ -17,7 +17,7 @@ namespace NonConsumables {
 		List<string> products;
 		bool pricesLoaded = false;
 		bool greyscalePurchased, sepiaPurchased;
-		NSObject priceObserver;
+		NSObject priceObserver, requestObserver;
 		
 		InAppPurchaseManager iap;
 		
@@ -176,6 +176,14 @@ namespace NonConsumables {
 				// update the buttons after a successful purchase
 				UpdateButtons ();
 			});
+
+			requestObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseManager.InAppPurchaseManagerRequestFailedNotification, 
+			                                                                 (notification) => {
+				// TODO: 
+				Console.WriteLine ("Request Failed");
+				greyscaleButton.SetTitle ("Network down?", UIControlState.Disabled);
+				sepiaButton.SetTitle ("Network down?", UIControlState.Disabled);
+			});
 		}
 
 		void UpdateButtons () {
@@ -196,6 +204,8 @@ namespace NonConsumables {
 		{
 			// remove the observer when the view isn't visible
 			NSNotificationCenter.DefaultCenter.RemoveObserver (priceObserver);
+			NSNotificationCenter.DefaultCenter.RemoveObserver (requestObserver);
+
 			base.ViewWillDisappear (animated);
 		}
 	}

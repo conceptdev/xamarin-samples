@@ -9,7 +9,8 @@ namespace Consumables {
 		public static NSString InAppPurchaseManagerProductsFetchedNotification = new NSString("InAppPurchaseManagerProductsFetchedNotification");
 		public static NSString InAppPurchaseManagerTransactionFailedNotification  = new NSString("InAppPurchaseManagerTransactionFailedNotification");
 		public static NSString InAppPurchaseManagerTransactionSucceededNotification  = new NSString("InAppPurchaseManagerTransactionSucceededNotification");
-		
+		public static NSString InAppPurchaseManagerRequestFailedNotification = new NSString("InAppPurchaseManagerRequestFailedNotification");
+
 		SKProductsRequest productsRequest;
 		CustomPaymentObserver theObserver;
 
@@ -66,21 +67,23 @@ namespace Consumables {
 			}
 		}
 
-
 		public void PurchaseProduct(string appStoreProductId)
 		{
 			Console.WriteLine("PurchaseProduct " + appStoreProductId);
-			SKPayment payment = SKPayment.PaymentWithProduct (appStoreProductId);	
+			SKMutablePayment payment = SKMutablePayment.PaymentWithProduct (appStoreProductId);
+			//payment.Quantity = 4;
 			SKPaymentQueue.DefaultQueue.AddPayment (payment);
 		}
+
 		public void CompleteTransaction (SKPaymentTransaction transaction)
 		{
 			Console.WriteLine("CompleteTransaction " + transaction.TransactionIdentifier);
 			var productId = transaction.Payment.ProductIdentifier;
+			//var qty = transaction.Payment.Quantity;
 			if (productId == ConsumableViewController.Buy5ProductId)
-				CreditManager.Add(5);
+				CreditManager.Add(5); // 5 * qty
 			else if (productId == ConsumableViewController.Buy10ProductId)
-				CreditManager.Add(10);
+				CreditManager.Add(10); // 10 * qty
 			else
 				Console.WriteLine ("Shouldn't happen, there are only two products");
 			
@@ -120,6 +123,11 @@ namespace Consumables {
 		public override void RequestFailed (SKRequest request, NSError error)
 		{
 			Console.WriteLine (" ** InAppPurchaseManager RequestFailed() " + error.LocalizedDescription);
+			using (var pool = new NSAutoreleasePool()) {
+				NSDictionary userInfo = NSDictionary.FromObjectsAndKeys(new NSObject[] {error},new NSObject[] {new NSString("error")});
+				// send out a notification for the failed transaction
+				NSNotificationCenter.DefaultCenter.PostNotificationName(InAppPurchaseManagerRequestFailedNotification,this,userInfo);
+			}
 		}
 	}
 }

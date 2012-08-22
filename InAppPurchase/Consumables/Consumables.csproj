@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
+    <None Include="ja.lproj\Localizable.strings" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
@@ -90,5 +91,8 @@
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="Images\icons\512_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ja.lproj\" />
   </ItemGroup>
 </Project>

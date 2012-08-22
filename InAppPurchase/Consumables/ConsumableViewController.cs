@@ -15,10 +15,31 @@ namespace Consumables {
 		List<string> products;
 		bool pricesLoaded = false;
 
-		NSObject priceObserver, succeededObserver, failedObserver;
+		NSObject priceObserver, succeededObserver, failedObserver, requestObserver;
 		
 		InAppPurchaseManager iap;
-		
+
+		#region localized strings
+		/// <summary>
+		/// String.Format(Buy, "price"); // "Buy {0}"
+		/// </summary>
+		string Buy {
+			get {return MonoTouch.Foundation.NSBundle.MainBundle.LocalizedString ("Buy {0}", "Buy {0}");}
+		}
+		/// <summary>
+		/// String.Format(Balance, "balance"); // "{0} monkey credits"
+		/// </summary>
+		string Balance {
+			get {return MonoTouch.Foundation.NSBundle.MainBundle.LocalizedString ("{0} monkey credits", "{0} monkey credits");}
+		}
+		/// <summary>
+		/// No placeholders
+		/// </summary>
+		string Footer {
+			get {return MonoTouch.Foundation.NSBundle.MainBundle.LocalizedString ("Notice how you can keep buying the same items over and over. That's what makes these products 'consumable'.", "Notice how you can keep buying the same items over and over. That's what makes these products 'consumable'.");}
+		}
+		#endregion
+
 		public ConsumableViewController () : base()
 		{
 			// two products for sale on this page
@@ -61,7 +82,7 @@ namespace Consumables {
 			
 			infoLabel = new UILabel(new RectangleF(10, 340, 300, 80));
 			infoLabel.Lines = 3;
-			infoLabel.Text = "Notice how you can keep buying the same items over and over. That's what makes these products 'consumable'.";
+			infoLabel.Text = Footer;
 	
 			View.AddSubview (buy5Button);			
 			View.AddSubview (buy5Title);
@@ -108,7 +129,7 @@ namespace Consumables {
 					buy5Button.Enabled = true;
 					buy5Title.Text = product.LocalizedTitle;
 					buy5Description.Text = product.LocalizedDescription;
-					buy5Button.SetTitle("Buy " + product.LocalizedPrice(), UIControlState.Normal);
+					buy5Button.SetTitle(String.Format (Buy, product.LocalizedPrice()), UIControlState.Normal);
 				}
 				if (info.ContainsKey(NSBuy10ProductId)) {
 					pricesLoaded = true;
@@ -124,7 +145,7 @@ namespace Consumables {
 					buy10Button.Enabled = true;
 					buy10Title.Text = product.LocalizedTitle;
 					buy10Description.Text = product.LocalizedDescription;
-					buy10Button.SetTitle("Buy " + product.LocalizedPrice(), UIControlState.Normal);
+					buy10Button.SetTitle(String.Format (Buy, product.LocalizedPrice()), UIControlState.Normal);
 				}
 			});
 				
@@ -139,25 +160,33 @@ namespace Consumables {
 				buy10Button.SetTitle ("AppStore disabled", UIControlState.Disabled);
 			}
 
-			balanceLabel.Text = CreditManager.Balance() + " monkey credits";
+			balanceLabel.Text = String.Format (Balance, CreditManager.Balance());// + " monkey credits";
 
 			succeededObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseManager.InAppPurchaseManagerTransactionSucceededNotification, 
 			(notification) => {
-				balanceLabel.Text = CreditManager.Balance() + " monkey credits";
+				balanceLabel.Text = String.Format (Balance, CreditManager.Balance());// + " monkey credits";
 			});
 			failedObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseManager.InAppPurchaseManagerTransactionFailedNotification, 
-			                                                                  (notification) => {
+			(notification) => {
 				// TODO: 
 				Console.WriteLine ("Transaction Failed");
+			});
+
+			requestObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseManager.InAppPurchaseManagerRequestFailedNotification, 
+			                                                                 (notification) => {
+				// TODO: 
+				Console.WriteLine ("Request Failed");
+				buy5Button.SetTitle ("Network down?", UIControlState.Disabled);
+				buy10Button.SetTitle ("Network down?", UIControlState.Disabled);
 			});
 		}
 		public override void ViewWillDisappear (bool animated)
 		{
 			// remove the observer when the view isn't visible
 			NSNotificationCenter.DefaultCenter.RemoveObserver (priceObserver);
-
 			NSNotificationCenter.DefaultCenter.RemoveObserver (succeededObserver);
 			NSNotificationCenter.DefaultCenter.RemoveObserver (failedObserver);
+			NSNotificationCenter.DefaultCenter.RemoveObserver (requestObserver);
 
 			base.ViewWillDisappear (animated);
 		}

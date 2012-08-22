@@ -7,9 +7,10 @@ using MonoTouch.UIKit;
 namespace NonConsumables {
 	public class InAppPurchaseManager : SKProductsRequestDelegate {
 		public static NSString InAppPurchaseManagerProductsFetchedNotification = new NSString("InAppPurchaseManagerProductsFetchedNotification");
-		public static NSString InAppPurchaseManagerTransactionFailedNotification  = new NSString("InAppPurchaseManagerTransactionFailedNotification");
-		public static NSString InAppPurchaseManagerTransactionSucceededNotification  = new NSString("InAppPurchaseManagerTransactionSucceededNotification");
-		
+		public static NSString InAppPurchaseManagerTransactionFailedNotification = new NSString("InAppPurchaseManagerTransactionFailedNotification");
+		public static NSString InAppPurchaseManagerTransactionSucceededNotification = new NSString("InAppPurchaseManagerTransactionSucceededNotification");
+		public static NSString InAppPurchaseManagerRequestFailedNotification = new NSString("InAppPurchaseManagerRequestFailedNotification");
+
 		SKProductsRequest productsRequest;
 		CustomPaymentObserver theObserver;
 
@@ -81,7 +82,7 @@ namespace NonConsumables {
 		{
 			// Restored Transactions always have an 'original transaction' attached
 			Console.WriteLine("RestoreTransaction " + transaction.TransactionIdentifier + "; OriginalTransaction " + transaction.OriginalTransaction.TransactionIdentifier);
-			var productId = transaction.Payment.ProductIdentifier;
+			var productId = transaction.OriginalTransaction.Payment.ProductIdentifier;
 			// Register the purchase, so it is remembered for next time
 			PhotoFilterManager.Purchase(productId); // it's as though it was purchased again
 			FinishTransaction(transaction, true);
@@ -120,6 +121,11 @@ namespace NonConsumables {
 		public override void RequestFailed (SKRequest request, NSError error)
 		{
 			Console.WriteLine (" ** InAppPurchaseManager RequestFailed() " + error.LocalizedDescription);
+			using (var pool = new NSAutoreleasePool()) {
+				NSDictionary userInfo = NSDictionary.FromObjectsAndKeys(new NSObject[] {error},new NSObject[] {new NSString("error")});
+				// send out a notification for the failed transaction
+				NSNotificationCenter.DefaultCenter.PostNotificationName(InAppPurchaseManagerRequestFailedNotification,this,userInfo);
+			}
 		}
 
 		/// <summary>
