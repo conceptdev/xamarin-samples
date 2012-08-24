@@ -70,8 +70,9 @@ namespace Consumables {
 		public void PurchaseProduct(string appStoreProductId)
 		{
 			Console.WriteLine("PurchaseProduct " + appStoreProductId);
-			SKMutablePayment payment = SKMutablePayment.PaymentWithProduct (appStoreProductId);
+			//SKMutablePayment payment = SKMutablePayment.PaymentWithProduct (appStoreProductId);
 			//payment.Quantity = 4;
+			SKPayment payment = SKPayment.PaymentWithProduct (appStoreProductId);
 			SKPaymentQueue.DefaultQueue.AddPayment (payment);
 		}
 

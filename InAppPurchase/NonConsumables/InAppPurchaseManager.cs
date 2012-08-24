@@ -72,11 +72,22 @@ namespace NonConsumables {
 		}
 		public void CompleteTransaction (SKPaymentTransaction transaction)
 		{
-			Console.WriteLine("CompleteTransaction " + transaction.TransactionIdentifier);
+			Console.WriteLine ("CompleteTransaction " + transaction.TransactionIdentifier);
 			var productId = transaction.Payment.ProductIdentifier;
 			// Register the purchase, so it is remembered for next time
 			PhotoFilterManager.Purchase(productId);
-			FinishTransaction(transaction, true);
+			FinishTransaction (transaction, true);
+/*
+			if (ReceiptValidation.VerificationController.SharedInstance.VerifyPurchase (transaction)) {
+				Console.WriteLine ("Verified!");
+				// Register the purchase, so it is remembered for next time
+				PhotoFilterManager.Purchase(productId);
+				FinishTransaction (transaction, true);
+			} else {
+				Console.WriteLine ("NOT Verified :(");
+				FinishTransaction (transaction, false);
+			}
+*/
 		}
 		public void RestoreTransaction (SKPaymentTransaction transaction)
 		{

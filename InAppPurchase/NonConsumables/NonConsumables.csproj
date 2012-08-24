@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
+    <Reference Include="System.Json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -77,6 +78,7 @@
     <Compile Include="CustomPaymentObserver.cs" />
     <Compile Include="NonConsumableViewController.cs" />
     <Compile Include="PhotoFilterManager.cs" />
+    <Compile Include="VerificationController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
