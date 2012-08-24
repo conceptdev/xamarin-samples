@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Add Product ID strings&#xD;&#xA;Set Delegate&#xD;&#xA;Call Start()">
+    <Position X="2.88" Y="0.5" Height="0.524" Width="1.788" />
+  </Comment>
+  <Comment CommentText="ReceivedResponse()&#xD;&#xA;...contains SKProductsResponse">
+    <Position X="2.893" Y="1.481" Height="0.498" Width="2.178" />
+  </Comment>
+  <Comment CommentText="...contains SKProducts">
+    <Position X="5.447" Y="1.544" Height="0.398" Width="1.7" />
+  </Comment>
+  <Comment CommentText="extract Product ID &amp; other info, update UI">
+    <Position X="7.308" Y="2.412" Height="0.473" Width="1.7" />
+  </Comment>
+  <Comment CommentText="To purchase, create with Product ID">
+    <Position X="0.811" Y="4.914" Height="0.398" Width="1.7" />
+  </Comment>
+  <Comment CommentText="BEFORE purchase, ensure SKPaymentQueue has AddTransactionObserver">
+    <Position X="0.5" Y="3.442" Height="0.461" Width="3.071" />
+  </Comment>
+  <Comment CommentText="Then AddPayment() to queue">
+    <Position X="2.786" Y="4.901" Height="0.398" Width="2.153" />
+  </Comment>
+  <Comment CommentText="ReceivedResponse() &#xD;&#xA;...contains SKPaymentTransactions[]">
+    <Position X="5.417" Y="4.811" Height="0.398" Width="2.43" />
+  </Comment>
+  <Comment CommentText="Check transaction state, if Purchased...">
+    <Position X="5.002" Y="6.283" Height="0.398" Width="2.43" />
+  </Comment>
+  <Comment CommentText="FULFIL in app code, then&#xD;&#xA;tell the queue to FinishTransaction()">
+    <Position X="2.348" Y="6.937" Height="0.398" Width="2.43" />
+  </Comment>
+  <Comment CommentText="if Failed, check reason">
+    <Position X="8.222" Y="6.271" Height="0.398" Width="2.43" />
+  </Comment>
+  <Class Name="MonoTouch.StoreKit.SKPayment" Collapsed="true">
+    <Position X="1.75" Y="5.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MonoTouch.StoreKit.SKPaymentQueue" Collapsed="true">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MonoTouch.StoreKit.SKProduct" Collapsed="true">
+    <Position X="5.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MonoTouch.StoreKit.SKPaymentTransactionObserver" Collapsed="true">
+    <Position X="4" Y="4" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MonoTouch.StoreKit.SKPaymentTransaction" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MonoTouch.StoreKit.SKProductsRequest" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MonoTouch.StoreKit.SKProductsResponse" Collapsed="true">
+    <Position X="3" Y="2.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MonoTouch.StoreKit.SKProductsRequestDelegate" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Enum Name="MonoTouch.StoreKit.SKPaymentTransactionState">
+    <Position X="5" Y="6.75" Width="2.25" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="MonoTouch.StoreKit.SKError">
+    <Position X="8.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
