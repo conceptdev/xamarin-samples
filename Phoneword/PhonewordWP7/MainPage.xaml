@@ -36,24 +36,30 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
                 <RowDefinition Height="80"/>
                 <RowDefinition Height="80" />
                 <RowDefinition Height="80" />
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <TextBox Grid.Row="0"
+            <TextBlock Text="Enter a phoneword:" 
+                     Grid.Row="0"
+                     Margin="6,0,0,0" />
+            <TextBox Grid.Row="1"
                      Height="72" 
                      HorizontalAlignment="Left" 
                      Margin="-4,6,0,0" 
                      x:Name="PhoneNumberText" 
                      Text="1-855-XAMARIN" VerticalAlignment="Top" Width="460" />
-            <Button Content="Translate" Grid.Row="1"
+            <Button Content="Translate" 
+                    Grid.Row="2"
                     Height="72" 
                     HorizontalAlignment="Center" 
                     x:Name="TranslateButton" 
                     Width="300"  
                     Click="Translate_Click" />
-            <Button Content="Call" Grid.Row="2"
+            <Button Content="Call"
+                    Grid.Row="3"
                     Height="72" 
                     HorizontalAlignment="Center" 
                     x:Name="CallButton" 
