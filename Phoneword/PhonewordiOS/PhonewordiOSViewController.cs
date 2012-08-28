@@ -46,7 +46,7 @@ namespace PhonewordiOS
 					var av = new UIAlertView("Not supported"
 					                         , "Scheme 'tel:' is not supported on this device"
 					                         , null
-					                         , "Ok thanks"
+					                         , "OK"
 					                         , null);
 					av.Show();
 				}

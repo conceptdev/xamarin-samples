@@ -4,6 +4,13 @@
 <dict>
 	<key>CFBundleDisplayName</key>
 	<string>Phoneword</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>Resources/icon.png</string>
+		<string>Resources/icon@2x.png</string>
+		<string>Resources/icon~ipad.png</string>
+		<string>Resources/icon~ipad@2x.png</string>
+	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.xamarin.example.phoneword</string>
 	<key>CFBundleVersion</key>

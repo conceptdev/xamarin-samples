@@ -39,6 +39,8 @@ namespace Phoneword
 		//
 		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
 		{
+			UINavigationBar.Appearance.TintColor = UIColor.Blue;
+
 			return true;
 		}
 		
