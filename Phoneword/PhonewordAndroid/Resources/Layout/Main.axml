@@ -23,5 +23,6 @@
         android:id="@+id/CallButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Call" />
+        android:text="@string/Call"
+        android:enabled="false" />
 </LinearLayout>

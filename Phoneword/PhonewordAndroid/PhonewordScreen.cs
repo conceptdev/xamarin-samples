@@ -34,14 +34,18 @@ namespace Phoneword
 				} else {
 					CallButton.Text = "Call " + translatedNumber;
 					CallButton.Enabled = true;
-					// new AlertDialog.Builder(this).SetMessage("No number entered").SetNeutralButton("Ok", delegate { });
 				}
             };
 
 			CallButton.Click += delegate {
 				var callIntent = new Intent(Intent.ActionCall);
-				callIntent.SetData(Android.Net.Uri.Parse("tel:" + translatedNumber));
-				StartActivity(callIntent);
+                new AlertDialog.Builder(this)
+                    .SetMessage("Call " + PhoneNumberText.Text + "?")
+                    .SetNeutralButton("Call", delegate {
+                        callIntent.SetData(Android.Net.Uri.Parse("tel:" + translatedNumber));
+                        StartActivity(callIntent);
+                    })
+                    .SetNegativeButton("Cancel", delegate{}).Show();
 			};
         }
     }
