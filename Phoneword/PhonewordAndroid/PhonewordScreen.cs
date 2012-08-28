@@ -45,7 +45,8 @@ namespace Phoneword
                         callIntent.SetData(Android.Net.Uri.Parse("tel:" + translatedNumber));
                         StartActivity(callIntent);
                     })
-                    .SetNegativeButton("Cancel", delegate{}).Show();
+                    .SetNegativeButton("Cancel", delegate{})
+                    .Show();
 			};
         }
     }
