@@ -1,0 +1,58 @@
+﻿<Page
+    x:Class="PhonewordWin8.MainPage"
+    IsTabStop="false"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PhonewordWin8"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}"
+          Margin="0,0,800,0"
+          Width="400">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="60"/>
+            
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="ApplicationTitle" 
+                   Grid.Row="0"
+                       Text="Phoneword" 
+                       Style="{StaticResource BasicTextStyle}" 
+                       Foreground="Blue"/>
+        <TextBlock x:Name="PageTitle" 
+                   Grid.Row="1"
+                       Text="translate&amp;call" 
+                       Style="{StaticResource HeaderTextStyle}"
+                       Foreground="Blue"/>
+        <TextBlock Text="Enter a phoneword:" 
+                     Grid.Row="2"/>
+        <TextBox Grid.Row="3"
+                     HorizontalAlignment="Left" 
+                     x:Name="PhoneNumberText" 
+                     Text="1-855-XAMARIN" 
+                 VerticalAlignment="Top" Width="400" />
+        <Button Content="Translate" Foreground="White"
+                    Grid.Row="4"
+                    Height="72" 
+                    HorizontalAlignment="Center" 
+                    x:Name="TranslateButton" 
+                    Width="300"  
+                    Click="Translate_Click" />
+        <TextBox Grid.Row="5"
+                     Height="72" 
+                     HorizontalAlignment="Left" 
+                     x:Name="CallText" 
+                     Text="" 
+                     IsReadOnly="True"
+                    TextAlignment="Center"
+                    Width="400" 
+                    FontSize="36"/>
+    </Grid>
+</Page>
