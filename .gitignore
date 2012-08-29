@@ -5,6 +5,7 @@
 *.nib
 *.suo
 *.user
+*.pfx
 
 */bin/*
 */obj/*
