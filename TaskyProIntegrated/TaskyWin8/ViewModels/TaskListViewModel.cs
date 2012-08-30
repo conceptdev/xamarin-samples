@@ -72,11 +72,18 @@ namespace TaskyWin8
 
         public TaskViewModel Task { get; private set; }
 
-        public void PopulateTask(TaskViewModel entry)
+        public void PopulateTaskViewModel(TaskViewModel entry)
         {
             Task = entry;
             OnPropertyChanged("Task");
         }
 
+        public Task GetTask()
+        {
+            if (Task != null)
+                return Task.GetTask();
+            return null;
+
+        }
     }
 }

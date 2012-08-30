@@ -42,13 +42,10 @@ namespace TaskyWin8
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            //var vm = new TaskViewModel();
             var task = new Task();
-            //vm.Update(task);
-            task.Name = "Test " + DateTime.Now.Second;
-            task.Notes = "blah de blah";
+            task.Name = "<new task>";
+            task.Notes = "";
             TaskManager.SaveTask(task);
-
             ((TaskListViewModel)DataContext).BeginUpdate();
         }
 
@@ -56,8 +53,26 @@ namespace TaskyWin8
         {
             var lb = sender as ListBox;
             var tvm = lb.SelectedItem as TaskViewModel;
+            ((TaskListViewModel)DataContext).PopulateTaskViewModel(tvm);
+        }
 
-            ((TaskListViewModel)DataContext).PopulateTask(tvm);
+        private void Save_Tap(object sender, TappedRoutedEventArgs e)
+        {
+            var t = ((TaskListViewModel)DataContext).GetTask();
+            if (t != null) {
+                TaskManager.SaveTask(t);
+                ((TaskListViewModel)DataContext).BeginUpdate();
+            }
+        }
+
+        private void Delete_Tap(object sender, TappedRoutedEventArgs e)
+        {
+            var t = ((TaskListViewModel)DataContext).GetTask();
+            if (t != null)
+            {
+                TaskManager.DeleteTask(t.ID);
+                ((TaskListViewModel)DataContext).BeginUpdate();
+            }
         }
     }
 }
