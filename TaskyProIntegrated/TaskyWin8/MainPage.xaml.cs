@@ -48,6 +48,16 @@ namespace TaskyWin8
             task.Name = "Test " + DateTime.Now.Second;
             task.Notes = "blah de blah";
             TaskManager.SaveTask(task);
+
+            ((TaskListViewModel)DataContext).BeginUpdate();
+        }
+
+        private void Task_Tap(object sender, TappedRoutedEventArgs e)
+        {
+            var lb = sender as ListBox;
+            var tvm = lb.SelectedItem as TaskViewModel;
+
+            ((TaskListViewModel)DataContext).PopulateTask(tvm);
         }
     }
 }

@@ -9,62 +9,97 @@
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="400"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
         
-        <TextBlock x:Name="ApplicationTitle" 
-                   Grid.Row="0"
-                       Text="Tasky" 
-                       Style="{StaticResource BasicTextStyle}" 
-                       Foreground="Blue"/>
-        <TextBlock x:Name="PageTitle" 
-                   Grid.Row="1"
-                       Text="todo list" 
-                       Style="{StaticResource HeaderTextStyle}"
-                       Foreground="Blue"/>
-        <Button Content="Add" Foreground="White"
-                    Grid.Row="2"
-                    Height="72" 
-                    HorizontalAlignment="Center" 
-                    x:Name="TranslateButton" 
-                    Width="300"  
-                    Click="Add_Click" />
-    <ListBox Grid.Row="3" 
-            ItemsSource="{Binding Items}"
-            Visibility="{Binding ListVisibility}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid
-                        Margin="{Binding Margin}"
-                        Width="400">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-
-                        <TextBlock
-                                        Grid.Row="0"
-                                        Grid.Column="0"
-                                        Foreground="White"
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="0">
+        
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="400"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+        
+            <TextBlock x:Name="ApplicationTitle" 
+                       Grid.Row="0"
+                           Text="Tasky" 
+                           Style="{StaticResource BasicTextStyle}" 
+                           Foreground="Blue"/>
+            <TextBlock x:Name="PageTitle" 
+                       Grid.Row="1"
+                           Text="todo list" 
+                           Style="{StaticResource HeaderTextStyle}"
+                           Foreground="Blue"/>
+            <Button Content="Add" Foreground="White"
+                        Grid.Row="2"
+                        Height="72" 
+                        HorizontalAlignment="Center" 
+                        x:Name="AddButton" 
+                        Width="300"  
+                        Click="Add_Click" />
+        <ListBox Grid.Row="3" 
+                ItemsSource="{Binding Items}"
+                 Tapped="Task_Tap"
+                Visibility="{Binding ListVisibility}"
+                 >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                            Margin="{Binding Margin}"
+                            Width="400">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            Foreground="White"
                                         
-                                        Margin="0,0,0,0"
-                                        Text="{Binding Name}" />
-                        <TextBlock
-                                        Grid.Row="1"
-                                        Grid.Column="0"
-                                        Foreground="LightGray"
-                                        Margin="0,0,0,0"
-                                        Text="{Binding Notes}" />
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+                                            Margin="0,0,0,0"
+                                            Text="{Binding Name}" />
+                            <TextBlock
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            Foreground="LightGray"
+                                            Margin="0,0,0,0"
+                                            Text="{Binding Notes}" />
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0"
+                Text="Task:"/>
+            <TextBox Grid.Row="1"
+                x:Name="NameText"
+                Text="{Binding Task.Name,Mode=TwoWay}"></TextBox>
+            <TextBlock Grid.Row="2"
+                       Text="Notes:"/>
+            <TextBox
+                Grid.Row="3"
+                x:Name="NotesText"
+                Text="{Binding Task.Notes,Mode=TwoWay}"></TextBox>
+            <CheckBox
+                Grid.Row="4"
+                x:Name="DoneCheck"
+                IsChecked="{Binding Task.Done,Mode=TwoWay}"
+                />
+          
+        </Grid>
+
     </Grid>
-        
-    
 </Page>
