@@ -74,6 +74,48 @@
                         Width="400" 
                         FontSize="30"/>
             </Grid>
+            
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <StackPanel>
+                    <TextBlock 
+                        Foreground="Black"
+                        FontFamily="Segoe UI Light" FontSize="16" FontWeight="Bold"
+                        Text="Past translations" 
+                        />
+                    <TextBlock Margin="0,10,0,0"
+                        Foreground="Black"
+                        FontFamily="Segoe UI Light" 
+                        Text="Recent phonewords you've decoded" 
+                        />
+                </StackPanel>
+
+                <ListView Name="ListItems" Margin="0,10,0,0" 
+                          Grid.Row="1"
+                          SelectionMode="None"
+                          IsItemClickEnabled="true"
+                          ItemClick="ListItems_Click">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock 
+                                    Foreground="Black"
+                                    FontFamily="Segoe UI Light" FontWeight="Bold"
+                                    Text="{Binding Phoneword}" 
+                                    />
+                                <TextBlock Margin="20,10,0,0"
+                                    Foreground="Black"
+                                    FontFamily="Segoe UI Light" 
+                                    Text="{Binding Phonenumber}" 
+                                    />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
         </Grid>
     </Grid>
 </Page>
