@@ -28,9 +28,13 @@ namespace PhonewordiOS
 		{
 			base.ViewDidLoad ();
 			CallButton.Enabled = false;
-			// Perform any additional setup after loading the view, typically from a nib.
+
 			TranslateButton.TouchUpInside += (sender, e) => {
+
+				// *** SHARED CODE ***
 				translatedNumber = Core.PhonewordTranslator.ToNumber(PhoneNumberText.Text);
+
+
 				if (translatedNumber == "") {
 					CallButton.SetTitle ("Call ", UIControlState.Normal);
 					CallButton.Enabled = false;
