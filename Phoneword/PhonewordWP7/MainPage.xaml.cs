@@ -28,8 +28,11 @@ namespace Phoneword
         {
             if(!String.IsNullOrEmpty(PhoneNumberText.Text))
             {
+
+                // *** SHARED CODE
                 translatedNumber = Core.PhonewordTranslator.ToNumber(PhoneNumberText.Text);
-                //MessageBox.Show(translatedNumber);
+                
+
                 CallButton.Content = "Call " + translatedNumber;
                 CallButton.IsEnabled = true;
             }
