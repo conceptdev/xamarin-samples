@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhonewordCmd", "PhonewordCmd.csproj", "{7877DBB3-4DC5-4B4F-B875-18417C50D313}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhonewordCmd", "PhonewordCmd\PhonewordCmd.csproj", "{7877DBB3-4DC5-4B4F-B875-18417C50D313}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

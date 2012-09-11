@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhonewordWin8", "PhonewordWin8.csproj", "{CA006E85-22B8-4A9E-89B0-7682C6F087FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhonewordWin8", "PhonewordWin8\PhonewordWin8.csproj", "{CA006E85-22B8-4A9E-89B0-7682C6F087FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
