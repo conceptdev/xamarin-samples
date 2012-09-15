@@ -6,13 +6,12 @@
 	<string>Tasky</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>Images/Icons/57_icon.png</string>
-		<string>Images/Icons/114_icon.png</string>
-		<string>Images/Icons/72_icon.png</string>
-		<string>Images/Icons/29_icon.png</string>
-		<string>Images/Icons/58_icon.png</string>
-		<string>Images/Icons/50_icon.png</string>
-		<string>Images/Icons/512_icon.png</string>
+		<string>Resources/57_icon.png</string>
+		<string>Resources/114_icon.png</string>
+		<string>Resources/72_icon.png</string>
+		<string>Resources/29_icon.png</string>
+		<string>Resources/58_icon.png</string>
+		<string>Resources/50_icon.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.xamarin.samples.taskytouch</string>
