@@ -6,13 +6,12 @@
 	<string>NonConsumables</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>Images/icons/57_icon.png</string>
-		<string>Images/icons/114_icon.png</string>
-		<string>Images/icons/72_icon.png</string>
-		<string>Images/icons/29_icon.png</string>
-		<string>Images/icons/58_icon.png</string>
-		<string>Images/icons/50_icon.png</string>
-		<string>Images/icons/512_icon.png</string>
+		<string>Resources/57_icon.png</string>
+		<string>Resources/114_icon.png</string>
+		<string>Resources/72_icon.png</string>
+		<string>Resources/29_icon.png</string>
+		<string>Resources/58_icon.png</string>
+		<string>Resources/50_icon.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.xamarin.storekit.testing</string>

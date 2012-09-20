@@ -1,9 +1,7 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consumables", "Consumables\Consumables.csproj", "{7E1B3C9B-795E-417E-9D09-9E17AB686E36}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NonConsumables", "NonConsumables\NonConsumables.csproj", "{EB92A80A-4519-4C0D-AFE2-D0801FE5A221}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consumables", "Consumables.csproj", "{7E1B3C9B-795E-417E-9D09-9E17AB686E36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,17 +19,9 @@ Global
 		{7E1B3C9B-795E-417E-9D09-9E17AB686E36}.Release|iPhone.Build.0 = Release|iPhone
 		{7E1B3C9B-795E-417E-9D09-9E17AB686E36}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{7E1B3C9B-795E-417E-9D09-9E17AB686E36}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{EB92A80A-4519-4C0D-AFE2-D0801FE5A221}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{EB92A80A-4519-4C0D-AFE2-D0801FE5A221}.Debug|iPhone.Build.0 = Debug|iPhone
-		{EB92A80A-4519-4C0D-AFE2-D0801FE5A221}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{EB92A80A-4519-4C0D-AFE2-D0801FE5A221}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{EB92A80A-4519-4C0D-AFE2-D0801FE5A221}.Release|iPhone.ActiveCfg = Release|iPhone
-		{EB92A80A-4519-4C0D-AFE2-D0801FE5A221}.Release|iPhone.Build.0 = Release|iPhone
-		{EB92A80A-4519-4C0D-AFE2-D0801FE5A221}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{EB92A80A-4519-4C0D-AFE2-D0801FE5A221}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = NonConsumables\NonConsumables.csproj
+		StartupItem = Consumables\Consumables.csproj
 		Policies = $0
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = None

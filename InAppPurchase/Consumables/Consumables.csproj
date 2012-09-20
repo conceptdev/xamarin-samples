@@ -82,17 +82,22 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Content Include="Images\icons\114_icon.png" />
-    <Content Include="Images\icons\50_icon.png" />
-    <Content Include="Images\icons\29_icon.png" />
-    <Content Include="Images\icons\58_icon.png" />
-    <Content Include="Images\icons\57_icon.png" />
-    <Content Include="Images\icons\72_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ITunesArtwork Include="Images\icons\512_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="ja.lproj\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\1024_icon.png" />
+    <BundleResource Include="Resources\114_icon.png" />
+    <BundleResource Include="Resources\29_icon.png" />
+    <BundleResource Include="Resources\50_icon.png" />
+    <BundleResource Include="Resources\512_icon.png" />
+    <BundleResource Include="Resources\57_icon.png" />
+    <BundleResource Include="Resources\58_icon.png" />
+    <BundleResource Include="Resources\72_icon.png" />
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\Default-Landscape~ipad.png" />
+    <BundleResource Include="Resources\Default-Portrait~ipad.png" />
+    <BundleResource Include="Resources\Default.png" />
+    <BundleResource Include="Resources\Default%402x.png" />
   </ItemGroup>
 </Project>

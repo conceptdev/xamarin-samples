@@ -32,7 +32,8 @@ namespace NonConsumables {
 			navigationController.PushViewController (viewController, false);
 
 			// If you have defined a view, add it here:
-			window.AddSubview (navigationController.View);
+			//window.AddSubview (navigationController.View);
+			window.RootViewController = navigationController;
 			
 			// make the window visible
 			window.MakeKeyAndVisible ();
