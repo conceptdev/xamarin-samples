@@ -27,11 +27,7 @@ namespace Phoneword
 
 			TranslateButton.Click += delegate
             {
-
-				// *** SHARED CODE
 				translatedNumber = Core.PhonewordTranslator.ToNumber(PhoneNumberText.Text);
-
-
 				if (translatedNumber == "") {
 					CallButton.Text = "Call";
 					CallButton.Enabled = false;

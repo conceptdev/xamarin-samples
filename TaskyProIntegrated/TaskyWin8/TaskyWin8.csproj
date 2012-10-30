@@ -101,15 +101,6 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <SDKReference Include="Microsoft.VCLibs, Version=11.0">
-      <Name>Microsoft Visual C++ Runtime Package</Name>
-    </SDKReference>
-    <SDKReference Include="SQLite.WinRT, Version=3.7.13">
-      <Name>SQLite for Windows Runtime</Name>
-    </SDKReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="..\Tasky.Core\BL\Contracts\BusinessEntityBase.cs">
       <Link>Tasky.Core\BL\BusinessEntityBase.cs</Link>
     </Compile>
@@ -167,7 +158,11 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <SDKReference Include="SQLite.WinRT, Version=3.7.14.1">
+      <Name>SQLite for Windows Runtime</Name>
+    </SDKReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>
   </PropertyGroup>

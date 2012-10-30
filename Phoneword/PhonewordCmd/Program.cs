@@ -13,7 +13,7 @@ namespace PhonewordCmd
             Console.WriteLine("Enter a phoneword:");
             var input = Console.ReadLine();
 
-            //TODO: Translate the word into numbers
+            // Translate the word into numbers
             var output = Core.PhonewordTranslator.ToNumber(input);
 
             Console.WriteLine(output);

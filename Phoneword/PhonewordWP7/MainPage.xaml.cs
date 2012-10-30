@@ -26,18 +26,13 @@ namespace Phoneword
 
         private void Translate_Click(object sender, RoutedEventArgs e)
         {
-            if(!String.IsNullOrEmpty(PhoneNumberText.Text))
-            {
+            if(!String.IsNullOrEmpty(PhoneNumberText.Text)) {
 
-                // *** SHARED CODE
                 translatedNumber = Core.PhonewordTranslator.ToNumber(PhoneNumberText.Text);
-                
 
-                CallButton.Content = "Call " + translatedNumber;
+				CallButton.Content = "Call " + translatedNumber;
                 CallButton.IsEnabled = true;
-            }
-            else
-            {
+            } else {
                 CallButton.Content = "Call";
                 CallButton.IsEnabled = false;
             }

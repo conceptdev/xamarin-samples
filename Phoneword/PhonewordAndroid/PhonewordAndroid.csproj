@@ -55,8 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
-    <AndroidResource Include="Resources\Layout-xlarge\Main.axml" />
-    <AndroidResource Include="Resources\Layout-xlarge-land\Main.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Layout\Main.axml" />
