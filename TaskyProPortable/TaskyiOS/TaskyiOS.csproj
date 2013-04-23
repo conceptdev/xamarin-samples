@@ -68,12 +68,12 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Screens\iPhone\Home\controller_iPhone.cs" />
-    <Compile Include="AL\EditingSource.cs" />
-    <Compile Include="AL\TaskDialog.cs" />
-    <Compile Include="AL\LocalizableBindingContext.cs" />
     <Compile Include="..\Tasky.Core.Portable\DL\SQLite.Implementation.cs">
-      <Link>DL\SQLite.Implementation.cs</Link>
+      <Link>DataLayer\SQLite.Implementation.cs</Link>
     </Compile>
+    <Compile Include="ApplicationLayer\EditingSource.cs" />
+    <Compile Include="ApplicationLayer\TaskDialog.cs" />
+    <Compile Include="ApplicationLayer\LocalizableBindingContext.cs" />
   </ItemGroup>
   <Import Project="$(ProgramFiles)\MSBuild\MonoTouch\Novell.MonoTouch.Common.targets" Condition="'$(windir)' != '' " />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -83,8 +83,8 @@
     <Folder Include="Screens\iPhone\Home\" />
     <Folder Include="Images\" />
     <Folder Include="Images\Icons\" />
-    <Folder Include="AL\" />
-    <Folder Include="DL\" />
+    <Folder Include="ApplicationLayer\" />
+    <Folder Include="DataLayer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\Icons\29_icon.png" />
@@ -93,7 +93,6 @@
     <Content Include="Images\Icons\58_icon.png" />
     <Content Include="Images\Icons\72_icon.png" />
     <Content Include="Images\Icons\114_icon.png" />
-    <Content Include="Images\Icons\512_icon.png" />
     <Content Include="Default-Landscape~ipad.png" />
     <Content Include="Default-Portrait~ipad.png" />
     <Content Include="Default.png" />
@@ -101,8 +100,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tasky.Core.Portable\Tasky.Core.Portable.csproj">
-      <Project>{dbecb1bb-1cb3-4726-aba3-f3cd716b6d86}</Project>
+      <Project>{DBECB1BB-1CB3-4726-ABA3-F3CD716B6D86}</Project>
       <Name>Tasky.Core.Portable</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="Images\Icons\512_icon.png" />
   </ItemGroup>
 </Project>
