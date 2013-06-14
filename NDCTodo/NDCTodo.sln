@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iOSTodo", "iOSTodo\iOSTodo.csproj", "{08A1E777-C427-42A1-9DB4-F7C9105E389B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidTodo", "AndroidTodo\AndroidTodo.csproj", "{615E9D9F-71F5-46D1-8A88-8C3714DD3490}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08A1E777-C427-42A1-9DB4-F7C9105E389B}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{08A1E777-C427-42A1-9DB4-F7C9105E389B}.Debug|iPhone.Build.0 = Debug|iPhone
+		{08A1E777-C427-42A1-9DB4-F7C9105E389B}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{08A1E777-C427-42A1-9DB4-F7C9105E389B}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{08A1E777-C427-42A1-9DB4-F7C9105E389B}.Release|iPhone.ActiveCfg = Release|iPhone
+		{08A1E777-C427-42A1-9DB4-F7C9105E389B}.Release|iPhone.Build.0 = Release|iPhone
+		{08A1E777-C427-42A1-9DB4-F7C9105E389B}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{08A1E777-C427-42A1-9DB4-F7C9105E389B}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{615E9D9F-71F5-46D1-8A88-8C3714DD3490}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{615E9D9F-71F5-46D1-8A88-8C3714DD3490}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{615E9D9F-71F5-46D1-8A88-8C3714DD3490}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{615E9D9F-71F5-46D1-8A88-8C3714DD3490}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{615E9D9F-71F5-46D1-8A88-8C3714DD3490}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{615E9D9F-71F5-46D1-8A88-8C3714DD3490}.Release|iPhone.Build.0 = Release|Any CPU
+		{615E9D9F-71F5-46D1-8A88-8C3714DD3490}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{615E9D9F-71F5-46D1-8A88-8C3714DD3490}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = AndroidTodo\AndroidTodo.csproj
+	EndGlobalSection
+EndGlobal
