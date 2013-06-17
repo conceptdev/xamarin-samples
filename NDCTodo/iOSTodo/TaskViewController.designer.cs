@@ -6,7 +6,7 @@
 //
 using MonoTouch.Foundation;
 
-namespace StoryboardTables
+namespace NDCTodo
 {
 	[Register ("TaskViewController")]
 	partial class TaskViewController

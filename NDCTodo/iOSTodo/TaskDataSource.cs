@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using MonoTouch.UIKit;
 
-namespace StoryboardTables
+namespace NDCTodo
 {
 	public class TaskDataSource : UITableViewSource
 	{

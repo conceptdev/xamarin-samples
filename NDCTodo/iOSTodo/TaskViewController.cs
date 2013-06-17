@@ -5,7 +5,7 @@ using System;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
-namespace StoryboardTables
+namespace NDCTodo
 {
 	public partial class TaskViewController : UIViewController
 	{
