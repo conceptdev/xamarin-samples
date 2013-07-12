@@ -10,6 +10,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>TaskyCorePcl</RootNamespace>
     <AssemblyName>TaskyCorePcl</AssemblyName>
+    <TargetFrameworkProfile>Profile136</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
