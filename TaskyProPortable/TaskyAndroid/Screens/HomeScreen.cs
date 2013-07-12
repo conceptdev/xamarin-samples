@@ -8,7 +8,7 @@ using Android.Graphics;
 using Android.Views;
 
 namespace TaskyAndroid.Screens {
-	[Activity (Label = "TaskyPro", MainLauncher = true, Icon="@drawable/launcher")]			
+	[Activity (Label = "TaskyPro", MainLauncher = true, Icon="@drawable/ic_launcher")]			
 	public class HomeScreen : Activity {
 		protected Adapters.TaskListAdapter taskList;
 		protected IList<Task> tasks;

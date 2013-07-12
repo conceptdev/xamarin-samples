@@ -81,30 +81,31 @@
     <Folder Include="Screens\" />
     <Folder Include="Screens\iPhone\" />
     <Folder Include="Screens\iPhone\Home\" />
-    <Folder Include="Images\" />
-    <Folder Include="Images\Icons\" />
     <Folder Include="ApplicationLayer\" />
     <Folder Include="DataLayer\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\Icons\29_icon.png" />
-    <Content Include="Images\Icons\50_icon.png" />
-    <Content Include="Images\Icons\57_icon.png" />
-    <Content Include="Images\Icons\58_icon.png" />
-    <Content Include="Images\Icons\72_icon.png" />
-    <Content Include="Images\Icons\114_icon.png" />
     <Content Include="Default-Landscape~ipad.png" />
     <Content Include="Default-Portrait~ipad.png" />
     <Content Include="Default.png" />
     <Content Include="Default%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <ITunesArtwork Include="Images\Icons\512_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\TaskyCorePcl\TaskyCorePcl.csproj">
       <Project>{E7D41E53-4B11-4649-89BD-B82439167A00}</Project>
       <Name>TaskyCorePcl</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\Default.png" />
+    <BundleResource Include="Resources\Default%402x.png" />
+    <BundleResource Include="Resources\icon-29.png" />
+    <BundleResource Include="Resources\icon-50.png" />
+    <BundleResource Include="Resources\icon-57.png" />
+    <BundleResource Include="Resources\icon-58.png" />
+    <BundleResource Include="Resources\icon-72.png" />
+    <BundleResource Include="Resources\icon-114.png" />
   </ItemGroup>
 </Project>
