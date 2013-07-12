@@ -31,7 +31,7 @@
     <ConsolePause>false</ConsolePause>
     <AndroidLinkMode>None</AndroidLinkMode>
     <AndroidLinkSkip />
-    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -40,7 +40,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
@@ -76,11 +75,11 @@
     <AndroidResource Include="Resources\drawable-xhdpi\launcher.png" />
     <AndroidResource Include="Resources\drawable\bluebutton.axml" />
   </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\Tasky.Core.Portable\Tasky.Core.Portable.csproj">
-      <Project>{dbecb1bb-1cb3-4726-aba3-f3cd716b6d86}</Project>
-      <Name>Tasky.Core.Portable</Name>
+    <ProjectReference Include="..\TaskyCorePcl\TaskyCorePcl.csproj">
+      <Project>{E7D41E53-4B11-4649-89BD-B82439167A00}</Project>
+      <Name>TaskyCorePcl</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

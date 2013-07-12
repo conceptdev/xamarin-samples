@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{dbecb1bb-1cb3-4726-aba3-f3cd716b6d86}</ProjectGuid>
+    <ProjectGuid>{DBECB1BB-1CB3-4726-ABA3-F3CD716B6D86}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Tasky.Core.Portable</RootNamespace>
@@ -14,6 +14,8 @@
     <TargetFrameworkProfile>Profile2</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,14 +52,12 @@
     <Compile Include="BL\Contracts\BusinessEntityBase.cs" />
     <Compile Include="BL\Contracts\IBusinessEntity.cs" />
     <Compile Include="DAL\TaskRepository.cs" />
-
   </ItemGroup>
   <ItemGroup>
     <None Include="DL\About.txt" />
     <None Include="DAL\About.txt" />
     <None Include="BL\About.txt" />
     <None Include="About.txt" />
-
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -67,5 +67,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
 </Project>
