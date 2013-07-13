@@ -113,9 +113,9 @@
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Tasky.Core.Portable\Tasky.Core.Portable.csproj">
-      <Project>{DBECB1BB-1CB3-4726-ABA3-F3CD716B6D86}</Project>
-      <Name>Tasky.Core.Portable</Name>
+    <ProjectReference Include="..\TaskyCorePcl\TaskyCorePcl.csproj">
+      <Project>{E7D41E53-4B11-4649-89BD-B82439167A00}</Project>
+      <Name>TaskyCorePcl</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />

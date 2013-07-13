@@ -75,7 +75,7 @@
     <Compile Include="ApplicationLayer\TaskDialog.cs" />
     <Compile Include="ApplicationLayer\LocalizableBindingContext.cs" />
   </ItemGroup>
-  <Import Project="$(ProgramFiles)\MSBuild\MonoTouch\Novell.MonoTouch.Common.targets" Condition="'$(windir)' != '' " />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" Condition="'$(windir)' != '' " />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Screens\" />
