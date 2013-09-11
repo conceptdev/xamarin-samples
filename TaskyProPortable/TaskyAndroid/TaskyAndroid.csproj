@@ -50,15 +50,15 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Tasky.Core.Portable\DL\SQLite.Implementation.cs">
-      <Link>DL\SQLite.Implementation.cs</Link>
-    </Compile>
     <Compile Include="Application.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screens\HomeScreen.cs" />
     <Compile Include="Adapters\TaskListAdapter.cs" />
     <Compile Include="Screens\TaskDetailsScreen.cs" />
+    <Compile Include="..\TaskyPortableLibrary\SQLite.Implementation.cs">
+      <Link>SQLite.Implementation.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -82,6 +82,7 @@
     <Folder Include="Resources\drawable-ldpi\" />
     <Folder Include="Resources\drawable-mdpi\" />
     <Folder Include="Resources\drawable-xhdpi\" />
+    <Folder Include="DL\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TaskyPortableLibrary\TaskyPortableLibrary.csproj">
