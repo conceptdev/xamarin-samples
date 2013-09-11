@@ -92,12 +92,6 @@
     <Content Include="Default%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TaskyCorePcl\TaskyCorePcl.csproj">
-      <Project>{E7D41E53-4B11-4649-89BD-B82439167A00}</Project>
-      <Name>TaskyCorePcl</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
     <BundleResource Include="Resources\Default.png" />
     <BundleResource Include="Resources\Default%402x.png" />
@@ -107,5 +101,11 @@
     <BundleResource Include="Resources\icon-58.png" />
     <BundleResource Include="Resources\icon-72.png" />
     <BundleResource Include="Resources\icon-114.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TaskyPortableLibrary\TaskyPortableLibrary.csproj">
+      <Project>{8B8EDFDB-403F-4A0B-AEF0-EA35719B1B14}</Project>
+      <Name>TaskyPortableLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

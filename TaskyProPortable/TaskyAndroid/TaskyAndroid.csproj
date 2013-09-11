@@ -30,7 +30,8 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <AndroidLinkMode>None</AndroidLinkMode>
-    <AndroidLinkSkip />
+    <AndroidLinkSkip>
+    </AndroidLinkSkip>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -77,15 +78,15 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\TaskyCorePcl\TaskyCorePcl.csproj">
-      <Project>{E7D41E53-4B11-4649-89BD-B82439167A00}</Project>
-      <Name>TaskyCorePcl</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />
     <Folder Include="Resources\drawable-ldpi\" />
     <Folder Include="Resources\drawable-mdpi\" />
     <Folder Include="Resources\drawable-xhdpi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TaskyPortableLibrary\TaskyPortableLibrary.csproj">
+      <Project>{8B8EDFDB-403F-4A0B-AEF0-EA35719B1B14}</Project>
+      <Name>TaskyPortableLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

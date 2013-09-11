@@ -45,7 +45,7 @@ namespace Tasky.Screens.iPhone.Home {
 			currentTask.Done = taskDialog.Done;
 			AppDelegate.Current.TaskMgr.SaveTask(currentTask);
 			NavigationController.PopViewControllerAnimated (true);
-			context.Dispose (); // per documentation
+			//context.Dispose (); // per documentation
 		}
 		public void DeleteTask ()
 		{
