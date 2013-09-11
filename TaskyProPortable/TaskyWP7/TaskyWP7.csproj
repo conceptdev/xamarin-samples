@@ -64,12 +64,10 @@
     <Reference Include="mscorlib.extensions" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Tasky.Core.Portable\DL\SQLite.Implementation.cs">
-      <Link>DL\SQLite.Implementation.cs</Link>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DL\SQLite.Implementation.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -113,9 +111,9 @@
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TaskyCorePcl\TaskyCorePcl.csproj">
-      <Project>{E7D41E53-4B11-4649-89BD-B82439167A00}</Project>
-      <Name>TaskyCorePcl</Name>
+    <ProjectReference Include="..\TaskyPortableLibraryVS\TaskyPortableLibraryVS.csproj">
+      <Project>{1F2F0191-BC8D-449B-8385-F253DF10697C}</Project>
+      <Name>TaskyPortableLibraryVS</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
