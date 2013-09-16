@@ -20,28 +20,10 @@ namespace Tasky.Portable {
 		{
 			// set the db location
 			storeLocation = filename;
-			tasks = new List<Task> ();
 			storage = xmlStorage;
 			// deserialize XML from file at dbLocation
 			tasks = storage.ReadXml (filename);
 		}
-
-//		static void ReadXml ()
-//		{
-//			if (File.Exists (storeLocation)) {
-//				var serializer = new XmlSerializer (typeof(List<Task>));
-//				using (var stream = new FileStream (storeLocation, FileMode.Open)) {
-//					tasks = (List<Task>)serializer.Deserialize (stream);
-//				}
-//			}
-//		}
-//		static void WriteXml ()
-//		{
-//			var serializer = new XmlSerializer (typeof(List<Task>));
-//			using (var writer = new StreamWriter (storeLocation)) {
-//				serializer.Serialize (writer, tasks);
-//			}
-//		}
 
 		public Task GetTask(int id)
 		{
@@ -72,7 +54,7 @@ namespace Tasky.Portable {
 			} else {
 				//HACK: why isn't Find available in PCL ?
 				//var i = tasks.Find (x => x.ID == item.ID); 
-				var j = tasks.Select (x => x.ID == item.ID?x:null).First();
+				var j = tasks.Where (x => x.ID == item.ID).First();
 				j = item; // replaces item in collection with updated value
 			}
 
