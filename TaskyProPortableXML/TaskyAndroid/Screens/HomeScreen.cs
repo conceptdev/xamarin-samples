@@ -8,9 +8,9 @@ using Android.Views;
 using Tasky.Portable;
 
 namespace Tasky {
-	[Activity (Label = "TaskyPro", MainLauncher = true, Icon="@drawable/ic_launcher")]			
+	[Activity (Label = "TaskyPro", MainLauncher = true, Icon="@drawable/ic_launcher", Theme = "@style/AppTheme")]			
 	public class HomeScreen : Activity {
-		protected Adapters.TaskListAdapter taskList;
+		protected TaskListAdapter taskList;
 		protected IList<Task> tasks;
 		protected Button addTaskButton = null;
 		protected ListView taskListView = null;
@@ -61,7 +61,7 @@ namespace Tasky {
 			tasks = TaskyApp.Current.TaskMgr.GetTasks();
 			
 			// create our adapter
-			taskList = new Adapters.TaskListAdapter(this, tasks);
+			taskList = new TaskListAdapter(this, tasks);
 
 			//Hook up our adapter to our ListView
 			taskListView.Adapter = taskList;

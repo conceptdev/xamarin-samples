@@ -13,8 +13,8 @@ using Android.Views;
 using Tasky.Portable;
 
 namespace Tasky {
-	//TODO: implement proper lifecycle methods
-	[Activity (Label = "Task Details")]			
+
+	[Activity (Label = "Task Details", Icon="@drawable/ic_launcher", Theme = "@style/AppTheme")]			
 	public class TaskDetailsScreen : Activity {
 		protected Task task = new Task();
 		protected Button cancelDeleteButton = null;
