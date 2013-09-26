@@ -3,6 +3,7 @@
 using System;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using MonoTouch.AVFoundation;
 
 namespace StoryboardTables
 {
@@ -28,6 +29,17 @@ namespace StoryboardTables
 			DeleteButton.TouchUpInside += (sender, e) => {
 				Delegate.DeleteTask(currentTask);
 			};
+
+			if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) {
+				// requires iOS 7
+				SpeakButton.TouchUpInside += (sender, e) => {
+					Speak (TitleText.Text + ". " + NotesText.Text);
+				};
+//				InitPitchAndVolume ();
+			} else {
+				SpeakButton.SetTitleColor (UIColor.Gray, UIControlState.Disabled);
+				SpeakButton.Enabled = false;
+			}
 		}
 
 		// this will be called before the view is displayed 
@@ -43,5 +55,48 @@ namespace StoryboardTables
 			NotesText.Text = currentTask.Notes;
 			DoneSwitch.On = currentTask.Done;
 		}
+
+		/// <summary>
+		/// Speak example from: 
+		/// http://blog.xamarin.com/make-your-ios-7-app-speak/
+		/// </summary>
+		void Speak (string text)
+		{
+			var speechSynthesizer = new AVSpeechSynthesizer ();
+
+//			var voices = AVSpeechSynthesisVoice.GetSpeechVoices ();
+
+			var speechUtterance = new AVSpeechUtterance (text) {
+				Rate = AVSpeechUtterance.MaximumSpeechRate/4,
+				Voice = AVSpeechSynthesisVoice.FromLanguage ("en-AU"),
+				Volume = volume,
+				PitchMultiplier = pitch
+			};
+
+			speechSynthesizer.SpeakUtterance (speechUtterance);
+		}
+
+		float volume = 0.5f;
+		float pitch = 1.0f;
+		// http://blog.xamarin.com/make-your-ios-7-app-speak/
+//		void InitPitchAndVolume ()
+//		{
+//			volumeSlider.MinValue = 0;
+//			volumeSlider.MaxValue = 1.0f;
+//			volumeSlider.SetValue (volume, false);
+//
+//			pitchSlider.MinValue = 0.5f;
+//			pitchSlider.MaxValue = 2.0f;
+//			pitchSlider.SetValue (pitch, false);
+//
+//			volumeSlider.ValueChanged += (sender, e) => {
+//				volume = volumeSlider.Value;
+//			};
+//
+//			pitchSlider.ValueChanged += (sender, e) => {
+//				pitch = volumeSlider.Value;
+//			};
+//		}
+
 	}
 }
