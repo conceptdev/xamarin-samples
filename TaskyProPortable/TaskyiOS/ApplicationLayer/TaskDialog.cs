@@ -32,10 +32,14 @@ namespace Tasky {
 
 		[Localize]
 		[Section ("")]
+		[OnTap ("Speak")]
+		[Alignment (UITextAlignment.Center)]
+    	public string Speak;
+
 		[OnTap ("SaveTask")]
 		[Alignment (UITextAlignment.Center)]
-    	public string Save;
-		
+		public string Save;
+
 		[Localize]
 		[Section ("")]
 		[OnTap ("DeleteTask")]

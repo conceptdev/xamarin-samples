@@ -29,12 +29,24 @@
         android:layout_below="@+id/NotesLabel"
         android:maxLines="1"
         android:imeOptions="actionDone" />
-    <CheckBox
-        android:id="@+id/chkDone"
+    <LinearLayout
+        android:id="@+id/row"
         android:layout_below="@+id/txtNotes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Done" />
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <CheckBox
+            android:id="@+id/chkDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Done" />
+        <Button
+            android:id="@+id/btnSpeak"
+            android:text="Speak"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp" />
+    </LinearLayout>
     <Button
         android:id="@+id/btnSave"
         android:text="Save"
@@ -42,7 +54,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="10dip"
         android:paddingBottom="10dip"
-        android:layout_below="@+id/chkDone" />
+        android:layout_below="@+id/row" />
     <Button
         android:id="@+id/btnCancelDelete"
         android:text="Cancel"

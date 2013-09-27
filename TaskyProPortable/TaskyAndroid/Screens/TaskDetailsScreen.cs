@@ -12,16 +12,18 @@ using Android.Graphics;
 using Android.Views;
 
 using Tasky.BL;
+using Android.Speech.Tts;
 
 namespace TaskyAndroid.Screens {
 	//TODO: implement proper lifecycle methods
 	[Activity (Label = "Task Details", Icon="@drawable/ic_launcher", Theme = "@style/AppTheme")]			
-	public class TaskDetailsScreen : Activity {
+	public class TaskDetailsScreen : Activity, TextToSpeech.IOnInitListener {
 		protected Task task = new Task();
-		protected Button cancelDeleteButton = null;
-		protected EditText notesTextEdit = null;
-		protected EditText nameTextEdit = null;
-		protected Button saveButton = null;
+		protected Button cancelDeleteButton;
+		protected EditText notesTextEdit;
+		protected EditText nameTextEdit;
+		protected Button saveButton;
+		protected Button speakButton;
 		CheckBox doneCheckbox;
 		
 		protected override void OnCreate (Bundle bundle)
@@ -48,27 +50,43 @@ namespace TaskyAndroid.Screens {
 			notesTextEdit = FindViewById<EditText>(Resource.Id.txtNotes);
 			saveButton = FindViewById<Button>(Resource.Id.btnSave);
 			doneCheckbox = FindViewById<CheckBox>(Resource.Id.chkDone);
-			
-			// find all our controls
 			cancelDeleteButton = FindViewById<Button>(Resource.Id.btnCancelDelete);
-			
-			
+			speakButton = FindViewById<Button> (Resource.Id.btnSpeak);
+
 			// set the cancel delete based on whether or not it's an existing task
-			if(cancelDeleteButton != null)
-			{ cancelDeleteButton.Text = (task.ID == 0 ? "Cancel" : "Delete"); }
-			
+			cancelDeleteButton.Text = (task.ID == 0 ? "Cancel" : "Delete");
 			// name
-			if(nameTextEdit != null) { nameTextEdit.Text = task.Name; }
-			
+			nameTextEdit.Text = task.Name; 
 			// notes
-			if(notesTextEdit != null) { notesTextEdit.Text = task.Notes; }
-			
-			if(doneCheckbox != null) { doneCheckbox.Checked = task.Done; }
+			notesTextEdit.Text = task.Notes; 
+			// done
+			doneCheckbox.Checked = task.Done; 
 
 			// button clicks 
 			cancelDeleteButton.Click += (sender, e) => { CancelDelete(); };
 			saveButton.Click += (sender, e) => { Save(); };
+			speakButton.Click += (sender, e) => {
+				Speak(nameTextEdit.Text + ". " + notesTextEdit.Text);
+			};
+			speaker = new TextToSpeech (this, this);
 		}
+
+		void Speak(string text)
+		{
+			var p = new Dictionary<string,string> ();
+			speaker.Speak (text, QueueMode.Flush, p);
+		}
+
+		#region IOnInitListener implementation
+		TextToSpeech speaker;
+		public void OnInit (OperationResult status)
+		{
+			if (status.Equals (OperationResult.Success))
+				Console.WriteLine ("spoke");
+			else
+				Console.WriteLine ("was quiet");
+		}
+		#endregion
 
 		protected void Save()
 		{

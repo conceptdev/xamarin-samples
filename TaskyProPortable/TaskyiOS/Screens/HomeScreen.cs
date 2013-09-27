@@ -5,12 +5,13 @@ using MonoTouch.UIKit;
 using MonoTouch.Dialog;
 using Tasky.AL;
 using Tasky.BL;
+using MonoTouch.AVFoundation;
 
-namespace Tasky.Screens.iPhone.Home {
-	public class controller_iPhone : DialogViewController {
+namespace Tasky.Screens {
+	public class HomeScreen : DialogViewController {
 		List<Task> tasks;
 		
-		public controller_iPhone () : base (UITableViewStyle.Plain, null)
+		public HomeScreen () : base (UITableViewStyle.Plain, null)
 		{
 			Initialize ();
 		}
@@ -37,6 +38,32 @@ namespace Tasky.Screens.iPhone.Home {
 			detailsScreen = new DialogViewController (context.Root, true);
 			ActivateController(detailsScreen);
 		}
+
+
+		// only works on devices, not the iOS Simulator?
+		public void Speak()
+		{
+			context.Fetch (); // re-populates with updated values
+
+			var text = taskDialog.Name + ". " + taskDialog.Notes;
+
+			if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) {
+				  
+				var speechSynthesizer = new AVSpeechSynthesizer ();
+
+				var speechUtterance = new AVSpeechUtterance (text) {
+					Rate = AVSpeechUtterance.MaximumSpeechRate/4,
+					Voice = AVSpeechSynthesisVoice.FromLanguage ("en-AU"),
+					Volume = 0.5f,
+					PitchMultiplier = 1.0f
+				};
+
+				speechSynthesizer.SpeakUtterance (speechUtterance);
+			} else {
+				Console.WriteLine ("Speak requires iOS 7");
+			}
+		}
+
 		public void SaveTask()
 		{
 			context.Fetch (); // re-populates with updated values

@@ -33,12 +33,10 @@ namespace Tasky {
 			navController = new UINavigationController ();
 
 			// create our home controller based on the device
-			if (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone) {
-				homeViewController = new Tasky.Screens.iPhone.Home.controller_iPhone();
-			} else {
-//				homeViewController = new Hello_UniversalViewController ("Hello_UniversalViewController_iPad", null);
-			}
-			
+//			if (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone) {
+			homeViewController = new Tasky.Screens.HomeScreen();
+
+
 			// Styling
 			UINavigationBar.Appearance.TintColor = UIColor.FromRGB (38, 117 ,255); // nice blue
 			UITextAttributes ta = new UITextAttributes();

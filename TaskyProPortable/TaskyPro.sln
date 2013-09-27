@@ -29,18 +29,16 @@ Global
 		{08FAE550-E302-4022-A871-17E0462E99F3}.Debug|iPhone.Build.0 = Debug|iPhone
 		{08FAE550-E302-4022-A871-17E0462E99F3}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{08FAE550-E302-4022-A871-17E0462E99F3}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{08FAE550-E302-4022-A871-17E0462E99F3}.Debug|Mixed Platforms.ActiveCfg = Debug|iPhone
-		{08FAE550-E302-4022-A871-17E0462E99F3}.Debug|Mixed Platforms.Build.0 = Debug|iPhone
-		{08FAE550-E302-4022-A871-17E0462E99F3}.Debug|Mixed Platforms.Deploy.0 = Debug|iPhone
+		{08FAE550-E302-4022-A871-17E0462E99F3}.Debug|Mixed Platforms.ActiveCfg = Debug|iPhoneSimulator
+		{08FAE550-E302-4022-A871-17E0462E99F3}.Debug|Mixed Platforms.Build.0 = Debug|iPhoneSimulator
 		{08FAE550-E302-4022-A871-17E0462E99F3}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
 		{08FAE550-E302-4022-A871-17E0462E99F3}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
 		{08FAE550-E302-4022-A871-17E0462E99F3}.Release|iPhone.ActiveCfg = Release|iPhone
 		{08FAE550-E302-4022-A871-17E0462E99F3}.Release|iPhone.Build.0 = Release|iPhone
 		{08FAE550-E302-4022-A871-17E0462E99F3}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{08FAE550-E302-4022-A871-17E0462E99F3}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{08FAE550-E302-4022-A871-17E0462E99F3}.Release|Mixed Platforms.ActiveCfg = Release|iPhone
-		{08FAE550-E302-4022-A871-17E0462E99F3}.Release|Mixed Platforms.Build.0 = Release|iPhone
-		{08FAE550-E302-4022-A871-17E0462E99F3}.Release|Mixed Platforms.Deploy.0 = Release|iPhone
+		{08FAE550-E302-4022-A871-17E0462E99F3}.Release|Mixed Platforms.ActiveCfg = Release|iPhoneSimulator
+		{08FAE550-E302-4022-A871-17E0462E99F3}.Release|Mixed Platforms.Build.0 = Release|iPhoneSimulator
 		{1F2F0191-BC8D-449B-8385-F253DF10697C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1F2F0191-BC8D-449B-8385-F253DF10697C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F2F0191-BC8D-449B-8385-F253DF10697C}.Debug|iPhone.ActiveCfg = Debug|Any CPU
@@ -105,7 +103,7 @@ Global
 		{8FD09DFC-EE0E-448C-8E0A-6FD727332081}.Release|Mixed Platforms.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = TaskyAndroid\TaskyAndroid.csproj
+		StartupItem = TaskyiOS\TaskyiOS.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
