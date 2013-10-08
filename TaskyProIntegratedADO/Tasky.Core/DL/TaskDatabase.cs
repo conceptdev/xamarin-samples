@@ -55,7 +55,17 @@ namespace Tasky.DL
 			}
 			Console.WriteLine (output);
 		}
-		
+
+		/// <summary>Convert from DataReader to Task object</summary>
+		Task FromReader(SqliteDataReader r) {
+			var t = new Task ();
+			t.ID = Convert.ToInt32 (r ["_id"]);
+			t.Name = r ["Name"].ToString ();
+			t.Notes = r ["Notes"].ToString ();
+			t.Done = Convert.ToInt32 (r ["Done"]) == 1 ? true : false;
+			return t;
+		}
+
 		public IEnumerable<Task> GetItems ()
 		{
 			var tl = new List<Task> ();
@@ -67,12 +77,7 @@ namespace Tasky.DL
 					contents.CommandText = "SELECT [_id], [Name], [Notes], [Done] from [Items]";
 					var r = contents.ExecuteReader ();
 					while (r.Read ()) {
-						var t = new Task ();
-						t.ID = Convert.ToInt32 (r ["_id"]);
-						t.Name = r ["Name"].ToString ();
-						t.Notes = r ["Notes"].ToString ();
-						t.Done = Convert.ToInt32 (r ["Done"]) == 1 ? true : false;
-						tl.Add (t);
+						tl.Add (FromReader(r));
 					}
 				}
 				connection.Close ();
@@ -86,14 +91,12 @@ namespace Tasky.DL
             lock (locker) {
 				connection = new SqliteConnection ("Data Source=" + path);
 				connection.Open ();
-				using (var contents = connection.CreateCommand ()) {
-					contents.CommandText = "SELECT [_id], [Name], [Notes], [Done] from [Items]";
-					var r = contents.ExecuteReader ();
+				using (var command = connection.CreateCommand ()) {
+					command.CommandText = "SELECT [_id], [Name], [Notes], [Done] from [Items] WHERE [_id] = ?";
+					command.Parameters.Add (new SqliteParameter (System.Data.DbType.Int32) { Value = id });
+					var r = command.ExecuteReader ();
 					while (r.Read ()) {
-						t.ID = Convert.ToInt32 (r ["_id"]);
-						t.Name = r ["Name"].ToString ();
-						t.Notes = r ["Notes"].ToString ();
-						t.Done = Convert.ToInt32 (r ["Done"]) == 1 ? true : false;
+						t = FromReader (r);
 						break;
 					}
 				}
@@ -104,26 +107,35 @@ namespace Tasky.DL
 
 		public int SaveItem (Task item) 
 		{
+			int r;
             lock (locker) {
                 if (item.ID != 0) {
 					connection = new SqliteConnection ("Data Source=" + path);
 					connection.Open ();
-					using (var contents = connection.CreateCommand ()) {
-						contents.CommandText = "UPDATE [Items] SET [Name] = '"+item.Name+"', [Notes] = '"+item.Notes+"', [Done] = "+(item.Done?1:0)+" WHERE [_id] = " + item.ID;
-
-						var r = contents.ExecuteNonQuery ();
+					using (var command = connection.CreateCommand ()) {
+						//contents.CommandText = "UPDATE [Items] SET [Name] = '"+item.Name+"', [Notes] = '"+item.Notes+"', [Done] = "+(item.Done?1:0)+" WHERE [_id] = " + item.ID;
+						command.CommandText = "UPDATE [Items] SET [Name] = ?, [Notes] = ?, [Done] = ? WHERE [_id] = ?;";
+						command.Parameters.Add (new SqliteParameter (System.Data.DbType.String) { Value = item.Name });
+						command.Parameters.Add (new SqliteParameter (System.Data.DbType.String) { Value = item.Notes });
+						command.Parameters.Add (new SqliteParameter (System.Data.DbType.Int32) { Value = item.Done });
+						command.Parameters.Add (new SqliteParameter (System.Data.DbType.Int32) { Value = item.ID });
+						r = command.ExecuteNonQuery ();
 					}
 					connection.Close ();
-                    return 1;
+                    return r;
                 } else {
 					connection = new SqliteConnection ("Data Source=" + path);
 					connection.Open ();
-					using (var contents = connection.CreateCommand ()) {
-						contents.CommandText = "INSERT INTO [Items] ([Name], [Notes], [Done]) VALUES ('"+item.Name+"','"+item.Notes+"',"+(item.Done?1:0)+")";
-						var r = contents.ExecuteNonQuery ();
+					using (var command = connection.CreateCommand ()) {
+						//contents.CommandText = "INSERT INTO [Items] ([Name], [Notes], [Done]) VALUES ('"+item.Name+"','"+item.Notes+"',"+(item.Done?1:0)+")";
+						command.CommandText = "INSERT INTO [Items] ([Name], [Notes], [Done]) VALUES (? ,?, ?)";
+						command.Parameters.Add (new SqliteParameter (System.Data.DbType.String) { Value = item.Name });
+						command.Parameters.Add (new SqliteParameter (System.Data.DbType.String) { Value = item.Notes });
+						command.Parameters.Add (new SqliteParameter (System.Data.DbType.Int32) { Value = item.Done });
+						r = command.ExecuteNonQuery ();
 					}
 					connection.Close ();
-                    return -1;
+                    return r;
                 }
 
             }
@@ -132,20 +144,16 @@ namespace Tasky.DL
 		public int DeleteItem(int id) 
 		{
             lock (locker) {
-#if NETFX_CORE
-				return -1; //TODO: 
-#else
 				int r;
 				connection = new SqliteConnection ("Data Source=" + path);
 				connection.Open ();
-				using (var contents = connection.CreateCommand ()) {
-					contents.CommandText = "DELETE FROM [Items] WHERE [_id] = " + id;
-					r = contents.ExecuteNonQuery ();
-
+				using (var command = connection.CreateCommand ()) {
+					command.CommandText = "DELETE FROM [Items] WHERE [_id] = ?;";
+					command.Parameters.Add (new SqliteParameter (System.Data.DbType.Int32) { Value = id});
+					r = command.ExecuteNonQuery ();
 				}
 				connection.Close ();
 				return r;
-#endif
             }
 		}
 	}
