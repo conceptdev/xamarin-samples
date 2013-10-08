@@ -34,9 +34,6 @@ namespace Tasky.DL
 			bool exists = File.Exists (dbPath);
 
 			if (!exists) {
-				output += "Creating database";
-				// Need to create the database and seed it with some data.
-				//Mono.Data.Sqlite.SqliteConnection.CreateFile (dbPath);
 				connection = new SqliteConnection ("Data Source=" + dbPath);
 
 				connection.Open ();
@@ -47,11 +44,10 @@ namespace Tasky.DL
 					using (var c = connection.CreateCommand ()) {
 						c.CommandText = command;
 						var i = c.ExecuteNonQuery ();
-						output += "\n\tExecuted " + command + " (rows:" + i + ")";
 					}
 				}
 			} else {
-				output += "Database already exists";
+				// already exists
 			}
 			Console.WriteLine (output);
 		}
