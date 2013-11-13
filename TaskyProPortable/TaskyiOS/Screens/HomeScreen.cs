@@ -60,7 +60,7 @@ namespace Tasky.Screens {
 
 				speechSynthesizer.SpeakUtterance (speechUtterance);
 			} else {
-				Console.WriteLine ("Speak requires iOS 7");
+				Console.WriteLine ("Speech requires iOS 7");
 			}
 		}
 

@@ -86,7 +86,6 @@
     <Folder Include="Resources\drawable-ldpi\" />
     <Folder Include="Resources\drawable-mdpi\" />
     <Folder Include="Resources\drawable-xhdpi\" />
-    <Folder Include="DL\" />
     <Folder Include="Resources\values-v11\" />
     <Folder Include="Resources\values-v14\" />
   </ItemGroup>
