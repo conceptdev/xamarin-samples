@@ -33,22 +33,27 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            
-            <TextBox
-                Grid.Row="0" Grid.Column="0"
-                x:Name="NameText"
-                Text="{Binding Name,Mode=TwoWay}"></TextBox>
+            <TextBlock Grid.Row="0" Grid.Column="0"
+                       Text="Name"/>
             <TextBox
                 Grid.Row="1" Grid.Column="0"
+                x:Name="NameText"
+                Text="{Binding Name,Mode=TwoWay}"></TextBox>
+            <TextBlock Grid.Row="2" Grid.Column="0"
+                       Text="Notes"/>
+            <TextBox
+                Grid.Row="3" Grid.Column="0"
                 x:Name="NotesText"
                 Text="{Binding Notes,Mode=TwoWay}"></TextBox>
             <CheckBox
-                Grid.Row="2" Grid.Column="0"
+                Grid.Row="4" Grid.Column="0"
                 x:Name="DoneCheck"
                 IsChecked="{Binding Done,Mode=TwoWay}"
-                />
+                >Done</CheckBox>
         </Grid>
     </Grid>
 
@@ -57,12 +62,12 @@
         <shell:ApplicationBar Opacity="1" IsVisible="True" IsMenuEnabled="True">
 
             <shell:ApplicationBarIconButton 
-                IconUri="/Images/appbar.add.rest.jpg"
+                IconUri="/Images/save.png"
                 Text="save" 
                 Click="HandleSave"/>
 
             <shell:ApplicationBarIconButton 
-                IconUri="/Images/appbar.add.rest.jpg"
+                IconUri="/Images/delete.png"
                 Text="delete" 
                 Click="HandleDelete"/>
             
