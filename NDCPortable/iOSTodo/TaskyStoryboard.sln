@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskyStoryboard", "TaskyStoryboard.csproj", "{08A1E777-C427-42A1-9DB4-F7C9105E389B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08A1E777-C427-42A1-9DB4-F7C9105E389B}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{08A1E777-C427-42A1-9DB4-F7C9105E389B}.Debug|iPhone.Build.0 = Debug|iPhone
+		{08A1E777-C427-42A1-9DB4-F7C9105E389B}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{08A1E777-C427-42A1-9DB4-F7C9105E389B}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{08A1E777-C427-42A1-9DB4-F7C9105E389B}.Release|iPhone.ActiveCfg = Release|iPhone
+		{08A1E777-C427-42A1-9DB4-F7C9105E389B}.Release|iPhone.Build.0 = Release|iPhone
+		{08A1E777-C427-42A1-9DB4-F7C9105E389B}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{08A1E777-C427-42A1-9DB4-F7C9105E389B}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = TaskyStoryboard.csproj
+	EndGlobalSection
+EndGlobal
