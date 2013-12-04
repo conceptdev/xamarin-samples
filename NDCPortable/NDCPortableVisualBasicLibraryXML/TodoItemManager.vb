@@ -14,7 +14,7 @@ Public Class TodoItemManager
         Return _repository.GetTask(id)
     End Function
 
-    Public Function GetTasks() As IEnumerable(Of TodoItem)
+    Public Function GetTasks() As List(Of TodoItem)
         Return New List(Of TodoItem)(_repository.GetTasks())
     End Function
 
@@ -22,7 +22,7 @@ Public Class TodoItemManager
         Return _repository.SaveTask(item)
     End Function
 
-    Public Function DeleteTask(id As Integer) As Integer
-        Return _repository.DeleteTask(id)
+    Public Function DeleteTask(item As TodoItem) As Integer
+        Return _repository.DeleteTask(item.ID)
     End Function
 End Class

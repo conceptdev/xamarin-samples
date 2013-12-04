@@ -7,8 +7,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{18B171DE-0C66-4D54-AC49-6CC99B91F809}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Tasky.Portable</RootNamespace>
-    <AssemblyName>TaskyPortableVB</AssemblyName>
+    <RootNamespace>NDCPortable</RootNamespace>
+    <AssemblyName>NDCPortableVB</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile154</TargetFrameworkProfile>
     <ProjectTypeGuids>{14182A97-F7F0-4C62-8B27-98AA8AE2109A};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
@@ -39,7 +39,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug</OutputPath>
-    <DocumentationFile>TaskyPortableVB.xml</DocumentationFile>
+    <DocumentationFile>NDCPortableVB.xml</DocumentationFile>
     <NoWarn>42016,41999,42020,42021,42022</NoWarn>
     <WarningsAsErrors>42017,42018,42019,42032,42036</WarningsAsErrors>
   </PropertyGroup>
@@ -49,7 +49,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
-    <DocumentationFile>TaskyPortableVB.xml</DocumentationFile>
+    <DocumentationFile>NDCPortableVB.xml</DocumentationFile>
     <NoWarn>42016,41999,42020,42021,42022</NoWarn>
     <WarningsAsErrors>42017,42018,42019,42032,42036</WarningsAsErrors>
   </PropertyGroup>

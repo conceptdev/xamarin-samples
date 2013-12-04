@@ -15,7 +15,7 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>7.0</string>
+	<string></string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>icon-57</string>
@@ -35,5 +35,9 @@
 	<string>NDCTodo</string>
 	<key>CFBundleShortVersionString</key>
 	<string>2</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.xamarin.samples.ndc-todo</string>
+	<key>NSMainNibFile</key>
+	<string></string>
 </dict>
 </plist>

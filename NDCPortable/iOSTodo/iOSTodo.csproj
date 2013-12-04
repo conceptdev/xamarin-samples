@@ -66,6 +66,9 @@
     <AssemblyName>StoryboardTables</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NDCPortableVB">
+      <HintPath>..\NDCPortableVB.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -111,11 +114,5 @@
     <BundleResource Include="Resources\icon7-80.png" />
     <BundleResource Include="Resources\icon7-120.png" />
     <BundleResource Include="Resources\icon7-152.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NDCPortableLibraryXML\NDCPortableLibraryXML.csproj">
-      <Project>{8B8EDFDB-403F-4A0B-AEF0-EA35719B1B14}</Project>
-      <Name>NDCPortableLibraryXML</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>
