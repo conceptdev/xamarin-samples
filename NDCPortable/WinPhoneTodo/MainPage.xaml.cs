@@ -11,20 +11,26 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 
-namespace TaskyWP7 {
+namespace WinPhoneTodo {
     public partial class MainPage : PhoneApplicationPage {
         // Constructor
         public MainPage()
         {
             InitializeComponent();
 
-            DataContext = new TaskListViewModel();
+            DataContext = new TodoItemListViewModel();
             Loaded += new RoutedEventHandler(MainPage_Loaded);
         }
 
         void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            ((TaskListViewModel)DataContext).BeginUpdate(Dispatcher);
+            ((TodoItemListViewModel)DataContext).BeginUpdate(Dispatcher);
+        }
+        
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            ((TodoItemListViewModel)DataContext).BeginUpdate(Dispatcher);
         }
 
         private void HandleAdd(object sender, EventArgs e)
@@ -34,7 +40,7 @@ namespace TaskyWP7 {
 
         private void HandleTaskTap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            var item = ((Grid)sender).DataContext as TaskViewModel;
+            var item = ((Grid)sender).DataContext as TodoItemViewModel;
 
             if (item != null) {
                 NavigationService.Navigate(new Uri("/TaskDetailsPage.xaml?id=" + item.ID, UriKind.RelativeOrAbsolute));

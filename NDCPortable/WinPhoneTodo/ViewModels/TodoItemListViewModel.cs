@@ -1,26 +1,15 @@
-﻿using System;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using System.ComponentModel;
-using System.Windows.Threading;
-using Tasky.BL;
-using System.Collections.ObjectModel;
-using Tasky.BL.Managers;
-using System.Threading;
+﻿using NDCPortable;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading;
+using System.Windows;
+using System.Windows.Threading;
 
-namespace TaskyWP7 {
-    public class TaskListViewModel : ViewModelBase {
+namespace WinPhoneTodo {
+    public class TodoItemListViewModel : ViewModelBase {
 
-        public ObservableCollection<TaskViewModel> Items { get; private set; }
+        public ObservableCollection<TodoItemViewModel> Items { get; private set; }
 
         public bool IsUpdating { get; set; }
         public Visibility ListVisibility { get; set; }
@@ -42,20 +31,20 @@ namespace TaskyWP7 {
             IsUpdating = true;
 
             ThreadPool.QueueUserWorkItem(delegate {
-                var entries = (App.Current as TaskyWP7.App).TaskMgr.GetTasks();
+                var entries = (App.Current as WinPhoneTodo.App).TodoMgr.GetTasks();
                 PopulateData(entries);
             });
         }
 
-        void PopulateData(IEnumerable<Task> entries)
+        void PopulateData(IEnumerable<TodoItem> entries)
         {
             dispatcher.BeginInvoke(delegate {
                 //
                 // Set all the news items
                 //
-                Items = new ObservableCollection<TaskViewModel>(
+                Items = new ObservableCollection<TodoItemViewModel>(
                     from e in entries
-                    select new TaskViewModel(e));
+                    select new TodoItemViewModel(e));
 
                 //
                 // Update the properties

@@ -12,10 +12,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using Tasky.BL.Managers;
-using Tasky.DL.SQLite;
+using NDCPortable;
 
-namespace TaskyWP7 {
+namespace WinPhoneTodo {
     public partial class App : Application {
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
@@ -24,8 +23,8 @@ namespace TaskyWP7 {
         public PhoneApplicationFrame RootFrame { get; private set; }
 
 
-        public TaskManager TaskMgr { get; set; }
-        Connection conn;
+        public TodoItemManager TodoMgr { get; set; }
+       // Connection conn;
 
         /// <summary>
         /// Constructor for the Application object.
@@ -42,11 +41,16 @@ namespace TaskyWP7 {
             InitializePhoneApplication();
 
 
-            var sqliteFilename = "TaskDB.db3";
-            conn = new Connection(sqliteFilename);
+            
+            // LIST
+            TodoMgr = new TodoItemManager();
 
-            TaskMgr = new TaskManager(conn);
 
+
+            // SQL
+            //var sqliteFilename = "TaskDB.db3";
+            //conn = new Connection(sqliteFilename);
+            //TodoMgr = new TodoItemManager();
 
 
             // Show graphics profiling information while debugging.

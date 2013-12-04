@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TaskyPortableVisualBasicLibrary", "TaskyPortableVisualBasicLibrary.vbproj", "{18B171DE-0C66-4D54-AC49-6CC99B91F809}"
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "NDCPortableVisualBasicLibraryXML", "NDCPortableVisualBasicLibraryXML.vbproj", "{18B171DE-0C66-4D54-AC49-6CC99B91F809}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

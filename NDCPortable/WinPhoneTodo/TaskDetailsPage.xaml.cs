@@ -10,10 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
-using Tasky.BL.Managers;
-using Tasky.BL;
+using NDCPortable;
 
-namespace TaskyWP7 {
+namespace WinPhoneTodo {
     public partial class TaskDetailsPage : PhoneApplicationPage {
         public TaskDetailsPage()
         {
@@ -25,12 +24,12 @@ namespace TaskyWP7 {
             base.OnNavigatedTo(e);
 
             if (e.NavigationMode == System.Windows.Navigation.NavigationMode.New) {
-                var vm = new TaskViewModel();
-                var task = default(Task);
+                var vm = new TodoItemViewModel();
+                var task = default(TodoItem);
 
                 if (NavigationContext.QueryString.ContainsKey("id")) {
                     var id = int.Parse(NavigationContext.QueryString["id"]);
-                    task = (App.Current as TaskyWP7.App).TaskMgr.GetTask(id);
+                    task = (App.Current as WinPhoneTodo.App).TodoMgr.GetTask(id);
                 }
 
                 if (task != null) {
@@ -43,16 +42,18 @@ namespace TaskyWP7 {
 
         private void HandleSave(object sender, EventArgs e)
         {
-            var taskvm = (TaskViewModel)DataContext;
-            var task = taskvm.GetTask();
-            (App.Current as TaskyWP7.App).TaskMgr.SaveTask(task);
+            var taskvm = (TodoItemViewModel)DataContext;
+            var task = taskvm.GetTodoItem();
+            (App.Current as WinPhoneTodo.App).TodoMgr.SaveTask(task);
+
+            NavigationService.GoBack();
         }
 
         private void HandleDelete(object sender, EventArgs e)
         {
-            var taskvm = (TaskViewModel)DataContext;
+            var taskvm = (TodoItemViewModel)DataContext;
             if (taskvm.ID >= 0)
-                (App.Current as TaskyWP7.App).TaskMgr.DeleteTask(taskvm.ID);
+                (App.Current as WinPhoneTodo.App).TodoMgr.DeleteTask(taskvm.GetTodoItem());
 
             NavigationService.GoBack();
         }
