@@ -3,13 +3,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
+    <ProductVersion>12.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{BE43237B-5E5E-4E50-9A93-9EA5820905DF}</ProjectGuid>
+    <ProjectGuid>{4619E97B-86C0-4E8E-8774-911E67F911EC}</ProjectGuid>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <RootNamespace>NDCPortableLibrary</RootNamespace>
-    <AssemblyName>NDCPortableLibrarySQL</AssemblyName>
+    <AssemblyName>NDCPortableLibraryList</AssemblyName>
     <TargetFrameworkProfile>Profile136</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
@@ -33,12 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BusinessEntityBase.cs" />
-    <Compile Include="IBusinessEntity.cs" />
-    <Compile Include="SQLite.cs" />
     <Compile Include="TodoItem.cs" />
-    <Compile Include="TodoItemDatabase.cs" />
-    <Compile Include="TodoItemRepository.cs" />
     <Compile Include="TodoItemManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

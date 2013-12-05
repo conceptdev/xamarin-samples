@@ -1,7 +1,18 @@
-TaskyPortableXML
+NDCPortable
 ================
 This simple to-do list app demonstrates using a **Portable Class Library** to share code between Xamarin.iOS, Xamarin.Android and Windows apps.
 
+There are FOUR implementations of the Portable code:
+
+List
+----
+Uses a simple in-memory `List<TodoItem>` so that we can build a pure Portable Class Library without any dependencies. 
+
+Simply reference this project and uncomment the relevant line in `AppDelegate.cs`
+
+
+XML
+----
 To keep the code simple we use a single XML file as the data-store - it contains a serialized collection of Task objects that we read & write to when the user edits their to-do items.
 
 There are two implementations of the Portable code:
@@ -13,3 +24,12 @@ Because Portable Class Library profiles do not allow `System.IO` we expose an in
 
 If you are browsing the VB code, this 
 [Visual Basic Reference](http://msdn.microsoft.com/en-us/library/sh9ywfdk.aspx) might come in handy ;)
+
+Simply reference this project and uncomment the relevant line in `AppDelegate.cs`
+
+
+SQLite
+------
+Uses the SQLite.NET source code to implement SQLite support in a Portable Class Library via an Interface.
+
+Simply reference this project and uncomment the relevant line in `AppDelegate.cs` (note: the Windows Phone app hasn't been updated to support SQLite just yet...)
