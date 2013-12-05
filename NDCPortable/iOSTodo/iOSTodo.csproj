@@ -9,7 +9,6 @@
     <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>iOSTodo</RootNamespace>
-    <AssemblyName>iOSTodo</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -66,9 +65,6 @@
     <AssemblyName>StoryboardTables</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NDCPortableVB">
-      <HintPath>..\NDCPortableVB.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -89,7 +85,8 @@
       <DependentUpon>TaskDetailViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="RootTableSource.cs" />
-    <Compile Include="XmlStorageImplementation.cs" />
+    <Compile Include="SQLite_Implementation.cs" />
+    <Compile Include="XmlStorage_Implementation.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
@@ -114,5 +111,11 @@
     <BundleResource Include="Resources\icon7-80.png" />
     <BundleResource Include="Resources\icon7-120.png" />
     <BundleResource Include="Resources\icon7-152.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NDCPortableLibraryList\NDCPortableLibraryList.csproj">
+      <Project>{4619E97B-86C0-4E8E-8774-911E67F911EC}</Project>
+      <Name>NDCPortableLibraryList</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

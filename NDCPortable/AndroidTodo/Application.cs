@@ -24,14 +24,21 @@ namespace AndroidTodo {
             base.OnCreate();
 
 			// List
-//			TaskMgr = new TodoItemManager();
+			TaskMgr = new TodoItemManager();
 
 			// XML
-			var sqliteFilename = "TaskDB.xml";
-			string libraryPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-			var path = Path.Combine(libraryPath, sqliteFilename);
-			var xmlStorage = new AndroidTodo.XmlStorageImplementation ();
-			TaskMgr = new TodoItemManager(path, xmlStorage);
+//			var sqliteFilename = "TaskDB.xml";
+//			string libraryPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+//			var path = Path.Combine(libraryPath, sqliteFilename);
+//			var xmlStorage = new AndroidTodo.XmlStorageImplementation ();
+//			TaskMgr = new TodoItemManager(path, xmlStorage);
+
+			// SQL
+//			var sqliteFilename = "TaskDB.db3";
+//			string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
+//			var path = Path.Combine(documentsPath, sqliteFilename);
+//			var conn = new Connection(path);
+//			TaskMgr = new TodoItemManager(conn);
 
         }
     }

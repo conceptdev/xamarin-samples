@@ -4,8 +4,8 @@ using System.Linq;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
-using NDCPortable;
 using System.IO;
+using NDCPortable;
 
 namespace iOSTodo
 {
@@ -28,17 +28,24 @@ namespace iOSTodo
 			Current = this;
 
 			// LIST
-//			TaskMgr = new TodoItemManager();
+			TaskMgr = new TodoItemManager();
 
 			// XML
-			var sqliteFilename = "TaskDB.xml";
-			// we need to put in /Library/ on iOS5.1 to meet Apple's iCloud terms
-			// (they don't want non-user-generated data in Documents)
-			string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
-			string libraryPath = Path.Combine (documentsPath, "..","Library"); // Library folder
-			var path = Path.Combine(libraryPath, sqliteFilename);
-			var xmlStorage = new XmlStorageImplementation ();
-			TaskMgr = new TodoItemManager(path, xmlStorage);
+//			var sqliteFilename = "TaskDB.xml";
+//			string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
+//			string libraryPath = Path.Combine (documentsPath, "..","Library"); // Library folder
+//			var path = Path.Combine(libraryPath, sqliteFilename);
+//			var xmlStorage = new XmlStorageImplementation ();
+//			TaskMgr = new TodoItemManager(path, xmlStorage);
+
+			// SQL
+//			var sqliteFilename = "TaskDB.db3";
+//			string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
+//			string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library folder
+//			var path = Path.Combine(libraryPath, sqliteFilename);
+//			var conn = new Connection(path);
+//			TaskMgr = new TodoItemManager(conn);
+
 
 			return true;
 		}
