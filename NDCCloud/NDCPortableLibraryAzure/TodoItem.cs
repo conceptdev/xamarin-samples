@@ -2,15 +2,13 @@ using System;
 using Newtonsoft.Json;
 
 namespace NDCPortable {
-	/// <summary>
-	/// Task business object, stored as XML
-	/// </summary>
+
 	public class TodoItem {
 		public TodoItem ()
 		{
 		}
 
-		//public int ID { get; set; }
+		//HACK: public int ID { get; set; }
 		public string ID { get; set; }
 
 		[JsonProperty(PropertyName = "text")]

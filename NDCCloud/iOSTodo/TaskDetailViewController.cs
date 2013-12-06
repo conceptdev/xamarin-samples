@@ -30,6 +30,7 @@ namespace iOSTodo
 				//HACK: AppDelegate.Current.TaskMgr.SaveTask(currentTodoItem);
 				await AppDelegate.Current.TaskMgr.SaveTaskAsync(currentTodoItem);
 
+				// VALIDATION
 //				try 
 //				{
 //					await AppDelegate.Current.TaskMgr.SaveTodoItemAsync(currentTodoItem);
@@ -47,6 +48,7 @@ namespace iOSTodo
 
 				NavigationController.PopViewControllerAnimated(true);
 			};
+
 			DeleteButton.TouchUpInside += async (sender, e) => {
 				//HACK: AppDelegate.Current.TaskMgr.DeleteTask(currentTodoItem);
 				await AppDelegate.Current.TaskMgr.DeleteTaskAsync(currentTodoItem);

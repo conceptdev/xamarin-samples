@@ -83,6 +83,8 @@ namespace iOSTodo
 		{
 			base.ViewWillAppear (animated);
 
+			// HACK: todoItems = AppDelegate.Current.TaskMgr.GetTasks ();
+
 			// NO AUTH
 			todoItems = await AppDelegate.Current.TaskMgr.GetTasksAsync ();
 			TableView.Source = new RootTableSource (todoItems.ToArray ());

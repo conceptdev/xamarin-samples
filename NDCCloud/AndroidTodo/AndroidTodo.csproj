@@ -72,6 +72,7 @@
     <Compile Include="SQLite_Implementation.cs" />
     <Compile Include="XmlStorage_Implementation.cs" />
     <Compile Include="AzureStorage_Implementation.cs" />
+    <Compile Include="ParseStorage_Implementation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

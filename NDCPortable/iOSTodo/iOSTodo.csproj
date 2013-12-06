@@ -113,9 +113,9 @@
     <BundleResource Include="Resources\icon7-152.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NDCPortableLibraryList\NDCPortableLibraryList.csproj">
-      <Project>{4619E97B-86C0-4E8E-8774-911E67F911EC}</Project>
-      <Name>NDCPortableLibraryList</Name>
+    <ProjectReference Include="..\NDCPortableLibrarySQL\NDCPortableLibrarySQL.csproj">
+      <Project>{BE43237B-5E5E-4E50-9A93-9EA5820905DF}</Project>
+      <Name>NDCPortableLibrarySQL</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

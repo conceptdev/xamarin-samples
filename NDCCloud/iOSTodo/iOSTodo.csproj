@@ -100,6 +100,7 @@
     <Compile Include="RootTableSource.cs" />
     <Compile Include="SQLite_Implementation.cs" />
     <Compile Include="AzureStorage_Implementation.cs" />
+    <Compile Include="ParseStorage_Implementation.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

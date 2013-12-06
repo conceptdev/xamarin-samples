@@ -28,7 +28,7 @@ namespace iOSTodo
 			Current = this;
 
 			// LIST
-			TaskMgr = new TodoItemManager();
+//			TaskMgr = new TodoItemManager();
 
 			// XML
 //			var sqliteFilename = "TaskDB.xml";
@@ -39,12 +39,12 @@ namespace iOSTodo
 //			TaskMgr = new TodoItemManager(path, xmlStorage);
 
 			// SQL
-//			var sqliteFilename = "TaskDB.db3";
-//			string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
-//			string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library folder
-//			var path = Path.Combine(libraryPath, sqliteFilename);
-//			var conn = new Connection(path);
-//			TaskMgr = new TodoItemManager(conn);
+			var sqliteFilename = "TaskDB.db3";
+			string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
+			string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library folder
+			var path = Path.Combine(libraryPath, sqliteFilename);
+			var conn = new Connection(path);
+			TaskMgr = new TodoItemManager(conn);
 
 
 			return true;

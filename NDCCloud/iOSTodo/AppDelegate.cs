@@ -49,7 +49,8 @@ namespace iOSTodo
 			// AZURE
 			TaskMgr = new TodoItemManager(AzureStorageImplementation.DefaultService);
 
-
+			// PARSE
+//			TaskMgr = new TodoItemManager(ParseStorageImplementation.Default);
 
 			return true;
 		}
