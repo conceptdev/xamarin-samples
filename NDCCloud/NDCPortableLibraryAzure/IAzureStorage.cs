@@ -8,7 +8,7 @@ namespace NDCPortable
 	{
 		Task<List<TodoItem>> RefreshDataAsync();
 
-		Task<TodoItem> GetTodoItemAsync (int id);
+		Task<TodoItem> GetTodoItemAsync (string id);
 
 		Task SaveTodoItemAsync (TodoItem item);
 

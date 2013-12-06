@@ -70,13 +70,13 @@ namespace iOSTodo
 
 		public async Task SaveTodoItemAsync(TodoItem todoItem)
 		{
-			if (todoItem.ID == null)
+			if (String.IsNullOrEmpty(todoItem.ID))
 				await todoTable.InsertAsync(todoItem);
 			else
 				await todoTable.UpdateAsync(todoItem);
 		}
 
-		public async Task<TodoItem> GetTodoItemAsync(int id)
+		public async Task<TodoItem> GetTodoItemAsync(string id)
 		{
 			try 
 			{

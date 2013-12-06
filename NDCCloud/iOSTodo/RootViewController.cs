@@ -84,23 +84,22 @@ namespace iOSTodo
 			base.ViewWillAppear (animated);
 
 			// NO AUTH
-//			todoItems = await AzureStorageImplementation.DefaultService.RefreshDataAsync ();
-//			TableView.Source = new RootTableSource (todoItems.ToArray ());
-//			TableView.ReloadData ();
-
+			todoItems = await AppDelegate.Current.TaskMgr.GetTasksAsync ();
+			TableView.Source = new RootTableSource (todoItems.ToArray ());
+			TableView.ReloadData ();
 
 			// AUTH
-			if (AzureStorageImplementation.DefaultService.User == null)
-				await AzureStorageImplementation.DefaultService.Authenticate (this);
-
-			if (AzureStorageImplementation.DefaultService.User != null) {
-				Console.WriteLine ("Logged in user: " + AzureStorageImplementation.DefaultService.User.UserId);
-				todoItems = await AzureStorageImplementation.DefaultService.RefreshDataAsync ();
-				TableView.Source = new RootTableSource (todoItems.ToArray ());
-				TableView.ReloadData ();
-			} else {
-				Console.WriteLine ("Didn't log in");
-			}
+//			if (AzureStorageImplementation.DefaultService.User == null)
+//				await AzureStorageImplementation.DefaultService.Authenticate (this);
+//
+//			if (AzureStorageImplementation.DefaultService.User != null) {
+//				Console.WriteLine ("Logged in user: " + AzureStorageImplementation.DefaultService.User.UserId);
+//				todoItems = await AppDelegate.Current.TaskMgr.GetTasksAsync ();
+//				TableView.Source = new RootTableSource (todoItems.ToArray ());
+//				TableView.ReloadData ();
+//			} else {
+//				Console.WriteLine ("Didn't log in");
+//			}
 
 		}
 		

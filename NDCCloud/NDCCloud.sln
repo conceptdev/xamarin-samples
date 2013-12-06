@@ -163,7 +163,7 @@ Global
 		{CD8735EB-5AD0-4754-8115-A963314855AE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = AndroidTodo\AndroidTodo.csproj
+		StartupItem = iOSTodo\iOSTodo.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

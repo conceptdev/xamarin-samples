@@ -48,10 +48,10 @@ namespace AndroidTodo {
 			cancelDeleteButton.Click += (sender, e) => { CancelDelete(); };
 			saveButton.Click += (sender, e) => { Save(); };
 
-			int taskID = Intent.GetIntExtra("TaskID", 0);
-			if(taskID > 0) {
+			string taskID = Intent.GetStringExtra("TaskID");
+			if(!String.IsNullOrEmpty(taskID)) {
 				//HACK: task = AppDelegate.Current.TaskMgr.GetTask(taskID);
-				task = await AppDelegate.Current.TaskMgr.GetTodoItemAsync(taskID);
+				task = await AppDelegate.Current.TaskMgr.GetTaskAsync(taskID);
 			}
 
 			// set the cancel delete based on whether or not it's an existing task
@@ -68,7 +68,7 @@ namespace AndroidTodo {
 			task.Notes = notesTextEdit.Text;
 			task.Done = doneCheckbox.Checked;
 			//HACK: AppDelegate.Current.TaskMgr.SaveTask(task);
-			await AppDelegate.Current.TaskMgr.SaveTodoItemAsync(task);
+			await AppDelegate.Current.TaskMgr.SaveTaskAsync(task);
 
 //				try 
 //				{
@@ -92,7 +92,7 @@ namespace AndroidTodo {
 		{
 			if(!String.IsNullOrEmpty(task.ID)) {
 				//HACK: AppDelegate.Current.TaskMgr.DeleteTask(task);
-				await AppDelegate.Current.TaskMgr.DeleteTodoItemAsync(task);
+				await AppDelegate.Current.TaskMgr.DeleteTaskAsync(task);
 			}
 			Finish();
 		}

@@ -7,31 +7,30 @@ namespace NDCPortable {
 	/// Manager classes are an abstraction on the data access layers
 	/// </summary>
 	public class TodoItemManager {
-		//TodoItemRepository repository;
+
 		IAzureStorage storage;
 
 		public TodoItemManager (IAzureStorage storage) 
 		{
-			//repository = new TodoItemRepository(filename, storage);
 			this.storage = storage;
 		}
 
-		public Task<TodoItem> GetTodoItemAsync(int id)
+		public Task<TodoItem> GetTaskAsync(string id)
 		{
 			return storage.GetTodoItemAsync(id);
 		}
 		
-		public Task<List<TodoItem>> GetTodoItemsAsync ()
+		public Task<List<TodoItem>> GetTasksAsync ()
 		{
 			return storage.RefreshDataAsync();
 		}
 		
-		public Task SaveTodoItemAsync (TodoItem item)
+		public Task SaveTaskAsync (TodoItem item)
 		{
 			return storage.SaveTodoItemAsync(item);
 		}
 		
-		public Task DeleteTodoItemAsync (TodoItem item)
+		public Task DeleteTaskAsync (TodoItem item)
 		{
 			return storage.DeleteTodoItemAsync(item);
 		}

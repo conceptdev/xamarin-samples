@@ -62,22 +62,22 @@ namespace AndroidTodo {
 
 			// NO AUTH
 			//HACK: tasks = AppDelegate.Current.TaskMgr.GetTasks();
-//			todoItems = await AzureStorageImplementation.DefaultService.RefreshDataAsync ();
-//			todoList = new TodoItemListAdapter(this, todoItems);
-//			todoListView.Adapter = todoList;
+			todoItems = await AppDelegate.Current.TaskMgr.GetTasksAsync ();
+			todoList = new TodoItemListAdapter(this, todoItems);
+			todoListView.Adapter = todoList;
 
 			// AUTH
-			if (AzureStorageImplementation.DefaultService.User == null)
-				await AzureStorageImplementation.DefaultService.Authenticate (this);
-
-			if (AzureStorageImplementation.DefaultService.User != null) {
-				Console.WriteLine ("Logged in user: " + AzureStorageImplementation.DefaultService.User.UserId);
-				todoItems = await AzureStorageImplementation.DefaultService.RefreshDataAsync ();
-				todoList = new TodoItemListAdapter(this, todoItems);
-				todoListView.Adapter = todoList;
-			} else {
-				Console.WriteLine ("Didn't log in");
-			}
+//			if (AzureStorageImplementation.DefaultService.User == null)
+//				await AzureStorageImplementation.DefaultService.Authenticate (this);
+//
+//			if (AzureStorageImplementation.DefaultService.User != null) {
+//				Console.WriteLine ("Logged in user: " + AzureStorageImplementation.DefaultService.User.UserId);
+//				todoItems = await AppDelegate.Current.TaskMgr.GetTasksAsync (); //AzureStorageImplementation.DefaultService.RefreshDataAsync ();
+//				todoList = new TodoItemListAdapter(this, todoItems);
+//				todoListView.Adapter = todoList;
+//			} else {
+//				Console.WriteLine ("Didn't log in");
+//			}
 		}
 	}
 }

@@ -28,7 +28,7 @@ namespace iOSTodo
 				currentTodoItem.Done = DoneSwitch.On;
 
 				//HACK: AppDelegate.Current.TaskMgr.SaveTask(currentTodoItem);
-				await AppDelegate.Current.TaskMgr.SaveTodoItemAsync(currentTodoItem);
+				await AppDelegate.Current.TaskMgr.SaveTaskAsync(currentTodoItem);
 
 //				try 
 //				{
@@ -49,10 +49,12 @@ namespace iOSTodo
 			};
 			DeleteButton.TouchUpInside += async (sender, e) => {
 				//HACK: AppDelegate.Current.TaskMgr.DeleteTask(currentTodoItem);
-				await AppDelegate.Current.TaskMgr.DeleteTodoItemAsync(currentTodoItem);
+				await AppDelegate.Current.TaskMgr.DeleteTaskAsync(currentTodoItem);
 				NavigationController.PopViewControllerAnimated(true);
 			};
 
+
+			// SPEECH
 			if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) {
 				// requires iOS 7
 				SpeakButton.TouchUpInside += (sender, e) => {
@@ -64,11 +66,12 @@ namespace iOSTodo
 			}
 		}
 
-		// this will be called before the view is displayed 
+		// this will be called before the view is displayed (from the list screen)
 		public void SetTask (TodoItem todo) {
 			currentTodoItem = todo;
 		}
 		// when displaying, set-up the properties
+		// expects SetTask() to be called first!
 		public override void ViewWillAppear (bool animated)
 		{
 			base.ViewWillAppear (animated);

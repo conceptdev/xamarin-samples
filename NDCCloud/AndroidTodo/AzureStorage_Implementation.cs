@@ -76,7 +76,7 @@ namespace AndroidTodo
 				await todoTable.UpdateAsync(todoItem);
 		}
 
-		public async Task<TodoItem> GetTodoItemAsync(int id)
+		public async Task<TodoItem> GetTodoItemAsync(string id)
 		{
 			try 
 			{
