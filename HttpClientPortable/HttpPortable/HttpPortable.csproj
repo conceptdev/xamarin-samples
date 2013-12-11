@@ -42,10 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http.Extensions">
-      <HintPath>..\HttpClient\Microsoft.Net.Http.2.2.18\lib\portable-net45+win8\System.Net.Http.Extensions.dll</HintPath>
+      <HintPath>..\HttpClient_bin\Microsoft.Net.Http.2.2.18\lib\portable-net45+win8\System.Net.Http.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.Primitives">
-      <HintPath>..\HttpClient\Microsoft.Net.Http.2.2.18\lib\portable-net45+win8\System.Net.Http.Primitives.dll</HintPath>
+      <HintPath>..\HttpClient_bin\Microsoft.Net.Http.2.2.18\lib\portable-net45+win8\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

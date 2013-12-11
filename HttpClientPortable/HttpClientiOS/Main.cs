@@ -49,7 +49,7 @@ namespace HttpClient
 		// This method is invoked when the application has loaded its UI and its ready to run
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
-			window.AddSubview (navigationController.View);
+			//window.AddSubview (navigationController.View);
 			
 			button1.TouchDown += Button1TouchDown;
 			TableViewSelector.Configure (this.stack, new string [] {
@@ -60,7 +60,9 @@ namespace HttpClient
 
                 //"http  - NSUrlConnection",
 			});
-			                   
+			            
+			window.RootViewController = navigationController;
+			       
 			window.MakeKeyAndVisible ();
 			
 			return true;

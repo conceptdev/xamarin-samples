@@ -68,7 +68,6 @@
     <Compile Include="Main.cs" />
     <Compile Include="Renderer.cs" />
     <Compile Include="TableViewRocks.cs" />
-    <Compile Include="Cocoa.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainWindow.xib" />
@@ -100,7 +99,7 @@
     <ITunesArtwork Include="Resources\iTunesArtwork.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="HttpPortable\HttpPortable.csproj">
+    <ProjectReference Include="..\HttpPortable\HttpPortable.csproj">
       <Project>{3801EA27-3AFA-4CAF-835E-704A46625CCA}</Project>
       <Name>HttpPortable</Name>
     </ProjectReference>

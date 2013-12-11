@@ -1,7 +1,7 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClient", "HttpClient.csproj", "{A7833601-70B7-4E22-8CEC-0B822863286D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientiOS", "HttpClientiOS\HttpClientiOS.csproj", "{A7833601-70B7-4E22-8CEC-0B822863286D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpPortable", "HttpPortable\HttpPortable.csproj", "{3801EA27-3AFA-4CAF-835E-704A46625CCA}"
 EndProject
@@ -47,7 +47,7 @@ Global
 		{A7833601-70B7-4E22-8CEC-0B822863286D}.Release|Mixed Platforms.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = HttpClient.csproj
+		StartupItem = HttpClientiOS.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
