@@ -39,8 +39,10 @@
     <WarningLevel>4</WarningLevel>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>True</MtouchDebug>
-    <IpaPackageName />
-    <MtouchI18n />
+    <IpaPackageName>
+    </IpaPackageName>
+    <MtouchI18n>
+    </MtouchI18n>
     <MtouchArch>ARMv7</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
@@ -99,7 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="HttpPortable\HttpPortable.csproj">
-      <Project>{3801ea27-3afa-4caf-835e-704a46625cca}</Project>
+      <Project>{3801EA27-3AFA-4CAF-835E-704A46625CCA}</Project>
       <Name>HttpPortable</Name>
     </ProjectReference>
   </ItemGroup>

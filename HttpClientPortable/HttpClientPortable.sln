@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClient", "HttpClient.csproj", "{A7833601-70B7-4E22-8CEC-0B822863286D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpPortable", "HttpPortable\HttpPortable.csproj", "{3801EA27-3AFA-4CAF-835E-704A46625CCA}"
@@ -19,20 +17,6 @@ Global
 		Release|Mixed Platforms = Release|Mixed Platforms
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A7833601-70B7-4E22-8CEC-0B822863286D}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
-		{A7833601-70B7-4E22-8CEC-0B822863286D}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{A7833601-70B7-4E22-8CEC-0B822863286D}.Debug|iPhone.Build.0 = Debug|iPhone
-		{A7833601-70B7-4E22-8CEC-0B822863286D}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{A7833601-70B7-4E22-8CEC-0B822863286D}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{A7833601-70B7-4E22-8CEC-0B822863286D}.Debug|Mixed Platforms.ActiveCfg = Debug|iPhoneSimulator
-		{A7833601-70B7-4E22-8CEC-0B822863286D}.Debug|Mixed Platforms.Build.0 = Debug|iPhoneSimulator
-		{A7833601-70B7-4E22-8CEC-0B822863286D}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
-		{A7833601-70B7-4E22-8CEC-0B822863286D}.Release|iPhone.ActiveCfg = Release|iPhone
-		{A7833601-70B7-4E22-8CEC-0B822863286D}.Release|iPhone.Build.0 = Release|iPhone
-		{A7833601-70B7-4E22-8CEC-0B822863286D}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{A7833601-70B7-4E22-8CEC-0B822863286D}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{A7833601-70B7-4E22-8CEC-0B822863286D}.Release|Mixed Platforms.ActiveCfg = Release|iPhoneSimulator
-		{A7833601-70B7-4E22-8CEC-0B822863286D}.Release|Mixed Platforms.Build.0 = Release|iPhoneSimulator
 		{3801EA27-3AFA-4CAF-835E-704A46625CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3801EA27-3AFA-4CAF-835E-704A46625CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3801EA27-3AFA-4CAF-835E-704A46625CCA}.Debug|iPhone.ActiveCfg = Debug|Any CPU
@@ -45,11 +29,27 @@ Global
 		{3801EA27-3AFA-4CAF-835E-704A46625CCA}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{3801EA27-3AFA-4CAF-835E-704A46625CCA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{3801EA27-3AFA-4CAF-835E-704A46625CCA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
+		{A7833601-70B7-4E22-8CEC-0B822863286D}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{A7833601-70B7-4E22-8CEC-0B822863286D}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{A7833601-70B7-4E22-8CEC-0B822863286D}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{A7833601-70B7-4E22-8CEC-0B822863286D}.Debug|iPhone.Build.0 = Debug|iPhone
+		{A7833601-70B7-4E22-8CEC-0B822863286D}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{A7833601-70B7-4E22-8CEC-0B822863286D}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{A7833601-70B7-4E22-8CEC-0B822863286D}.Debug|Mixed Platforms.ActiveCfg = Debug|iPhoneSimulator
+		{A7833601-70B7-4E22-8CEC-0B822863286D}.Debug|Mixed Platforms.Build.0 = Debug|iPhoneSimulator
+		{A7833601-70B7-4E22-8CEC-0B822863286D}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{A7833601-70B7-4E22-8CEC-0B822863286D}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{A7833601-70B7-4E22-8CEC-0B822863286D}.Release|iPhone.ActiveCfg = Release|iPhone
+		{A7833601-70B7-4E22-8CEC-0B822863286D}.Release|iPhone.Build.0 = Release|iPhone
+		{A7833601-70B7-4E22-8CEC-0B822863286D}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{A7833601-70B7-4E22-8CEC-0B822863286D}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{A7833601-70B7-4E22-8CEC-0B822863286D}.Release|Mixed Platforms.ActiveCfg = Release|iPhoneSimulator
+		{A7833601-70B7-4E22-8CEC-0B822863286D}.Release|Mixed Platforms.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = HttpClient.csproj
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
