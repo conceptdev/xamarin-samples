@@ -1,9 +1,11 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientiOS", "HttpClientiOS\HttpClientiOS.csproj", "{A7833601-70B7-4E22-8CEC-0B822863286D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpPortable", "HttpPortable\HttpPortable.csproj", "{3801EA27-3AFA-4CAF-835E-704A46625CCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientAndroid", "HttpClientAndroid\HttpClientAndroid.csproj", "{09EAC40A-B696-49B7-A063-6F1F08B48E3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +19,22 @@ Global
 		Release|Mixed Platforms = Release|Mixed Platforms
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09EAC40A-B696-49B7-A063-6F1F08B48E3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09EAC40A-B696-49B7-A063-6F1F08B48E3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09EAC40A-B696-49B7-A063-6F1F08B48E3B}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{09EAC40A-B696-49B7-A063-6F1F08B48E3B}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{09EAC40A-B696-49B7-A063-6F1F08B48E3B}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{09EAC40A-B696-49B7-A063-6F1F08B48E3B}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{09EAC40A-B696-49B7-A063-6F1F08B48E3B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{09EAC40A-B696-49B7-A063-6F1F08B48E3B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{09EAC40A-B696-49B7-A063-6F1F08B48E3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09EAC40A-B696-49B7-A063-6F1F08B48E3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09EAC40A-B696-49B7-A063-6F1F08B48E3B}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{09EAC40A-B696-49B7-A063-6F1F08B48E3B}.Release|iPhone.Build.0 = Release|Any CPU
+		{09EAC40A-B696-49B7-A063-6F1F08B48E3B}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{09EAC40A-B696-49B7-A063-6F1F08B48E3B}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{09EAC40A-B696-49B7-A063-6F1F08B48E3B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{09EAC40A-B696-49B7-A063-6F1F08B48E3B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{3801EA27-3AFA-4CAF-835E-704A46625CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3801EA27-3AFA-4CAF-835E-704A46625CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3801EA27-3AFA-4CAF-835E-704A46625CCA}.Debug|iPhone.ActiveCfg = Debug|Any CPU
@@ -47,7 +65,7 @@ Global
 		{A7833601-70B7-4E22-8CEC-0B822863286D}.Release|Mixed Platforms.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = HttpClientiOS.csproj
+		StartupItem = HttpClientiOS\HttpClientiOS.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
