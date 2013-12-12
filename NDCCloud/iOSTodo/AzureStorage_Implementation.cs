@@ -57,7 +57,7 @@ namespace iOSTodo
 			{
 				// This code refreshes the entries in the list view by querying the TodoItems table.
 				Items = await todoTable.ToListAsync();
-				//.Where (todoItem => todoItem.Complete == false).ToListAsync();
+				//	.Where (todoItem => todoItem.Done == false).ToListAsync();
 			} 
 			catch (MobileServiceInvalidOperationException msioe) 
 			{
