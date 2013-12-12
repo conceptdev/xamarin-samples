@@ -7,6 +7,7 @@ using System.Net.Http;
 using Microsoft.WindowsAzure.MobileServices;
 using System.Threading.Tasks;
 using MonoTouch.UIKit;
+using System.Linq;
 
 namespace iOSTodo
 {
@@ -81,6 +82,13 @@ namespace iOSTodo
 			try 
 			{
 				return await todoTable.LookupAsync(id);
+				// demo using a query instead
+//				return await todoTable.Where (u => u.ID == id).ToListAsync().FirstOrDefault();
+				// different demo using a query
+//				var list = await todoTable.Where (u => u.ID == id).ToListAsync();
+//				var exists = list.Any<TodoItem>();
+//				if (exists)
+//					return list.FirstOrDefault(); 
 			} 
 			catch (MobileServiceInvalidOperationException msioe)
 			{
