@@ -18,5 +18,8 @@ namespace AzurePortable {
 
 		[JsonProperty(PropertyName = "complete")]
 		public bool Done { get; set; }
+
+
+		public string DeviceToken { get; set; }
 	}
 }

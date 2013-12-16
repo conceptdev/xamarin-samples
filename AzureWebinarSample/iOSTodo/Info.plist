@@ -32,11 +32,11 @@
 		<string>icon7-40</string>
 	</array>
 	<key>CFBundleDisplayName</key>
-	<string>NDCTodo</string>
+	<string>AzureTodo</string>
 	<key>CFBundleShortVersionString</key>
 	<string>2</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.xamarin.samples.ndc-todo</string>
+	<string>com.conceptdevelopment.azuretest</string>
 	<key>NSMainNibFile</key>
 	<string></string>
 </dict>

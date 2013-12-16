@@ -125,9 +125,9 @@
     <BundleResource Include="Resources\icon7-152.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NDCPortableLibrarySQL\PortableLibrarySQL.csproj">
-      <Project>{BE43237B-5E5E-4E50-9A93-9EA5820905DF}</Project>
-      <Name>PortableLibrarySQL</Name>
+    <ProjectReference Include="..\PortableLibraryAzure\PortableLibraryAzure.csproj">
+      <Project>{CD8735EB-5AD0-4754-8115-A963314855AE}</Project>
+      <Name>PortableLibraryAzure</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -39,17 +39,49 @@ namespace iOSTodo
 			Current = this;
 
 			// SQL
-			var sqliteFilename = "TaskDB.db3";
-			string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
-			string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library folder
-			var path = Path.Combine(libraryPath, sqliteFilename);
-			var conn = new Connection(path);
-			TaskMgr = new TodoItemManager(conn);
+//			var sqliteFilename = "TaskDB.db3";
+//			string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
+//			string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library folder
+//			var path = Path.Combine(libraryPath, sqliteFilename);
+//			var conn = new Connection(path);
+//			TaskMgr = new TodoItemManager(conn);
 
 			// AZURE
-//			TaskMgr = new TodoItemManager(AzureStorageImplementation.DefaultService);
+			TaskMgr = new TodoItemManager(AzureStorageImplementation.DefaultService);
+
+
+			// PUSH
+			UIRemoteNotificationType notificationTypes = UIRemoteNotificationType.Alert | UIRemoteNotificationType.Badge | UIRemoteNotificationType.Sound;
+			UIApplication.SharedApplication.RegisterForRemoteNotificationTypes(notificationTypes); 
+
 
 			return true;
+		}
+
+
+		public string DeviceToken { get; set; }
+		public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
+		{
+			string trimmedDeviceToken = deviceToken.Description;
+			if (!string.IsNullOrWhiteSpace(trimmedDeviceToken))
+			{
+				trimmedDeviceToken = trimmedDeviceToken.Trim('<');
+				trimmedDeviceToken = trimmedDeviceToken.Trim('>');
+			}
+			DeviceToken = trimmedDeviceToken;
+		}
+		public override void ReceivedRemoteNotification(UIApplication application, NSDictionary userInfo)
+		{
+			Console.WriteLine(userInfo.ToString());
+			NSObject inAppMessage;
+
+			bool success = userInfo.TryGetValue(new NSString("inAppMessage"), out inAppMessage);
+
+			if (success)
+			{
+				var alert = new UIAlertView("Got push notification", inAppMessage.ToString(), null, "OK", null);
+				alert.Show();
+			}
 		}
 	}
 }
