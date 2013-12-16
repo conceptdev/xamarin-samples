@@ -94,7 +94,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\NDCPortableLibraryAzure\PortableLibraryAzure.csproj">
+    <ProjectReference Include="..\PortableLibraryAzure\PortableLibraryAzure.csproj">
       <Project>{CD8735EB-5AD0-4754-8115-A963314855AE}</Project>
       <Name>PortableLibraryAzure</Name>
     </ProjectReference>

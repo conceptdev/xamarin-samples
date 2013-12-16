@@ -9,6 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortableLibrarySQL", "Porta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortableLibraryAzure", "PortableLibraryAzure\PortableLibraryAzure.csproj", "{CD8735EB-5AD0-4754-8115-A963314855AE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureServerScripts", "AzureServerScripts", "{EE27FB6D-F08E-4DDF-A4E5-BC972BE00880}"
+	ProjectSection(SolutionItems) = preProject
+		AzureServerScripts\insert.js = AzureServerScripts\insert.js
+		AzureServerScripts\read.js = AzureServerScripts\read.js
+		AzureServerScripts\update.js = AzureServerScripts\update.js
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +120,8 @@ Global
 		{CD8735EB-5AD0-4754-8115-A963314855AE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{CD8735EB-5AD0-4754-8115-A963314855AE}.Release|x86.ActiveCfg = Release|Any CPU
 		{CD8735EB-5AD0-4754-8115-A963314855AE}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = iOSTodo\iOSTodo.csproj

@@ -51,9 +51,10 @@ namespace iOSTodo
 
 
 			// PUSH
-			UIRemoteNotificationType notificationTypes = UIRemoteNotificationType.Alert | UIRemoteNotificationType.Badge | UIRemoteNotificationType.Sound;
-			UIApplication.SharedApplication.RegisterForRemoteNotificationTypes(notificationTypes); 
-
+			UIRemoteNotificationType notificationTypes = 
+				 UIRemoteNotificationType.Alert | UIRemoteNotificationType.Badge | UIRemoteNotificationType.Sound;
+			UIApplication.SharedApplication
+				.RegisterForRemoteNotificationTypes(notificationTypes); 
 
 			return true;
 		}
