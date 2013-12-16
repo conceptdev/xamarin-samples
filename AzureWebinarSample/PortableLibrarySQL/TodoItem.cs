@@ -1,4 +1,5 @@
 using System;
+using SQLiteBase;
 
 namespace AzurePortable
 {
@@ -15,7 +16,6 @@ namespace AzurePortable
         public int ID { get; set; }
 		public string Name { get; set; }
 		public string Notes { get; set; }
-		// new property
 		public bool Done { get; set; }
 	}
 }

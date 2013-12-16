@@ -27,7 +27,7 @@ using System.Reflection;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace AzurePortable {
+namespace SQLiteBase {
     public class PrimaryKeyAttribute : Attribute {
     }
 
@@ -58,7 +58,7 @@ namespace AzurePortable {
         }
     }
 }
-namespace AzurePortable {
+namespace SQLiteBase {
 
     public abstract class SQLiteConnection : IDisposable {
        

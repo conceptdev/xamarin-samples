@@ -5,9 +5,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidTodo", "AndroidTodo\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iOSTodo", "iOSTodo\iOSTodo.csproj", "{08A1E777-C427-42A1-9DB4-F7C9105E389B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortableLibrarySQL", "NDCPortableLibrarySQL\PortableLibrarySQL.csproj", "{BE43237B-5E5E-4E50-9A93-9EA5820905DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortableLibrarySQL", "PortableLibrarySQL\PortableLibrarySQL.csproj", "{BE43237B-5E5E-4E50-9A93-9EA5820905DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortableLibraryAzure", "NDCPortableLibraryAzure\PortableLibraryAzure.csproj", "{CD8735EB-5AD0-4754-8115-A963314855AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortableLibraryAzure", "PortableLibraryAzure\PortableLibraryAzure.csproj", "{CD8735EB-5AD0-4754-8115-A963314855AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

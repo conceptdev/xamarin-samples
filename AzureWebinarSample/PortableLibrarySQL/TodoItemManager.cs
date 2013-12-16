@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-using AzurePortable.SQLiteBase;
+using AzurePortable;
+using SQLiteBase;
 
 namespace AzurePortable
 {

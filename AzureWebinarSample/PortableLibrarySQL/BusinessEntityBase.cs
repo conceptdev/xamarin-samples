@@ -1,4 +1,5 @@
 using System;
+using SQLiteBase;
 
 namespace AzurePortable {
 	/// <summary>

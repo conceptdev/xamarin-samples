@@ -28,7 +28,8 @@ namespace iOSTodo
 				currentTodoItem.Done = DoneSwitch.On;
 
 				//HACK: AppDelegate.Current.TaskMgr.SaveTask(currentTodoItem);
-				await AppDelegate.Current.TaskMgr.SaveTaskAsync(currentTodoItem);
+				AppDelegate.Current.TaskMgr.SaveTask(currentTodoItem);
+				//await AppDelegate.Current.TaskMgr.SaveTaskAsync(currentTodoItem);
 
 				// VALIDATION
 //				try 
@@ -51,7 +52,9 @@ namespace iOSTodo
 
 			DeleteButton.TouchUpInside += async (sender, e) => {
 				//HACK: AppDelegate.Current.TaskMgr.DeleteTask(currentTodoItem);
-				await AppDelegate.Current.TaskMgr.DeleteTaskAsync(currentTodoItem);
+				AppDelegate.Current.TaskMgr.DeleteTask(currentTodoItem);
+				//await AppDelegate.Current.TaskMgr.DeleteTaskAsync(currentTodoItem);
+
 				NavigationController.PopViewControllerAnimated(true);
 			};
 

@@ -39,15 +39,15 @@ namespace iOSTodo
 			Current = this;
 
 			// SQL
-//			var sqliteFilename = "TaskDB.db3";
-//			string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
-//			string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library folder
-//			var path = Path.Combine(libraryPath, sqliteFilename);
-//			var conn = new Connection(path);
-//			TaskMgr = new TodoItemManager(conn);
+			var sqliteFilename = "TaskDB.db3";
+			string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
+			string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library folder
+			var path = Path.Combine(libraryPath, sqliteFilename);
+			var conn = new Connection(path);
+			TaskMgr = new TodoItemManager(conn);
 
 			// AZURE
-			TaskMgr = new TodoItemManager(AzureStorageImplementation.DefaultService);
+//			TaskMgr = new TodoItemManager(AzureStorageImplementation.DefaultService);
 
 			return true;
 		}
