@@ -13,7 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureServerScripts", "Azure
 	ProjectSection(SolutionItems) = preProject
 		AzureServerScripts\insert.js = AzureServerScripts\insert.js
 		AzureServerScripts\read.js = AzureServerScripts\read.js
-		AzureServerScripts\update.js = AzureServerScripts\update.js
+		AzureServerScripts\update-android.js = AzureServerScripts\update-android.js
+		AzureServerScripts\update-ios.js = AzureServerScripts\update-ios.js
 	EndProjectSection
 EndProject
 Global
