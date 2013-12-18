@@ -23,6 +23,8 @@ namespace AndroidTodo {
         {
             base.OnCreate();
 
+            // TODO: pick which storage library you wish to use...
+
 			// List
 			TaskMgr = new TodoItemManager();
 

@@ -75,7 +75,6 @@
     <None Include="Info.plist" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="RootViewController.cs" />
     <Compile Include="RootViewController.designer.cs">

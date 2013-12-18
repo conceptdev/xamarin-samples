@@ -27,6 +27,8 @@ namespace iOSTodo
 		{
 			Current = this;
 
+            // TODO: pick which storage library you wish to use...
+
 			// LIST
 //			TaskMgr = new TodoItemManager();
 
@@ -75,5 +77,16 @@ namespace iOSTodo
 		{
 		}
 	}
+
+    public class Application
+    {
+        // This is the main entry point of the application.
+        static void Main(string[] args)
+        {
+            // if you want to use a different Application Delegate class from "AppDelegate"
+            // you can specify it here.
+            UIApplication.Main(args, null, "AppDelegate");
+        }
+    }
 }
 

@@ -24,9 +24,6 @@ namespace WinPhoneTodo
             {
                 var serializer = new XmlSerializer(typeof(List<TodoItem>));
             
-                //var fileReader = new StreamReader(new IsolatedStorageFileStream(filename, FileMode.Open, fileStorage));
-                //string textFile = fileReader.ReadToEnd();
-            
                 using (var stream = new StreamReader(new IsolatedStorageFileStream(filename, FileMode.Open, fileStorage)))
                 {
                     return (List<TodoItem>)serializer.Deserialize(stream);

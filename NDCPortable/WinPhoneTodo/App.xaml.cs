@@ -39,8 +39,8 @@ namespace WinPhoneTodo {
             // Phone-specific initialization
             InitializePhoneApplication();
 
+            // TODO: pick which storage library you wish to use...
 
-            
             // LIST
             //TodoMgr = new TodoItemManager();
 
@@ -53,10 +53,6 @@ namespace WinPhoneTodo {
             //var sqliteFilename = "TaskDB.db3";
             //var conn = new Connection(sqliteFilename);
             //TodoMgr = new TodoItemManager(conn);
-
-
-
-
 
 
 
