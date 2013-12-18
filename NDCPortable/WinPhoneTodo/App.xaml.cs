@@ -24,8 +24,7 @@ namespace WinPhoneTodo {
 
 
         public TodoItemManager TodoMgr { get; set; }
-       // Connection conn;
-
+        
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>
@@ -43,14 +42,22 @@ namespace WinPhoneTodo {
 
             
             // LIST
-            TodoMgr = new TodoItemManager();
+            //TodoMgr = new TodoItemManager();
 
-
+            // XML
+            var filename = "TaskDB.xml";
+            var xmlStorage = new XmlStorageImplementation();
+            TodoMgr = new TodoItemManager(filename, xmlStorage);
 
             // SQL
             //var sqliteFilename = "TaskDB.db3";
-            //conn = new Connection(sqliteFilename);
-            //TodoMgr = new TodoItemManager();
+            //var conn = new Connection(sqliteFilename);
+            //TodoMgr = new TodoItemManager(conn);
+
+
+
+
+
 
 
             // Show graphics profiling information while debugging.

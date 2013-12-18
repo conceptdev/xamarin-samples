@@ -23,21 +23,26 @@ namespace WinPhoneTodo {
         {
             base.OnNavigatedTo(e);
 
-            if (e.NavigationMode == System.Windows.Navigation.NavigationMode.New) {
-                var vm = new TodoItemViewModel();
-                var task = default(TodoItem);
+            var vm = new TodoItemViewModel();
+            var task = default(TodoItem);
 
-                if (NavigationContext.QueryString.ContainsKey("id")) {
+            if (e.NavigationMode == System.Windows.Navigation.NavigationMode.New)
+            {
+                if (NavigationContext.QueryString.ContainsKey("id"))
+                {
                     var id = int.Parse(NavigationContext.QueryString["id"]);
-                    task = (App.Current as WinPhoneTodo.App).TodoMgr.GetTask(id);
+                    if (id > 0)
+                        task = (App.Current as WinPhoneTodo.App).TodoMgr.GetTask(id);
                 }
 
-                if (task != null) {
+                if (task != null)
+                {
                     vm.Update(task);
                 }
-
-                DataContext = vm;
+            } else { // use default
+                vm.Update(task);
             }
+            DataContext = vm;
         }
 
         private void HandleSave(object sender, EventArgs e)
