@@ -8,9 +8,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Tasky.BL;
+using Tasky.Portable;
 
-namespace TaskyWP7 {
+namespace TaskyWinPhone {
     public class TaskViewModel : ViewModelBase {
         public int ID { get; set; }
         public string Name { get; set; }

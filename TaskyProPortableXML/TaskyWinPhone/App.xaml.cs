@@ -12,10 +12,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using Tasky.BL.Managers;
-using Tasky.DL.SQLite;
+using Tasky.Portable;
 
-namespace TaskyWP7 {
+namespace TaskyWinPhone {
     public partial class App : Application {
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
@@ -23,9 +22,8 @@ namespace TaskyWP7 {
         /// <returns>The root frame of the Phone Application.</returns>
         public PhoneApplicationFrame RootFrame { get; private set; }
 
-
         public TaskManager TaskMgr { get; set; }
-        Connection conn;
+       
 
         /// <summary>
         /// Constructor for the Application object.
@@ -41,11 +39,16 @@ namespace TaskyWP7 {
             // Phone-specific initialization
             InitializePhoneApplication();
 
+            // TODO: Choose data storage mechanism...
 
-            var sqliteFilename = "TaskDB.db3";
-            conn = new Connection(sqliteFilename);
+            // XML
+            var xmlStorage = new XmlStorageImplementation();
+            TaskMgr = new TaskManager("Storage.xml", xmlStorage);
 
-            TaskMgr = new TaskManager(conn);
+            // SQL
+            //var sqliteFilename = "TaskDB.db3";
+            //var conn = new Connection(sqliteFilename);
+            //TaskMgr = new TaskManager(conn);
 
 
 

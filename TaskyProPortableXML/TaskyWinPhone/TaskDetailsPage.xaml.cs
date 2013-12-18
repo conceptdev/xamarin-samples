@@ -10,10 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
-using Tasky.BL.Managers;
-using Tasky.BL;
+using Tasky.Portable;
 
-namespace TaskyWP7 {
+namespace TaskyWinPhone {
     public partial class TaskDetailsPage : PhoneApplicationPage {
         public TaskDetailsPage()
         {
@@ -30,7 +29,7 @@ namespace TaskyWP7 {
 
                 if (NavigationContext.QueryString.ContainsKey("id")) {
                     var id = int.Parse(NavigationContext.QueryString["id"]);
-                    task = (App.Current as TaskyWP7.App).TaskMgr.GetTask(id);
+                    task = (App.Current as TaskyWinPhone.App).TaskMgr.GetTask(id);
                 }
 
                 if (task != null) {
@@ -45,14 +44,14 @@ namespace TaskyWP7 {
         {
             var taskvm = (TaskViewModel)DataContext;
             var task = taskvm.GetTask();
-            (App.Current as TaskyWP7.App).TaskMgr.SaveTask(task);
+            (App.Current as TaskyWinPhone.App).TaskMgr.SaveTask(task);
         }
 
         private void HandleDelete(object sender, EventArgs e)
         {
             var taskvm = (TaskViewModel)DataContext;
             if (taskvm.ID >= 0)
-                (App.Current as TaskyWP7.App).TaskMgr.DeleteTask(taskvm.ID);
+                (App.Current as TaskyWinPhone.App).TaskMgr.DeleteTask(taskvm.ID);
 
             NavigationService.GoBack();
         }

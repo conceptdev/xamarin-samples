@@ -1,5 +1,14 @@
 TaskyPortableXML
 ================
+
+
+[UPDATED CODE available in the NDCPortable sample](https://github.com/conceptdev/xamarin-samples/tree/master/NDCPortable)
+
+
+
+DEPRECATED NOTES
+----------------
+
 This simple to-do list app demonstrates using a **Portable Class Library** to share code between Xamarin.iOS, Xamarin.Android and Windows apps.
 
 To keep the code simple we use a single XML file as the data-store - it contains a serialized collection of Task objects that we read & write to when the user edits their to-do items.

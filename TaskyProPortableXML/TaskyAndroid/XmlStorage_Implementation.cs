@@ -6,9 +6,9 @@ using System.IO;
 
 namespace Tasky
 {
-	public class XmlStorageImplementation : IXmlStorage
+	public class XmlStorage : IXmlStorage
 	{
-		public XmlStorageImplementation ()
+		public XmlStorage ()
 		{
 		}
 

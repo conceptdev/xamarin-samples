@@ -70,17 +70,13 @@
     <Compile Include="ApplicationLayer\EditingSource.cs" />
     <Compile Include="ApplicationLayer\TaskDialog.cs" />
     <Compile Include="ApplicationLayer\LocalizableBindingContext.cs" />
-    <Compile Include="XmlStorageImplementation.cs" />
+    <Compile Include="XmlStorage_Implementation.cs" />
     <Compile Include="Screens\PhoneHomeScreen.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" Condition="'$(windir)' != '' " />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Folder Include="Screens\" />
-    <Folder Include="Screens\iPhone\Home\" />
-    <Folder Include="ApplicationLayer\" />
     <Folder Include="DataLayer\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />

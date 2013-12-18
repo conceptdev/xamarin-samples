@@ -56,7 +56,7 @@
     <Compile Include="Screens\HomeScreen.cs" />
     <Compile Include="Adapters\TaskListAdapter.cs" />
     <Compile Include="Screens\TaskDetailsScreen.cs" />
-    <Compile Include="XmlStorageImplementation.cs" />
+    <Compile Include="XmlStorage_Implementation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -79,13 +79,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
-    <Folder Include="Resources\drawable-hdpi\" />
-    <Folder Include="Resources\drawable-ldpi\" />
-    <Folder Include="Resources\drawable-mdpi\" />
-    <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="DL\" />
-    <Folder Include="Resources\values-v11\" />
-    <Folder Include="Resources\values-v14\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TaskyPortableLibrary\TaskyPortableLibrary.csproj">

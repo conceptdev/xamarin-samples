@@ -26,7 +26,7 @@ namespace Tasky {
             string libraryPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             var path = Path.Combine(libraryPath, sqliteFilename);
 
-			var xmlStorage = new Tasky.XmlStorageImplementation ();
+			var xmlStorage = new Tasky.XmlStorage ();
 			TaskMgr = new TaskManager(path, xmlStorage);
 
         }

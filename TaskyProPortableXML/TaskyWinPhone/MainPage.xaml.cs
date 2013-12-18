@@ -11,7 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 
-namespace TaskyWP7 {
+namespace TaskyWinPhone {
     public partial class MainPage : PhoneApplicationPage {
         // Constructor
         public MainPage()

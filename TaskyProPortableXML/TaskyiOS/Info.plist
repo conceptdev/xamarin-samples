@@ -31,5 +31,9 @@
 	<string>6.1</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1</string>
+	<key>CFBundleIdentifier</key>
+	<string>TaskyPcl</string>
+	<key>NSMainNibFile</key>
+	<string></string>
 </dict>
 </plist>
