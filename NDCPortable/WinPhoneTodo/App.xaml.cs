@@ -42,15 +42,18 @@ namespace WinPhoneTodo {
             // TODO: pick which storage library you wish to use...
 
             // LIST
-            //TodoMgr = new TodoItemManager();
+            TodoMgr = new TodoItemManager();
 
             // XML
-            var filename = "TaskDB.xml";
-            var xmlStorage = new XmlStorageImplementation();
-            TodoMgr = new TodoItemManager(filename, xmlStorage);
+            //var filename = "TodoList.xml";
+            //var xmlStorage = new XmlStorageImplementation();
+            //TodoMgr = new TodoItemManager(filename, xmlStorage);
 
-            // SQL
-            //var sqliteFilename = "TaskDB.db3";
+            // ADO.NET
+            // NOT SUPPORTED IN WINDOWS PHONE 8
+
+            // SQLite
+            //var sqliteFilename = "TodoSqliteDB.db3";
             //var conn = new Connection(sqliteFilename);
             //TodoMgr = new TodoItemManager(conn);
 

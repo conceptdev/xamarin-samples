@@ -66,7 +66,9 @@
     <AssemblyName>StoryboardTables</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Mono.Data.Sqlite" />
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
@@ -75,6 +77,7 @@
     <None Include="Info.plist" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementations\ADODatabase_Implementation.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="RootViewController.cs" />
     <Compile Include="RootViewController.designer.cs">
@@ -85,14 +88,19 @@
       <DependentUpon>TaskDetailViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="RootTableSource.cs" />
-    <Compile Include="SQLite_Implementation.cs" />
-    <Compile Include="XmlStorage_Implementation.cs" />
+    <Compile Include="Implementations\SQLite_Implementation.cs" />
+    <Compile Include="Implementations\XmlStorage_Implementation.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\NDCPortableLibraryADO\NDCPortableLibraryADO.csproj">
+      <Project>{ac954e24-e43a-4488-af01-6ef65445fa17}</Project>
+      <Name>NDCPortableLibraryADO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
     <BundleResource Include="Resources\Default.png" />
@@ -111,11 +119,5 @@
     <BundleResource Include="Resources\icon7-80.png" />
     <BundleResource Include="Resources\icon7-120.png" />
     <BundleResource Include="Resources\icon7-152.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NDCPortableLibrarySQL\NDCPortableLibrarySQL.csproj">
-      <Project>{BE43237B-5E5E-4E50-9A93-9EA5820905DF}</Project>
-      <Name>NDCPortableLibrarySQL</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>

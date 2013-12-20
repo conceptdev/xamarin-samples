@@ -33,20 +33,28 @@ namespace iOSTodo
 //			TaskMgr = new TodoItemManager();
 
 			// XML
-//			var sqliteFilename = "TaskDB.xml";
+//			var sqliteFilename = "TodoList.xml";
 //			string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
 //			string libraryPath = Path.Combine (documentsPath, "..","Library"); // Library folder
 //			var path = Path.Combine(libraryPath, sqliteFilename);
 //			var xmlStorage = new XmlStorageImplementation ();
 //			TaskMgr = new TodoItemManager(path, xmlStorage);
 
-			// SQL
-			var sqliteFilename = "TaskDB.db3";
-			string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
-			string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library folder
-			var path = Path.Combine(libraryPath, sqliteFilename);
-			var conn = new Connection(path);
-			TaskMgr = new TodoItemManager(conn);
+            // ADO.NET
+            var sqliteFilename = "TodoADODB.db3";
+            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); // Documents folder
+            string libraryPath = Path.Combine(documentsPath, "..", "Library"); // Library folder
+            var path = Path.Combine(libraryPath, sqliteFilename);
+            var db = new ADODatabase(path);
+            TaskMgr = new TodoItemManager(db);
+
+			// SQLite
+            //var sqliteFilename = "TodoSQLiteDB.db3";
+            //string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
+            //string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library folder
+            //var path = Path.Combine(libraryPath, sqliteFilename);
+            //var conn = new Connection(path);
+            //TaskMgr = new TodoItemManager(conn);
 
 
 			return true;
