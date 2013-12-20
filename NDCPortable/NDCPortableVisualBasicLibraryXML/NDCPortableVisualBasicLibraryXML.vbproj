@@ -82,7 +82,7 @@
     <Compile Include="IXmlStorage.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="TodoItemManager.vb" />
-    <Compile Include="TodoItemRepository.vb" />
+    <Compile Include="TodoItemRepositoryXML.vb" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
