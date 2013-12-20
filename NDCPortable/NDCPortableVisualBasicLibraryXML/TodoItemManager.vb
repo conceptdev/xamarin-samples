@@ -4,10 +4,10 @@
 ''' </summary>
 Public Class TodoItemManager
 
-    Private _repository As TodoItemRepository
+    Private _repository As TodoItemRepositoryXML
 
     Public Sub New(filename As String, storage As IXmlStorage)
-        _repository = New TodoItemRepository(filename, storage)
+        _repository = New TodoItemRepositoryXML(filename, storage)
     End Sub
 
     Public Function GetTask(id As Integer) As TodoItem

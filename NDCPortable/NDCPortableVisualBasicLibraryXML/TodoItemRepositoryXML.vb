@@ -7,7 +7,7 @@
 ''' Because Portable Class Libraries cannot reference System.IO we have to 
 ''' pass in a class (via Interface) that loads and saves the xml file for us
 ''' </remarks>
-Public Class TodoItemRepository
+Public Class TodoItemRepositoryXML
 
     Private _filename As String
     Private _storage As IXmlStorage
@@ -53,7 +53,6 @@ Public Class TodoItemRepository
             item.ID = ++max
             _tasks.Add(item)
         Else
-            ''HACK: why isn't Find available in PCL?
             Dim j = _tasks.Where(Function(t) t.ID = item.ID).First()
             j = item
         End If
