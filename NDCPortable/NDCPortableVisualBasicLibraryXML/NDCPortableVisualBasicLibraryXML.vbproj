@@ -40,8 +40,9 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug</OutputPath>
     <DocumentationFile>NDCPortableVB.xml</DocumentationFile>
-    <NoWarn>42016,41999,42020,42021,42022</NoWarn>
-    <WarningsAsErrors>42017,42018,42019,42032,42036</WarningsAsErrors>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -50,8 +51,9 @@
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <DocumentationFile>NDCPortableVB.xml</DocumentationFile>
-    <NoWarn>42016,41999,42020,42021,42022</NoWarn>
-    <WarningsAsErrors>42017,42018,42019,42032,42036</WarningsAsErrors>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -60,7 +62,7 @@
     <OptionCompare>Binary</OptionCompare>
   </PropertyGroup>
   <PropertyGroup>
-    <OptionStrict>Off</OptionStrict>
+    <OptionStrict>On</OptionStrict>
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
@@ -78,8 +80,8 @@
     <Import Include="System.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TodoItem.vb" />
     <Compile Include="IXmlStorage.vb" />
+    <Compile Include="TodoItem.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="TodoItemManager.vb" />
     <Compile Include="TodoItemRepositoryXML.vb" />
@@ -97,6 +99,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(ProjectDir)</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
