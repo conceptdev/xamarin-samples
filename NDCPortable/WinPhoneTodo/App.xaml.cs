@@ -42,12 +42,12 @@ namespace WinPhoneTodo {
             // TODO: pick which storage library you wish to use...
 
             // LIST
-            TodoMgr = new TodoItemManager();
+            //TodoMgr = new TodoItemManager();
 
             // XML
-            //var filename = "TodoList.xml";
-            //var xmlStorage = new XmlStorageImplementation();
-            //TodoMgr = new TodoItemManager(filename, xmlStorage);
+            var filename = "TodoList.xml";
+            var xmlStorage = new XmlStorageImplementation();
+            TodoMgr = new TodoItemManager(filename, xmlStorage);
 
             // ADO.NET
             // NOT SUPPORTED IN WINDOWS PHONE 8

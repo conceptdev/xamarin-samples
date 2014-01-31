@@ -172,9 +172,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NDCPortableLibraryList\NDCPortableLibraryList.csproj">
-      <Project>{4619E97B-86C0-4E8E-8774-911E67F911EC}</Project>
-      <Name>NDCPortableLibraryList</Name>
+    <ProjectReference Include="..\NDCPortableLibraryXML\NDCPortableLibraryXML.csproj">
+      <Project>{8B8EDFDB-403F-4A0B-AEF0-EA35719B1B14}</Project>
+      <Name>NDCPortableLibraryXML</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
