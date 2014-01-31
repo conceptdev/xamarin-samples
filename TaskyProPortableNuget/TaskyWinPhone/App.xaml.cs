@@ -14,6 +14,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Tasky.BL.Managers;
 using SQLite.Net;
+using Windows.Storage;
 
 namespace TaskyWinPhone
 {
@@ -43,10 +44,16 @@ namespace TaskyWinPhone
             InitializePhoneApplication();
 
 
-            var sqliteFilename = "TaskDB.db3";
+            var sqliteFilename = System.IO.Path.Combine(ApplicationData.Current.LocalFolder.Path, "TaskDB.db3");
             var plat = new SQLite.Net.Platform.WindowsPhone8.CSharpSqlite.SQLitePlatformWP8CSharp();
-            conn = new SQLiteConnection(plat, sqliteFilename);
-
+            try
+            {
+                conn = new SQLiteConnection(plat, sqliteFilename);
+            }
+            catch (Exception e) {
+                // http://stackoverflow.com/questions/20873946/i-cannot-create-sqliteconnection-in-pcl-version-of-sqlite-net-on-wp8
+                Console.WriteLine(e.Message);
+            }
             TaskMgr = new TaskManager(conn);
 
 
