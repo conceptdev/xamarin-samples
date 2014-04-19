@@ -75,6 +75,7 @@ namespace Tasky.DL
 					while (r.Read ()) {
 						tl.Add (FromReader(r));
 					}
+					r.Close ();
 				}
 				connection.Close ();
             }
@@ -95,6 +96,7 @@ namespace Tasky.DL
 						t = FromReader (r);
 						break;
 					}
+					r.Close ();
 				}
 				connection.Close ();
             }
