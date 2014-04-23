@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<component format="1" id="azure-mobile-services">
+  <name>Azure Mobile Services</name>
+  <publisher>Microsoft</publisher>
+  <publisher-url>http://www.windowsazure.com/en-us/develop/mobile/</publisher-url>
+  <version>1.2.1</version>
+  <summary>Store data in the cloud, authenticate users, and send push notifications.</summary>
+  <screenshots>
+    <img src="screenshots/WAMS-New.PNG" title="WAMS-New" />
+    <img src="screenshots/WAMS-SQLdb1.png" title="WAMS-SQLdb1" />
+    <img src="screenshots/WAMS-SQLdb2.png" title="WAMS-SQLdb2" />
+    <img src="screenshots/WAMS-userauth.png" title="WAMS-userauth" />
+    <img src="screenshots/WAMS-push1.png" title="WAMS-push1" />
+    <img src="screenshots/WAMS-push2.png" title="WAMS-push2" />
+    <img src="screenshots/WAMS-Create.png" title="WAMS-Create" />
+    <img src="screenshots/WAMS-Script1.png" title="WAMS-Script1" />
+    <img src="screenshots/WAMS-Script2.png" title="WAMS-Script2" />
+    <img src="screenshots/WAMS-Scheduler2.png" title="WAMS-Scheduler2" />
+    <img src="screenshots/WAMS-Keys.png" title="WAMS-Keys" />
+    <img src="screenshots/WAMS-EmptyData.png" title="WAMS-EmptyData" />
+    <img src="screenshots/WAMS-DataPermissions.png" title="WAMS-DataPermissions" />
+  </screenshots>
+  <samples>
+    <sample id="androidsample">
+      <name>Android Sample</name>
+      <summary>Android Sample</summary>
+    </sample>
+    <sample id="iOSsample">
+      <name>iOS Sample</name>
+      <summary>iOS Sample</summary>
+    </sample>
+  </samples>
+</component>
