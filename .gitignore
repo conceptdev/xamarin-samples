@@ -20,3 +20,8 @@
 */*/*/*/Resource.designer.cs
 
 InAppPurchase/ComponentSample/Components/
+
+RazorTodoList/packages/
+RazorTodoList/Components/
+RazorTodoADO/packages/
+RazorTodoADO/Components/
