@@ -31,6 +31,8 @@ namespace Tasky.DAL {
 	            var path = sqliteFilename;
 #else
 
+
+
 #if __ANDROID__
 				// Just use whatever directory SpecialFolder.Personal returns
 	            string libraryPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); ;
@@ -40,8 +42,24 @@ namespace Tasky.DAL {
 				string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
 				string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library folder
 #endif
+
+
+
+
+
+
+
+
+
+
 				var path = Path.Combine (libraryPath, sqliteFilename);
 #endif		
+
+
+
+
+
+
 				return path;	
 			}
 		}

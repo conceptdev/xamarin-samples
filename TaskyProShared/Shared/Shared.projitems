@@ -9,22 +9,12 @@
     <Import_RootNamespace>Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)DL\" />
-    <Folder Include="$(MSBuildThisFileDirectory)DAL\" />
-    <Folder Include="$(MSBuildThisFileDirectory)BL\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)BL\About.txt">
-      <DependentUpon>$(MSBuildThisFileDirectory)Task.cs</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)DL\SQLite.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)DL\TaskDatabase.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)DAL\TaskRepository.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)BL\Task.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)BL\Contracts\BusinessEntityBase.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)BL\Contracts\IBusinessEntity.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)BL\Managers\TaskManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SQLite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TaskDatabase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TaskRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Task.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Contracts\BusinessEntityBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Contracts\IBusinessEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TaskManager.cs" />
   </ItemGroup>
 </Project>
