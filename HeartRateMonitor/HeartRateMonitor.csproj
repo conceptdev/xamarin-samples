@@ -50,8 +50,8 @@
     <MtouchDebug>True</MtouchDebug>
     <CodesignKey>iPhone Developer</CodesignKey>
     <ConsolePause>False</ConsolePause>
-    <AssemblyName>CoreImage</AssemblyName>
-    <MtouchSdkVersion>6.1</MtouchSdkVersion>
+    <AssemblyName>HeartRateMonitor</AssemblyName>
+    <MtouchSdkVersion>7.0</MtouchSdkVersion>
     <BuildIpa>True</BuildIpa>
     <IpaPackageName>
     </IpaPackageName>

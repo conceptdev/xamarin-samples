@@ -26,11 +26,13 @@
 
 using System;
 
-//using MonoMac.Foundation;
-//using MonoMac.CoreBluetooth;
-
+#if XAMMAC
+using MonoMac.Foundation;
+using MonoMac.CoreBluetooth;
+#else
 using MonoTouch.Foundation;
 using MonoTouch.CoreBluetooth;
+#endif
 
 namespace Xamarin.HeartMonitor
 {
@@ -189,13 +191,19 @@ namespace Xamarin.HeartMonitor
 			beatTimer = NSTimer.CreateScheduledTimer (60 / (double)CurrentHeartBeat.Rate, ScheduleBeatTimer);
 		}
 
+		/* to use the unsafe version of this method, 
+		 * 'tick' **Project > Options > Build > General > Allow 'unsafe' code** */
 		/*unsafe*/ void UpdateHeartRate (NSData hr)
 		{
 			var now = DateTime.Now;
 
-			/*var data = (byte *)hr.Bytes;*/
+			// unsafe line
+//			var data = (byte *)hr.Bytes;
+
+			// replaced by safe lines
 			byte[] data = new byte[hr.Length];
 			System.Runtime.InteropServices.Marshal.Copy(hr.Bytes, data, 0, Convert.ToInt32(hr.Length));
+			// end safe lines
 
 			ushort bpm = 0;
 			if ((data [0] & 0x01) == 0) {
@@ -216,12 +224,18 @@ namespace Xamarin.HeartMonitor
 			}
 		}
 
+		/* to use the unsafe version of this method, 
+		 * 'tick' **Project > Options > Build > General > Allow 'unsafe' code** */
 		/*unsafe*/ void UpdateBodySensorLocation (NSData location)
 		{
-			/*var value = ((byte *)location.Bytes) [0];*/
+			// unsafe line
+//			var value = ((byte *)location.Bytes) [0];
+
+			// replaced by safe lines
 			byte[] data = new byte[location.Length];
 			System.Runtime.InteropServices.Marshal.Copy(location.Bytes, data, 0, Convert.ToInt32(location.Length));
 			var value = (int)data[0];
+			// end safe lines
 
 			if (value < 0 || value > (byte)HeartRateMonitorLocation.Reserved) {
 				Location = HeartRateMonitorLocation.Unknown;
