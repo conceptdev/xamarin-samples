@@ -6,6 +6,7 @@ using MonoTouch.Foundation;
 using MonoTouch.CoreImage;
 using MonoTouch.CoreBluetooth;
 using System.Collections.Generic;
+using MonoTouch.HealthKit;
 
 namespace Xamarin.HeartMonitor
 {
@@ -22,15 +23,20 @@ namespace Xamarin.HeartMonitor
 
 		List<HeartRateMonitor> heartRateMonitors = new List<HeartRateMonitor> ();
 
-		UILabel statusLabel, heartRateLabel, heartRateUnitLabel, deviceNameLabel;
-		UIButton connectButton;
+		UILabel statusLabel, heartRateLabel, heartRateUnitLabel, deviceNameLabel, permissionsLabel;
+		UIButton connectButton, storeData;
+
+		 
+
+		HKHealthStore healthKitStore;
 
 		public override void ViewDidLoad ()
 		{	
 			base.ViewDidLoad ();
 			
-
+			#region UI controls
 			statusLabel = new UILabel (new RectangleF(10, 30, 300, 30));
+			statusLabel.Text = "waiting...";
 
 			heartRateLabel = new UILabel(new RectangleF(10, 70, 150, 30));
 			heartRateLabel.Font = UIFont.BoldSystemFontOfSize (36);
@@ -42,28 +48,94 @@ namespace Xamarin.HeartMonitor
 
 			connectButton = UIButton.FromType (UIButtonType.System);
 			connectButton.SetTitle ("Connect", UIControlState.Normal);
+			connectButton.SetTitle ("searching...", UIControlState.Disabled);
+			connectButton.Enabled = false;
 			connectButton.Frame = new RectangleF (10, 160, 300, 30);
 			connectButton.TouchUpInside += ConnectToSelectedDevice;
+
+
+			permissionsLabel = new UILabel (new RectangleF (10, 200, 300, 30));
+			permissionsLabel.Text = "Permission was NOT granted to send to HealthKit :-(";
+			permissionsLabel.Hidden = false;
+
+			storeData = UIButton.FromType (UIButtonType.System);
+			storeData.Frame = new RectangleF (10, 220, 300, 30);
+			storeData.SetTitle ("Store in HealthKit", UIControlState.Normal);
+			storeData.SetTitle ("requires permission", UIControlState.Disabled);
+			storeData.Enabled = false;
+			storeData.TouchUpInside += (sender, e) => {
+				UpdateHealthKit(heartRateLabel.Text); // pretty hacky :)
+			};
 
 			Add (statusLabel);
 			Add (heartRateLabel);
 			Add (heartRateUnitLabel);
 			Add (deviceNameLabel);
 			Add (connectButton);
+			Add (permissionsLabel);
+			Add (storeData);
+			#endregion
 
 			InitializeCoreBluetooth ();
+
+			#region HealthKit
+			// https://gist.github.com/lobrien/1217d3cff7b29716c0d3
+			// http://www.knowing.net/index.php/2014/07/11/exploring-healthkit-with-xamarin-provisioning-and-permissions-illustrated-walkthrough/
+
+			healthKitStore = new HKHealthStore();
+			//Permissions
+			//Request HealthKit authorization
+			var heartRateId = HKQuantityTypeIdentifierKey.HeartRate;
+			var heartRateType = HKObjectType.GetQuantityType (heartRateId);
+			//Request to write heart rate, read nothing...
+			healthKitStore.RequestAuthorizationToShare (new NSSet (new [] { heartRateType }), new NSSet (), (success, error) =>
+				InvokeOnMainThread (() => {
+					if (success) {
+						//Whatever...
+						permissionsLabel.Hidden = true;
+						storeData.Enabled = true;
+					} else {
+						//Whatever...
+						permissionsLabel.Hidden = false;
+						storeData.Enabled = false;
+					}
+					if (error != null) {
+						Console.WriteLine ("HealthKit authorization error: " + error);
+					}
+				}));
+			#endregion
+
 		}
+		#region HealthKit
+		void UpdateHealthKit(string s) {
+			//Creating a heartbeat sample
+			int result = 0;
+			if (Int32.TryParse (s, out result)) {
 
+				var heartRateId = HKQuantityTypeIdentifierKey.HeartRate;
+				var heartRateType = HKObjectType.GetQuantityType (heartRateId);
+				var heartRateQuantityType = HKQuantityType.GetQuantityType (heartRateId);
 
-		void ConnectToSelectedDevice (object sender, EventArgs e)
-		{
-			monitor = heartRateMonitors [0];
-			Console.WriteLine ("monitor:" + monitor);
-			if (monitor != null) {
-				statusLabel.Text = "Connecting to " + monitor.Name + " ... ";
-				monitor.Connect ();
+				//Beats per minute = "Count/Minute" as a unit
+				var heartRateUnitType = HKUnit.Count.UnitDividedBy (HKUnit.Minute);
+				var quantity = HKQuantity.FromQuantity (heartRateUnitType, result);
+				//If we know where the sensor is...
+				var metadata = new HKMetadata ();
+				metadata.HeartRateSensorLocation = HKHeartRateSensorLocation.Chest;
+				//Create the sample
+				var heartRateSample = HKQuantitySample.FromType (heartRateQuantityType, quantity, new NSDate (), new NSDate (), metadata);
+
+				//Attempt to store it...
+				healthKitStore.SaveObject (heartRateSample, (success, error) => {
+					//Error will be non-null if permissions not granted
+					Console.WriteLine ("Write succeeded: " + success);
+					if (error != null) {
+						Console.WriteLine (error);
+					}
+				});
 			}
 		}
+		#endregion
 
 		#region Heart Pulse UI
 
@@ -109,6 +181,20 @@ namespace Xamarin.HeartMonitor
 
 		#region Bluetooth
 
+		void ConnectToSelectedDevice (object sender, EventArgs e)
+		{
+			if (heartRateMonitors.Count > 0) {
+				monitor = heartRateMonitors [0];
+				Console.WriteLine ("monitor:" + monitor);
+				if (monitor != null) {
+					statusLabel.Text = "Connecting to " + monitor.Name + " ... ";
+					monitor.Connect ();
+				}
+			} else {
+				Console.WriteLine ("No heart rate monitors detected");
+			}
+		}
+
 		void InitializeCoreBluetooth ()
 		{
 			manager.UpdatedState += OnCentralManagerUpdatedState;
@@ -116,6 +202,7 @@ namespace Xamarin.HeartMonitor
 			//HACK: Modified this to just quit after finding the first heart rate monitor
 			EventHandler<CBDiscoveredPeripheralEventArgs> discovered = null;
 			discovered += (sender, e) => {
+				Console.WriteLine ("discovered!");
 				if (monitor != null) {
 					monitor.Dispose ();
 				}
@@ -125,6 +212,7 @@ namespace Xamarin.HeartMonitor
 				monitor.HeartBeat += OnHeartBeat;
 
 				heartRateMonitors.Add (monitor);
+				connectButton.Enabled = true;
 
 				//HACK: instead of adding to a list, just use this one
 				statusLabel.Text = "Found " + monitor.Name + ".";
@@ -136,7 +224,7 @@ namespace Xamarin.HeartMonitor
 
 			manager.DisconnectedPeripheral += (sender, e) => DisconnectMonitor ();
 
-			HeartRateMonitor.ScanForHeartRateMonitors (manager);
+
 		}
 
 		void OnCentralManagerUpdatedState (object sender, EventArgs e)
@@ -145,7 +233,9 @@ namespace Xamarin.HeartMonitor
 
 			switch (manager.State) {
 			case CBCentralManagerState.PoweredOn:
-				connectButton.Enabled = true;
+				HeartRateMonitor.ScanForHeartRateMonitors (manager);
+				//connectButton.Enabled = true;
+				message = "Scanning...";
 				return;
 			case CBCentralManagerState.Unsupported:
 				message = "The platform or hardware does not support Bluetooth Low Energy.";
@@ -157,6 +247,7 @@ namespace Xamarin.HeartMonitor
 				message = "Bluetooth is currently powered off.";
 				break;
 			default:
+				message = "Unhandled state: " + manager.State;
 				break;
 			}
 
