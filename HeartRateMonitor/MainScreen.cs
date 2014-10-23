@@ -11,10 +11,16 @@ using MonoTouch.HealthKit;
 namespace Xamarin.HeartMonitor
 {
 	/// <summary>
-	/// View containing Buttons, TextView and ImageViews to show off the samples
+	/// HeartRateMonitor sample for iOS 8
+	/// 
+	/// HRM code for Mac by Aaron Bockover
+	/// HealthKit integration by Larry O'Brien
 	/// </summary>
 	/// <remarks>
-	/// See the 'SampleCode.cs' file for the actual sample code
+	/// Icon for this app uses heart found here
+	/// https://www.iconfinder.com/icons/299063/heart_icon#size=512
+	/// and is used under the Creative Commons license
+	/// http://creativecommons.org/licenses/by/3.0/
 	/// </remarks> 
 	public class MainScreen : UIViewController
 	{
@@ -25,8 +31,6 @@ namespace Xamarin.HeartMonitor
 
 		UILabel statusLabel, heartRateLabel, heartRateUnitLabel, deviceNameLabel, permissionsLabel;
 		UIButton connectButton, storeData;
-
-		 
 
 		HKHealthStore healthKitStore;
 
@@ -53,15 +57,12 @@ namespace Xamarin.HeartMonitor
 			connectButton.Frame = new RectangleF (10, 160, 300, 30);
 			connectButton.TouchUpInside += ConnectToSelectedDevice;
 
-
-			permissionsLabel = new UILabel (new RectangleF (10, 200, 300, 30));
-			permissionsLabel.Text = "Permission was NOT granted to send to HealthKit :-(";
-			permissionsLabel.Hidden = false;
+			permissionsLabel = new UILabel (new RectangleF (10, 200, 300, 60));
 
 			storeData = UIButton.FromType (UIButtonType.System);
-			storeData.Frame = new RectangleF (10, 220, 300, 30);
-			storeData.SetTitle ("Store in HealthKit", UIControlState.Normal);
+			storeData.Frame = new RectangleF (10, 250, 300, 30);
 			storeData.SetTitle ("requires permission", UIControlState.Disabled);
+			storeData.SetTitle ("Store in HealthKit", UIControlState.Normal);
 			storeData.Enabled = false;
 			storeData.TouchUpInside += (sender, e) => {
 				UpdateHealthKit(heartRateLabel.Text); // pretty hacky :)
@@ -92,11 +93,13 @@ namespace Xamarin.HeartMonitor
 				InvokeOnMainThread (() => {
 					if (success) {
 						//Whatever...
-						permissionsLabel.Hidden = true;
+						Console.WriteLine ("RequestAuthorizationToShare: success");
+						permissionsLabel.Text = "HealthKit access is enabled!";
 						storeData.Enabled = true;
 					} else {
 						//Whatever...
-						permissionsLabel.Hidden = false;
+						Console.WriteLine ("RequestAuthorizationToShare:  failed");
+						permissionsLabel.Text = "No permission to access HealthKit :-(";
 						storeData.Enabled = false;
 					}
 					if (error != null) {
@@ -148,6 +151,8 @@ namespace Xamarin.HeartMonitor
 			deviceNameLabel.Text = String.Empty;
 			deviceNameLabel.Hidden = true;
 
+			connectButton.Enabled = false;
+
 			if (monitor != null) {
 				monitor.Dispose ();
 				monitor = null;
@@ -191,6 +196,7 @@ namespace Xamarin.HeartMonitor
 					monitor.Connect ();
 				}
 			} else {
+				statusLabel.Text = "No heart rate monitors detected";
 				Console.WriteLine ("No heart rate monitors detected");
 			}
 		}

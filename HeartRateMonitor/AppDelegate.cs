@@ -31,6 +31,9 @@ namespace Xamarin.HeartMonitor
 			window.BackgroundColor = UIColor.White;
 			window.Bounds = UIScreen.MainScreen.Bounds;
 
+			UINavigationBar.Appearance.TintColor = UIColor.Red;
+			UIButton.Appearance.TintColor = UIColor.Red;
+
 			window.RootViewController = ms;
             window.MakeKeyAndVisible ();
 			return true;

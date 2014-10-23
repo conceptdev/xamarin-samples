@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>HeartRateMonitor</string>
+	<string>HeartRate</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.conceptdevelopment.sample.heartratemonitor</string>
 	<key>CFBundleVersion</key>
