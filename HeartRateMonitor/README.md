@@ -1,6 +1,8 @@
 HeartRateMonitor with HealthKit
 ===========
 
+##Moved to [xamarin-ios-samples](https://github.com/conceptdev/xamarin-ios-samples)
+
 iOS example based on the [Xamarin.Mac HeartRateMonitor](https://github.com/xamarin/mac-samples/tree/master/HeartRateMonitor) by [abock](https://github.com/abock), with [HealthKit code](http://www.knowing.net/index.php/2014/07/11/exploring-healthkit-with-xamarin-provisioning-and-permissions-illustrated-walkthrough/) by [@lobrien](https://github.com/lobrien)
 
 The `HeartBeat`, `HeartBeatEventArgs`, `HeartRateMonitorLocation` classes are unchanged from Aaron's Xamarin.Mac app. The `HeartRateMonitor` class only required namespace changes. The `CoreBluetooth` APIs work identically across OS X and iOS.
