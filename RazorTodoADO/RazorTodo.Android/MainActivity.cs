@@ -12,7 +12,9 @@ using System.Linq;
 
 namespace RazorTodo
 {
-	[Activity (Label = "RazorTodo", MainLauncher = true)]
+	[Activity (Label = "RazorTodo", 
+		MainLauncher = true, 
+		ConfigurationChanges = Android.Content.PM.ConfigChanges.ScreenSize | Android.Content.PM.ConfigChanges.Orientation)]
 	public class Activity1 : Activity
 	{
 		// I apologize in advance for this awful hack, I'm sure there's a better way...

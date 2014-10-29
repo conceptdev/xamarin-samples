@@ -97,12 +97,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
-    <Reference Include="SQLite.Net">
-      <HintPath>..\packages\SQLite.Net-PCL.2.1.0\lib\portable-net4+sl4+wp7+win8+monotouch+MonoAndroid\SQLite.Net.dll</HintPath>
-    </Reference>
-    <Reference Include="SQLite.Net.Platform.XamarinIOS">
-      <HintPath>..\packages\SQLite.Net.Platform.XamarinIOS.2.0.2\lib\monotouch\SQLite.Net.Platform.XamarinIOS.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.Services" />
     <Reference Include="Mono.Data.Sqlite" />
     <Reference Include="System.Data" />
