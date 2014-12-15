@@ -21,6 +21,12 @@ namespace StoryboardTables
 					new Task() {Name="Groceries", Notes="Buy bread, cheese, apples", Done=false},
 					new Task() {Name="Devices", Notes="Buy Nexus, Galaxy, Droid", Done=false}
 			};
+
+			if (NSLocale.PreferredLanguages.Length > 0) {
+				var pref = NSLocale.PreferredLanguages [0];
+				Console.WriteLine ("preferred-language:" + pref);
+			}
+
 		}
 
 		/// <summary>

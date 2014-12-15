@@ -18,5 +18,19 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>de</string>
+		<string>es</string>
+		<string>ja</string>
+	</array>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>MinimumOSVersion</key>
+	<string>7.0</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.conceptdevelopment.taskyl10nstoryboard</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1</string>
 </dict>
 </plist>
