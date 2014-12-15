@@ -4,8 +4,6 @@
 <dict>
 	<key>CFBundleDisplayName</key>
 	<string>TaskyL10n</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.xamarin.samples.taskyl10nstoryboard</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>UIDeviceFamily</key>
