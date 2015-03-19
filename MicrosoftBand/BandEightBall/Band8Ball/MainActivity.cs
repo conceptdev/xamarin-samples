@@ -258,13 +258,13 @@ namespace Band8Ball
 				{
 					var accelerometerEvent = e.SensorReading;
 
-					if(Math.Abs(accelerometerEvent.AccelerationX) > 3) xCount++;
+					//if(Math.Abs(accelerometerEvent.AccelerationX) > 3) xCount++;
 					if(Math.Abs(accelerometerEvent.AccelerationY) > 3) yCount++;
 					if(Math.Abs(accelerometerEvent.AccelerationZ) > 3) zCount++;
 
 					// rudimentary shake detection
-					if (xCount > 2
-						&& yCount > 2
+					//if (xCount > 2
+					if (yCount > 2
 						&& zCount > 2) {
 
 						// wait 20 seconds below allowing a new answer
@@ -287,7 +287,7 @@ namespace Band8Ball
 //							accelY.Text = string.Format("{0:F3}", accelerometerEvent.AccelerationY);
 //							accelZ.Text = string.Format("{0:F3}", accelerometerEvent.AccelerationZ);
 
-							accelZ.Text = xCount + " " + yCount + " " + zCount;
+							accelZ.Text = xCount + " " + yCount + " " + zCount + " (x,y,x) only (y,z) count";
 
 							resultText.Text = lastAnswer;
 						});
