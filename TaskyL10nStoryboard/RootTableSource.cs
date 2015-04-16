@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 
 namespace StoryboardTables {
 	public class RootTableSource : UITableViewSource {
@@ -18,11 +18,11 @@ namespace StoryboardTables {
 			tableItems = items; 
 		}
 	    
-	    public override int RowsInSection (UITableView tableview, int section)
+	    public override nint RowsInSection (UITableView tableview, nint section)
 	    {
 	        return tableItems.Length;
 	    }
-	    public override UITableViewCell GetCell (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+	    public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
 	    {
 			// in a Storyboard, Dequeue will ALWAYS return a cell, 
 	        UITableViewCell cell = tableView.DequeueReusableCell (cellIdentifier);

@@ -1,8 +1,8 @@
 using System;
-using System.Drawing;
+using CoreGraphics;
 using System.Collections.Generic;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 
 namespace StoryboardTables
 {
@@ -67,13 +67,13 @@ namespace StoryboardTables
 			Console.WriteLine("Save "+task.Name);
 			var oldTask = tasks.Find(t => t.Id == task.Id);
 			oldTask = task;
-			NavigationController.PopViewControllerAnimated(true);
+			NavigationController.PopViewController(true);
 		}
 		public void DeleteTask (Task task) {
 			Console.WriteLine("Delete "+task.Name);
 			var oldTask = tasks.Find(t => t.Id == task.Id);
 			tasks.Remove (oldTask);
-			NavigationController.PopViewControllerAnimated(true);
+			NavigationController.PopViewController(true);
 		}
 
 
