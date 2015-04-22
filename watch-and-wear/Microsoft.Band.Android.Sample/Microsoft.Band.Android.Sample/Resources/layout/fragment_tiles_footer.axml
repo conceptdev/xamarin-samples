@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp" >
+    
+        <TextView
+            android:id="@+id/labelNotifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Notifications"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/separator2"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/labelNotifications"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
+            android:background="@android:color/darker_gray" />
+
+        <EditText
+            android:id="@+id/editTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/separator2"
+            android:hint="Title"
+            android:ems="10" />
+
+        <EditText
+            android:id="@+id/editBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTitle"
+            android:hint="Body"
+            android:ems="10"
+            android:lines="2" />
+
+        <Button
+            android:id="@+id/buttonSendDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/buttonSendMessage"
+            android:layout_alignRight="@+id/buttonSendMessage"
+            android:layout_below="@id/editBody"
+            android:text="Send Dialog" />
+
+        <Button
+            android:id="@+id/buttonSendMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonSendDialog"
+            android:text="Send Message" />
+
+        <CheckBox
+            android:id="@+id/cbWithDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/buttonSendMessage"
+            android:layout_toRightOf="@id/buttonSendMessage"
+            android:text="with dialog" />
+
+</RelativeLayout>

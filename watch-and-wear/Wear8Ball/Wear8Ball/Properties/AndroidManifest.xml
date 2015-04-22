@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="wear8ball">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="21" />
+	<uses-feature android:name="android.hardware.type.watch" />
+	<application android:label="wear8ball" android:icon="@drawable/ic_launcher" android:theme="@android:style/Theme.DeviceDefault">
+	</application>
+</manifest>

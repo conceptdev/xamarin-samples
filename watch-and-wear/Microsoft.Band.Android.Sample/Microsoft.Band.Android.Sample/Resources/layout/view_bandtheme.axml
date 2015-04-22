@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:stretchColumns="0,2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/base_label"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <GridLayout
+            android:id="@+id/gridBase"
+            android:tag="gridBase"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/Black">
+
+        </GridLayout>
+
+        <Button
+            android:id="@+id/buttonChangeBase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="Base"
+            android:text="@string/change_label" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/highlight_label"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <GridLayout
+            android:id="@+id/gridHighlight"
+            android:tag="gridHighlight"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/Black" >
+
+        </GridLayout>
+
+        <Button
+            android:id="@+id/buttonChangeHighlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="Highlight"
+            android:text="@string/change_label" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lowlight_label"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <GridLayout
+            android:id="@+id/gridLowlight"
+            android:tag="gridLowlight"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/Black" >
+
+        </GridLayout>
+
+        <Button
+            android:id="@+id/buttonChangeLowlight"
+            android:tag="Lowlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change_label" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/secondary_text_label"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <GridLayout
+            android:id="@+id/gridSecondaryText"
+            android:tag="gridSecondaryText"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/Black" >
+
+        </GridLayout>
+
+        <Button
+            android:id="@+id/buttonChangeSecondaryText"
+            android:tag="SecondaryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change_label" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/high_contrast_label"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <GridLayout
+            android:id="@+id/gridHighContrast"
+            android:tag="gridHighContrast"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/Black" >
+
+        </GridLayout>
+        <Button
+            android:id="@+id/buttonChangeHighContrast"
+            android:tag="HighContrast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change_label"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/muted_label"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <GridLayout
+            android:id="@+id/gridMuted"
+            android:tag="gridMuted"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/Black" >
+
+        </GridLayout>
+
+        <Button
+            android:id="@+id/buttonChangeMuted"
+            android:tag="Muted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change_label" />
+
+    </TableRow>
+
+</TableLayout>

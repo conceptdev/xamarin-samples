@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Band8BallAndroid", "Band8Ball\Band8BallAndroid.csproj", "{1470FA0B-B704-4B8E-A71A-090BEC44B069}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1470FA0B-B704-4B8E-A71A-090BEC44B069}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1470FA0B-B704-4B8E-A71A-090BEC44B069}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1470FA0B-B704-4B8E-A71A-090BEC44B069}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1470FA0B-B704-4B8E-A71A-090BEC44B069}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

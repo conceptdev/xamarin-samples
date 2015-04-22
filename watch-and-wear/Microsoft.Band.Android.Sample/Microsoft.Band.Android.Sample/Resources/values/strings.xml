@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Microsoft Band SDK Sample</string>
+    <string name="title_basics_section">Basics</string>
+    <string name="title_theme_section">Theme</string>
+    <string name="title_tiles_section">Tiles</string>
+    <string name="title_sensors_section">Sensors</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="management_label">Management</string>
+    <string name="get_fw_version_label">Get FW Version</string>
+    <string name="get_hw_version_label">Get HW Version</string>
+    <string name="vibration_label">Vibration</string>
+    <string name="vibrate_label">Vibrate</string>
+    <string name="choose_band_label">Choose band</string>
+    <string name="choose_vibration_pattern_label">Choose pattern</string>
+    <string name="versioning_label">Versions</string>
+    
+    <string name="connect_label">Connect</string>
+    <string name="disconnect_label">Disconnect</string>
+    <string name="cancel_button_text">Cancel</string>
+    <string name="ok_button_text">OK</string>
+    <string name="bgnd_image_label">Background image</string>
+    <string name="base_label">Base</string>
+    <string name="change_label">Change</string>
+    <string name="get_colors_label">Get Colors</string>
+    <string name="set_colors_label">Set Colors</string>
+    <string name="get_image_label">Get image</string>
+    <string name="set_image_label">Set image</string>
+    <string name="high_contrast_label">High contrast</string>
+    <string name="highlight_label">Highlight</string>
+    <string name="lowlight_label">Lowlight</string>
+    <string name="muted_label">Muted</string>
+    <string name="secondary_text_label">Secondary text</string>
+    <string name="select_label">Select...</string>
+    <string name="theme_colors_label">Theme colors</string>
+
+</resources>

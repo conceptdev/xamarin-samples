@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textManagement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/management_label"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Button
+            android:id="@+id/buttonConnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textManagement"
+            android:layout_below="@+id/textManagement"
+            android:enabled="false"
+            android:text="@string/connect_label" />
+
+        <View
+            android:id="@+id/sepManagement"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="8dp"
+            android:layout_below="@+id/buttonConnect"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:id="@+id/textVersioning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/versioning_label"
+            android:layout_below="@+id/sepManagement"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Button
+            android:id="@+id/buttonGetFirmwareVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/buttonConnect"
+            android:layout_below="@+id/textVersioning"
+            android:layout_marginTop="10dp"
+            android:enabled="false"
+            android:text="@string/get_fw_version_label" />
+
+        <TextView
+            android:id="@+id/textFirmwareVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/buttonGetFirmwareVersion"
+            android:layout_alignBottom="@+id/buttonGetFirmwareVersion"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="18dp"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Button
+            android:id="@+id/buttonGetHardwareVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/buttonGetFirmwareVersion"
+            android:layout_below="@+id/buttonGetFirmwareVersion"
+            android:layout_marginTop="10dp"
+            android:enabled="false"
+            android:text="@string/get_hw_version_label" />
+
+        <TextView
+            android:id="@+id/textHardwareVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/buttonGetHardwareVersion"
+            android:layout_alignBottom="@+id/buttonGetHardwareVersion"
+            android:layout_alignRight="@+id/textFirmwareVersion"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <View
+            android:id="@+id/sepVersioning"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="8dp"
+            android:layout_below="@+id/buttonGetHardwareVersion"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:id="@+id/textVibration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/buttonGetHardwareVersion"
+            android:layout_below="@+id/sepVersioning"
+            android:text="@string/vibration_label"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/textChooseBand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/buttonChooseBand"
+            android:layout_alignRight="@+id/buttonChooseBand"
+            android:text="@string/choose_band_label"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <Button
+            android:id="@+id/buttonVibrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textVibration"
+            android:layout_below="@+id/textVibration"
+            android:enabled="false"
+            android:text="@string/vibrate_label" />
+
+        <Button
+            android:id="@+id/buttonVibrationPattern"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/buttonVibrate"
+            android:layout_alignParentRight="true"
+            android:enabled="false"
+            android:maxHeight="96dp"
+            android:maxWidth="200dp"
+            android:text="" />
+
+        <Button
+            android:id="@+id/buttonChooseBand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/buttonVibrationPattern"
+            android:layout_below="@+id/textManagement"
+            android:enabled="false" />
+
+        <TextView
+            android:id="@+id/textChoosePattern"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/buttonVibrationPattern"
+            android:layout_alignRight="@+id/buttonVibrationPattern"
+            android:text="@string/choose_vibration_pattern_label"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    </RelativeLayout>
+</ScrollView>
