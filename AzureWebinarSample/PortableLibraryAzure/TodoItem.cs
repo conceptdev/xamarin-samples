@@ -20,6 +20,6 @@ namespace AzurePortable {
 		public bool Done { get; set; }
 
 
-		public string DeviceToken { get; set; }
+		public string DeviceToken { get; set; } = "";
 	}
 }

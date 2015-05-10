@@ -27,7 +27,7 @@ namespace iOSTodo
 				currentTodoItem.Notes = NotesText.Text;
 				currentTodoItem.Done = DoneSwitch.On;
 				// PUSH
-				currentTodoItem.DeviceToken = AppDelegate.Current.DeviceToken;
+				currentTodoItem.DeviceToken = AppDelegate.Current.DeviceToken ?? "";
 
 				//HACK: AppDelegate.Current.TaskMgr.SaveTask(currentTodoItem);
 				//AppDelegate.Current.TaskMgr.SaveTask(currentTodoItem);
