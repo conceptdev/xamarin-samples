@@ -1,6 +1,8 @@
 Tasky (localized storyboard)
 ============================
 
+![](Screenshots/es-sml.png)
+
 You can localize all the strings used in a storyboard by creating a `.strings`
 file named the same as the storyboard (placed in relevant `.lproj` directory)
 and creating strings for each control/property, eg:
@@ -34,14 +36,18 @@ Don't forget these entries in the `Info.plist` (for the languages you wish to su
 <string>en</string>
 ```
 
-**WARNING:** This sample does *not* use Size Classes, but rather is specifically
+## WARNING: Using Size Classes (Universal Storyboards)
+
+This sample does *not* use Size Classes, but rather is specifically
 targeting iPhone in the storyboard.
 
 If you attempt to localize a Storyboard that uses Size Classes you may
 run into [this issue (on StackOverflow)](http://stackoverflow.com/questions/24989208/xcode-6-does-not-localize-interface-builder).
-The storyboard elements fail
+The storyboard elements fail to be localized, and always show the base language.
 
 The easy/hack fix is to duplicate your storyboard strings file into
 `MainStoryboard~iphone.strings` and `MainStoryboard~ipad.strings`
 
-![](Screenshots/es-sml.png)
+(apparently under-the-covers the universal storyboard is duplicated into `~ipad`
+and `~iphone` versions; which causes the `.strings` file load to fail because
+the filenames don't match exactly)
