@@ -54,7 +54,7 @@ namespace Tasky {
 			string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
 			string libraryPath = Path.Combine (documentsPath, "../Library/"); // Library folder
             var path = Path.Combine(libraryPath, sqliteFilename);
-            conn = new Connection(path);
+			conn = new Tasky.DL.SQLite.Connection(path);
 			TaskMgr = new TaskManager(conn);
 
 
@@ -62,7 +62,7 @@ namespace Tasky {
 			navController.PushViewController(homeViewController, false);
 			window.RootViewController = navController;
 			window.MakeKeyAndVisible ();
-			
+
 			return true;
 		}
 	}
