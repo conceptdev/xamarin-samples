@@ -6,6 +6,7 @@ using MonoTouch.UIKit;
 using Tasky.BL.Managers;
 using Tasky.DL.SQLite;
 using System.IO;
+using System.Diagnostics;
 
 namespace Tasky {
 	[Register ("AppDelegate")]
@@ -63,6 +64,28 @@ namespace Tasky {
 			window.RootViewController = navController;
 			window.MakeKeyAndVisible ();
 
+
+			//
+			// https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html
+			NSDateFormatter df = new NSDateFormatter ();
+
+			df.DateStyle = NSDateFormatterStyle.Full;
+			df.TimeStyle = NSDateFormatterStyle.Short;
+			Debug.WriteLine ("tz: " + NSTimeZone.LocalTimeZone);
+
+var date = NSDate.Now;
+
+df.DateStyle = NSDateFormatterStyle.Full;
+df.TimeStyle = NSDateFormatterStyle.Long;
+Debug.WriteLine ("Full,Long: " + df.StringFor(date));
+
+df.DateStyle = NSDateFormatterStyle.Short;
+df.TimeStyle = NSDateFormatterStyle.Short;
+Debug.WriteLine ("Short,Short: " + df.StringFor(date));
+
+df.DateStyle = NSDateFormatterStyle.Medium;
+df.TimeStyle = NSDateFormatterStyle.None;
+Debug.WriteLine ("Medium,None: " + df.StringFor(date));
 			return true;
 		}
 	}

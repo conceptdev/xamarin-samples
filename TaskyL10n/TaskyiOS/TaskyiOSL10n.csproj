@@ -106,7 +106,6 @@
     <BundleResource Include="Images\Icons\57_icon.png" />
     <BundleResource Include="Images\Icons\58_icon.png" />
     <BundleResource Include="Images\Icons\72_icon.png" />
-    <BundleResource Include="Resources\Base.lproj\Localizable.stringsdict" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="Images\Icons\512_icon.png" />
