@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="hello">Hello World, Click Me!</string>
+	<string name="app_name">TaskyLeon</string>
+
+	<string name="taskadd">להוסיף משימה</string>
+	<string name="taskname">שם</string>
+	<string name="tasknotes">הערות</string>
+	<string name="taskdone">מלא</string>
+	<string name="taskcancel">לבטל</string>
+	<string name="tasksave">להציל</string>
+	<string name="taskdelete">להסיר</string>
+
+</resources>

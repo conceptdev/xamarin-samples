@@ -19,6 +19,7 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <AndroidSupportedAbis>armeabi%3barmeabi-v7a%3bx86</AndroidSupportedAbis>
     <MandroidI18n />
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -76,6 +77,9 @@
     <AndroidResource Include="Resources\drawable\bluebutton.axml" />
     <AndroidResource Include="Resources\values-de\Strings.xml" />
     <AndroidResource Include="Resources\values-es\Strings.xml" />
+    <AndroidResource Include="Resources\values-ar\Strings.xml" />
+    <AndroidResource Include="Resources\values-he\Strings.xml" />
+    <AndroidResource Include="Resources\values-iw\Strings.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -87,5 +91,8 @@
   <ItemGroup>
     <Folder Include="Resources\values-es\" />
     <Folder Include="Resources\values-de\" />
+    <Folder Include="Resources\values-ar\" />
+    <Folder Include="Resources\values-he\" />
+    <Folder Include="Resources\values-iw\" />
   </ItemGroup>
 </Project>
