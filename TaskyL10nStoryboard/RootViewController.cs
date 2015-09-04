@@ -14,7 +14,7 @@ namespace StoryboardTables
 
 		public RootViewController (IntPtr handle) : base (handle)
 		{
-			Title = "TaskBoard";
+			Title = NSBundle.MainBundle.LocalizedString ("Todo", "");
 			
 			// Custom initialization
 			tasks = new List<Task> {

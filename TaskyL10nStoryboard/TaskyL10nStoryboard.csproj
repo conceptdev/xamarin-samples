@@ -27,8 +27,9 @@
     <AssemblyName>L10nStoryboard</AssemblyName>
     <MtouchI18n>
     </MtouchI18n>
-    <MtouchArch>ARMv7</MtouchArch>
+    <MtouchArch>i386, x86_64</MtouchArch>
     <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -56,6 +57,9 @@
     <IpaPackageName>
     </IpaPackageName>
     <MtouchArch>ARMv7</MtouchArch>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchI18n>
+    </MtouchI18n>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -97,6 +101,8 @@
   <ItemGroup>
     <Folder Include="Base.lproj\" />
     <Folder Include="Resources\" />
+    <Folder Include="Resources\ar.lproj\" />
+    <Folder Include="Resources\he.lproj\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\en.lproj\Localizable.strings" />
@@ -105,6 +111,12 @@
     <BundleResource Include="Resources\es.lproj\MainStoryboard.strings" />
     <BundleResource Include="Resources\ja.lproj\Localizable.strings" />
     <BundleResource Include="Resources\ja.lproj\MainStoryboard.strings" />
+    <BundleResource Include="Resources\ar.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\ar.lproj\MainStoryboard.strings" />
+    <BundleResource Include="Resources\ar.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\he.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\he.lproj\MainStoryboard.strings" />
+    <BundleResource Include="Resources\he.lproj\InfoPlist.strings" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

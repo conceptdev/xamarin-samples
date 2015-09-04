@@ -1,6 +1,18 @@
 Tasky (localized storyboard)
 ============================
 
+## Updated for iOS 9 RTL support
+
+
+* in Storyboard, use Auto-Layout `leading` and `trailing` attributess (not `right` and `left`)
+* use `TitleText.TextAlignment = UITextAlignment.Natural;` alignment in code, not `Left` or `Right`
+* see [Apple's guide](https://developer.apple.com/library/prerelease/ios/documentation/MacOSX/Conceptual/BPInternational/SupportingRight-To-LeftLanguages/SupportingRight-To-LeftLanguages.html#//apple_ref/doc/uid/10000171i-CH17) for other advice eg regarding images.
+
+![](Screenshots/ar-RTL-detail-sml.png) ![](Screenshots/he-RTL-detail-sml.png)
+
+
+## Spanish and other LTR languages
+
 ![](Screenshots/es-sml.png)
 
 You can localize all the strings used in a storyboard by creating a `.strings`

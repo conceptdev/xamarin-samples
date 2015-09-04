@@ -28,6 +28,9 @@ namespace StoryboardTables
 			DeleteButton.TouchUpInside += (sender, e) => {
 				Delegate.DeleteTask(currentTask);
 			};
+
+			TitleText.TextAlignment = UITextAlignment.Natural;
+			NotesText.TextAlignment = UITextAlignment.Natural;
 		}
 
 		// this will be called before the view is displayed 
