@@ -17,7 +17,7 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>6.1</string>
+	<string>9.1</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>icon-57</string>
@@ -33,5 +33,9 @@
 		<string>icon7-152</string>
 		<string>icon7-40</string>
 	</array>
+	<key>CFBundleShortVersionString</key>
+	<string>1</string>
+	<key>CFBundleIdentifier</key>
+	<string>co.conceptdev.taskyboard</string>
 </dict>
 </plist>

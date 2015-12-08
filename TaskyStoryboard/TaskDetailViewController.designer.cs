@@ -4,7 +4,7 @@
 // actions made in the UI designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoTouch.Foundation;
+using Foundation;
 using System.CodeDom.Compiler;
 
 namespace StoryboardTables
@@ -13,22 +13,22 @@ namespace StoryboardTables
 	partial class TaskDetailViewController
 	{
 		[Outlet]
-		MonoTouch.UIKit.UIButton DeleteButton { get; set; }
+		UIKit.UIButton DeleteButton { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UISwitch DoneSwitch { get; set; }
+		UIKit.UISwitch DoneSwitch { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UITextField NotesText { get; set; }
+		UIKit.UITextField NotesText { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UIButton SaveButton { get; set; }
+		UIKit.UIButton SaveButton { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UIButton SpeakButton { get; set; }
+		UIKit.UIButton SpeakButton { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UITextField TitleText { get; set; }
+		UIKit.UITextField TitleText { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
