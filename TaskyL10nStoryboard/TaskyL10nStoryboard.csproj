@@ -97,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Base.lproj\MainStoryboard.storyboard" />
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Base.lproj\" />
@@ -117,6 +118,7 @@
     <BundleResource Include="Resources\he.lproj\Localizable.strings" />
     <BundleResource Include="Resources\he.lproj\MainStoryboard.strings" />
     <BundleResource Include="Resources\he.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\Default-568h%402x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
