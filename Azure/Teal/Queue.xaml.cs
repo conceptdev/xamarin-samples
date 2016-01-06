@@ -51,7 +51,7 @@ namespace Teal
 			try
 			{
 				var creds = new StorageCredentials (sas);
-				storageAccount = CloudStorageAccount.Create (creds, null, queueStorageUri, null, null);
+				storageAccount = new CloudStorageAccount (creds, null, queueStorageUri, null, null);
 			}
 			catch (FormatException)
 			{
