@@ -33,16 +33,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskcell" rowHeight="44" id="30">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskcell" rowHeight="44" id="30" accessoryType="checkmark">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="30" id="wWV-po-dCM">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews/>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="LmH-xe-dDP" kind="push" identifier="TaskSegue" id="Mef-pQ-QFW"/>
                                 </connections>
+                                <color key="tintColor" colorSpace="calibratedRGB" red="0.43529411764705883" green="0.63529411764705879" blue="0.1803921568627451" alpha="1"/>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -75,7 +77,7 @@
                             <tableViewSection id="kFR-hb-f2z">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="title" rowHeight="44" id="lI0-If-rIm">
-                                        <rect key="frame" x="0.0" y="35" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="70" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lI0-If-rIm" id="Bf7-qe-57S">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -98,7 +100,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notes" rowHeight="44" id="rki-Ec-knm">
-                                        <rect key="frame" x="0.0" y="79" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="114" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rki-Ec-knm" id="jHQ-oM-fpt">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -121,7 +123,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="done" rowHeight="44" id="Bq3-hy-Og5">
-                                        <rect key="frame" x="0.0" y="123" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="158" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bq3-hy-Og5" id="FQb-yc-2UA">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -154,7 +156,7 @@
                             <tableViewSection id="Xfc-aN-IAQ">
                                 <cells>
                                     <tableViewCell alpha="0.0" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="save" rowHeight="83" id="3V1-0U-B53">
-                                        <rect key="frame" x="0.0" y="187" width="320" height="83"/>
+                                        <rect key="frame" x="0.0" y="364" width="320" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3V1-0U-B53" id="TFh-Yb-7UZ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
@@ -209,4 +211,22 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+    <resources>
+        <image name="Default-568h.png" width="320" height="568"/>
+        <image name="Default.png" width="320" height="480"/>
+        <image name="icon-29.png" width="29" height="29"/>
+        <image name="icon-50.png" width="50" height="50"/>
+        <image name="icon-57.png" width="57" height="57"/>
+        <image name="icon-58.png" width="58" height="58"/>
+        <image name="icon-72.png" width="72" height="72"/>
+        <image name="icon-100.png" width="100" height="100"/>
+        <image name="icon-114.png" width="114" height="114"/>
+        <image name="icon-144.png" width="144" height="144"/>
+        <image name="icon7-40.png" width="40" height="40"/>
+        <image name="icon7-60.png" width="60" height="60"/>
+        <image name="icon7-76.png" width="76" height="76"/>
+        <image name="icon7-80.png" width="80" height="80"/>
+        <image name="icon7-120.png" width="120" height="120"/>
+        <image name="icon7-152.png" width="152" height="152"/>
+    </resources>
 </document>
