@@ -111,4 +111,7 @@
   <ItemGroup>
     <ITunesArtwork Include="Images\Icons\512_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+  </ItemGroup>
 </Project>
