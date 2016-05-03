@@ -17,7 +17,7 @@ namespace TaskyAndroid.Screens {
 	//TODO: implement proper lifecycle methods
 	[Activity (Label = "Task Details")]			
 	public class TaskDetailsScreen : Activity {
-		protected Task task = new Task();
+		protected TodoItem task = new TodoItem();
 		protected Button cancelDeleteButton = null;
 		protected EditText notesTextEdit = null;
 		protected EditText nameTextEdit = null;

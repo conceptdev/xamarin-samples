@@ -45,13 +45,13 @@
     <Folder Include="BL\Contracts\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BL\Task.cs" />
     <Compile Include="DL\SQLite.cs" />
-    <Compile Include="DL\TaskDatabase.cs" />
-    <Compile Include="BL\Managers\TaskManager.cs" />
     <Compile Include="BL\Contracts\BusinessEntityBase.cs" />
     <Compile Include="BL\Contracts\IBusinessEntity.cs" />
-    <Compile Include="DAL\TaskRepository.cs" />
+    <Compile Include="DL\TodoDatabase.cs" />
+    <Compile Include="DAL\TodoRepository.cs" />
+    <Compile Include="BL\TodoItem.cs" />
+    <Compile Include="BL\Managers\TodoManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DL\About.txt" />

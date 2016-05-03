@@ -17,7 +17,7 @@ namespace TaskyAndroid.Screens {
 		ConfigurationChanges =  ConfigChanges.Orientation | ConfigChanges.Locale)]			
 	public class HomeScreen : Activity {
 		protected Adapters.TaskListAdapter taskList;
-		protected IList<Task> tasks;
+		protected IList<TodoItem> tasks;
 		protected Button addTaskButton = null;
 		protected ListView taskListView = null;
 		
@@ -83,8 +83,8 @@ namespace TaskyAndroid.Screens {
 			string documentsPath = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal); // Documents folder
 			var path = System.IO.Path.Combine(documentsPath, sqliteFilename);
 			var conn = new Connection(path);
-			var TaskMgr = new TaskManager(conn);
-			tasks = TaskMgr.GetTasks();
+			var TaskMgr = new TodoManager(conn);
+			tasks = TaskMgr.GetTodos();
 			
 			// create our adapter
 			taskList = new Adapters.TaskListAdapter(this, tasks);

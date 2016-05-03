@@ -8,7 +8,7 @@ using Tasky.BL;
 
 namespace Tasky.Screens.iPhone.Home {
 	public class controller_iPhone : DialogViewController {
-		List<Task> tasks;
+		List<TodoItem> tasks;
 		
 		public controller_iPhone () : base (UITableViewStyle.Plain, null)
 		{
@@ -18,16 +18,16 @@ namespace Tasky.Screens.iPhone.Home {
 		protected void Initialize()
 		{
 			NavigationItem.SetRightBarButtonItem (new UIBarButtonItem (UIBarButtonSystemItem.Add), false);
-			NavigationItem.RightBarButtonItem.Clicked += (sender, e) => { ShowTaskDetails(new Task()); };
+			NavigationItem.RightBarButtonItem.Clicked += (sender, e) => { ShowTaskDetails(new TodoItem()); };
 		}
 		
 
 		// MonoTouch.Dialog individual TaskDetails view (uses /AL/TaskDialog.cs wrapper class)
 		LocalizableBindingContext context;
 		TaskDialog taskDialog;
-		Task currentTask;
+		TodoItem currentTask;
 		DialogViewController detailsScreen;
-		protected void ShowTaskDetails (Task task)
+		protected void ShowTaskDetails (TodoItem task)
 		{
 			currentTask = task;
 			taskDialog = new TaskDialog (task);
@@ -43,14 +43,14 @@ namespace Tasky.Screens.iPhone.Home {
 			currentTask.Name = taskDialog.Name;
 			currentTask.Notes = taskDialog.Notes;
 			currentTask.Done = taskDialog.Done;
-			AppDelegate.Current.TaskMgr.SaveTask(currentTask);
+			AppDelegate.Current.TaskMgr.SaveTodo(currentTask);
 			NavigationController.PopViewControllerAnimated (true);
 			context.Dispose (); // per documentation
 		}
 		public void DeleteTask ()
 		{
 			if (currentTask.ID >= 0)
-				AppDelegate.Current.TaskMgr.DeleteTask (currentTask.ID);
+				AppDelegate.Current.TaskMgr.DeleteTodo (currentTask.ID);
 			NavigationController.PopViewControllerAnimated (true);
 		}
 
@@ -66,7 +66,7 @@ namespace Tasky.Screens.iPhone.Home {
 		
 		protected void PopulateTable ()
 		{
-			tasks = AppDelegate.Current.TaskMgr.GetTasks ().ToList ();
+			tasks = AppDelegate.Current.TaskMgr.GetTodos ().ToList ();
 			var newTask = MonoTouch.Foundation.NSBundle.MainBundle.LocalizedString ("<new task>", "<new task>");
 			Root = new RootElement ("Tasky") {
 				new Section() {
@@ -86,7 +86,7 @@ namespace Tasky.Screens.iPhone.Home {
 		}
 		public void DeleteTaskRow(int rowId)
 		{
-			AppDelegate.Current.TaskMgr.DeleteTask(tasks[rowId].ID);
+			AppDelegate.Current.TaskMgr.DeleteTodo(tasks[rowId].ID);
 		}
 	}
 }

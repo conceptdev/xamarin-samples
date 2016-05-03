@@ -17,7 +17,7 @@ namespace Tasky {
 		UITableViewController homeViewController;
 
 		public static AppDelegate Current { get; private set; }
-        public TaskManager TaskMgr { get; set; }
+        public TodoManager TaskMgr { get; set; }
         Connection conn;
 
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
@@ -56,7 +56,7 @@ namespace Tasky {
 			string libraryPath = Path.Combine (documentsPath, "../Library/"); // Library folder
             var path = Path.Combine(libraryPath, sqliteFilename);
 			conn = new Tasky.DL.SQLite.Connection(path);
-			TaskMgr = new TaskManager(conn);
+			TaskMgr = new TodoManager(conn);
 
 
 			// push the view controller onto the nav controller and show the window
