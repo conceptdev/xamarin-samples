@@ -1,0 +1,16 @@
+
+"SXg-TT-IwM.placeholder" = "task name";
+"Pqa-aa-ury.placeholder"= "other task info";
+
+"zwR-D9-hM1.text" = "Task Details";
+"bAM-2j-Rzw.text" = "Notes";
+"NF3-h8-xmR.text" = "Done";
+"MWt-Ya-pMf.normalTitle" = "Save";
+"IGr-pR-05L.normalTitle" = "Delete";
+
+/* Accessibility */
+"Enk-an-TVH.accessibilityLabel" = "Details input";
+"Pqa-aa-ury.accessibilityLabel" = "﻿Noeas input";
+"meq-FH-E52.accessibilityLabel" = "Completed switch";
+"MWt-Ya-pMf.accessibilityLabel" = "Save button";
+"IGr-pR-05L.accessibilityLabel" = "Delete button";

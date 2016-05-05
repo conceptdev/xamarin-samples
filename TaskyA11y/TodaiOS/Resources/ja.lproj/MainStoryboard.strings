@@ -1,0 +1,17 @@
+/* MACHINE TRANSLATION : apologies for any mistakes */
+
+"SXg-TT-IwM.placeholder" = "タスク名";
+"Pqa-aa-ury.placeholder"= "﻿他のタスクの情報";
+
+"zwR-D9-hM1.text" = "タスクの詳細";
+"bAM-2j-Rzw.text" = "注釈";
+"NF3-h8-xmR.text" = "削除する";
+"MWt-Ya-pMf.normalTitle" = "はい";
+"IGr-pR-05L.normalTitle" = "削除する";
+
+/* Accessibility */
+"Enk-an-TVH.accessibilityLabel" = "タスク名 input";
+"Pqa-aa-ury.accessibilityLabel" = "﻿他のタスクの情報 input";
+"meq-FH-E52.accessibilityLabel" = "削除する switch";
+"MWt-Ya-pMf.accessibilityLabel" = "はい button";
+"IGr-pR-05L.accessibilityLabel" = "削除する button";

@@ -1,0 +1,16 @@
+
+"SXg-TT-IwM.placeholder" = "task name";
+"Pqa-aa-ury.placeholder"= "other task info";
+
+"zwR-D9-hM1.text" = "Task Details";
+"bAM-2j-Rzw.text" = "Notes";
+"NF3-h8-xmR.text" = "Done";
+"MWt-Ya-pMf.normalTitle" = "Save";
+"IGr-pR-05L.normalTitle" = "Delete";
+
+/* Accessibility */
+"Enk-an-TVH.accessibilityLabel" = "タスク名 input";
+"Pqa-aa-ury.accessibilityLabel" = "﻿他のタスクの情報 input";
+"meq-FH-E52.accessibilityLabel" = "削除する switch";
+"MWt-Ya-pMf.accessibilityLabel" = "はい button";
+"IGr-pR-05L.accessibilityLabel" = "削除する button";

@@ -1,0 +1,17 @@
+/* MACHINE TRANSLATION : apologies for any mistakes */
+
+"SXg-TT-IwM.placeholder" = "nombre de la tarea";
+"Pqa-aa-ury.placeholder"= "﻿otra información de tarea";
+
+"zwR-D9-hM1.text" = "Detalles de la tarea";
+"bAM-2j-Rzw.text" = "Notas";
+"NF3-h8-xmR.text" = "Completo";
+"MWt-Ya-pMf.normalTitle" = "Guardar";
+"IGr-pR-05L.normalTitle" = "Eliminar";
+
+/* Accessibility */
+"Enk-an-TVH.accessibilityLabel" = "Detalles input";
+"Pqa-aa-ury.accessibilityLabel" = "﻿Notas input";
+"meq-FH-E52.accessibilityLabel" = "Completo switch";
+"MWt-Ya-pMf.accessibilityLabel" = "Guardar button";
+"IGr-pR-05L.accessibilityLabel" = "Eliminar button";
