@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">TaskyL10n</string>
+	<string name="taskadd">Add Task</string>
+	<string name="taskname">Name</string>
+	<string name="tasknotes">Notes</string>
+	<string name="taskdone">Done</string>
+	<string name="taskcancel">Cancel</string>
+	<string name="tasksave">Save</string>
+	<string name="taskdelete">Delete</string>
+
+	 <plurals name="numberOfTasks">
+        <!--
+             As a developer, you should always supply "one" and "other"
+             strings. Your translators will know which strings are actually
+             needed for their language. Always include %d in "one" because
+             translators will need to use %d for languages where "one"
+             doesn't mean 1 (as explained above).
+          -->
+        <item quantity="one">%d task to do.</item>
+        <item quantity="other">%d tasks to do.</item>
+    </plurals>
+
+</resources>

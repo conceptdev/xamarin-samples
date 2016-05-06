@@ -12,6 +12,7 @@
 /* Accessibility */
 "Enk-an-TVH.accessibilityLabel" = "Detalles input";
 "Pqa-aa-ury.accessibilityLabel" = "﻿Notas input";
+"Pqa-aa-ury.accessibilityHint" = "﻿escriba más información";
 "meq-FH-E52.accessibilityLabel" = "Completo switch";
 "MWt-Ya-pMf.accessibilityLabel" = "Guardar button";
 "IGr-pR-05L.accessibilityLabel" = "Eliminar button";

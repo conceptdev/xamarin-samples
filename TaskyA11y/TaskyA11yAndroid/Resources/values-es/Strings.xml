@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="hello">Hello World, Click Me!</string>
+	<string name="app_name">TaskyLeon</string>
+
+	<string name="taskadd">agregar tarea</string>
+	<string name="taskname">Nombre</string>
+	<string name="tasknotes">Notas</string>
+	<string name="taskdone">Completo</string>
+	<string name="taskcancel">Cancelar</string>
+	<string name="tasksave">Guardar</string>
+	<string name="taskdelete">Eliminar</string>
+
+</resources>

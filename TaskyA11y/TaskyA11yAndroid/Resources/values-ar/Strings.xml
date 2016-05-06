@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="hello">Hello World, Click Me!</string>
+	<string name="app_name">TaskyHe</string>
+
+	<string name="taskadd">إضافة مهمة</string>
+	<string name="taskname">اسم</string>
+	<string name="tasknotes">ملاحظات</string>
+	<string name="taskdone">كامل</string>
+	<string name="taskcancel">إلغاء</string>
+	<string name="tasksave">حفظ</string>
+	<string name="taskdelete">حذف</string>
+
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<!--TextView android:id="@+id/TaskDetailsHeader" android:text="Task Details" android:layout_width="fill_parent" android:layout_height="wrap_content"/-->
+    <TextView
+        android:id="@+id/NameLabel"
+        android:text="@string/taskname"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TaskDetailsHeader"
+        android:labelFor="@+id/txtName" />
+    <EditText
+        android:id="@+id/txtName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/NameLabel"
+        android:imeOptions="actionNext"
+        android:maxLines="1"
+        android:focusable="true"
+        android:hint="Enter todo name" />
+    <TextView
+        android:id="@+id/NotesLabel"
+        android:text="@string/tasknotes"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtName"
+        android:labelFor="@+id/txtNotes" />
+    <EditText
+        android:id="@+id/txtNotes"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/NotesLabel"
+        android:maxLines="1"
+        android:imeOptions="actionDone"
+        android:focusable="true"
+        android:hint="Enter additional information" />
+    <CheckBox
+        android:id="@+id/chkDone"
+        android:layout_below="@+id/txtNotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/taskdone"
+        android:focusable="true" />
+    <Button
+        android:id="@+id/btnCancelDelete"
+        android:text="@string/taskcancel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chkDone"
+        android:focusable="true" />
+    <Button
+        android:id="@+id/btnSave"
+        android:text="@string/tasksave"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip"
+        android:layout_below="@+id/btnCancelDelete"
+        android:focusable="true" />
+</RelativeLayout>
