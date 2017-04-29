@@ -1,6 +1,6 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using MonoTouch.UIKit;
+using UIKit;
 
 namespace NDCTodo
 {
@@ -11,11 +11,11 @@ namespace NDCTodo
 			taskList = tasks;
 		}
 
-		public override int RowsInSection (UITableView tableview, int section) {
+		public override nint RowsInSection (UITableView tableview, nint section) {
 			return taskList.Count;
 		}
 
-		public override UITableViewCell GetCell (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+		public override UITableViewCell GetCell (UITableView tableView, Foundation.NSIndexPath indexPath)
 		{
 			var cell = tableView.DequeueReusableCell ("taskcell");
 

@@ -1,10 +1,10 @@
-// WARNING
+﻿// WARNING
 //
 // This file has been generated automatically by Xamarin Studio to store outlets and
 // actions made in the UI designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoTouch.Foundation;
+using Foundation;
 
 namespace NDCTodo
 {
@@ -12,16 +12,16 @@ namespace NDCTodo
 	partial class TaskViewController
 	{
 		[Outlet]
-		MonoTouch.UIKit.UIButton CancelButton { get; set; }
+		UIKit.UIButton CancelButton { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UISwitch DoneSwitch { get; set; }
+		UIKit.UISwitch DoneSwitch { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UIButton SaveButton { get; set; }
+		UIKit.UIButton SaveButton { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UITextField TitleText { get; set; }
+		UIKit.UITextField TitleText { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{

@@ -21,8 +21,12 @@
 		<string>icon-114</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>6.1</string>
+	<string>10.0</string>
 	<key>CFBundleDisplayName</key>
 	<string>NDCTodo</string>
+	<key>CFBundleName</key>
+	<string>NDCTodo</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1</string>
 </dict>
 </plist>
