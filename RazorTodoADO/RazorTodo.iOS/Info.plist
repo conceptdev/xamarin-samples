@@ -5,7 +5,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>HybridTodoADO</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.your-company.HybridTodoADO.iOS</string>
+	<string>com.conceptdevelopment.HybridTodoADO.iOS</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -13,7 +13,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
-	<string>7.0</string>
+	<string>10.0</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
@@ -37,5 +37,7 @@
 	<false/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>CFBundleName</key>
+	<string>HybridTodoADO</string>
 </dict>
 </plist>
