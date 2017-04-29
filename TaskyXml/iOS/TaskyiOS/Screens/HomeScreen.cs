@@ -1,7 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoTouch.UIKit;
+using UIKit;
 using MonoTouch.Dialog;
 using Tasky.Core;
 using Tasky.ApplicationLayer;
@@ -46,14 +46,14 @@ namespace Tasky.Screens {
 			currentTask.Name = taskDialog.Name;
 			currentTask.Notes = taskDialog.Notes;
 			TaskManager.SaveTask(currentTask);
-			NavigationController.PopViewControllerAnimated (true);
+			NavigationController.PopViewController (true);
 			context.Dispose (); // per documentation
 		}
 		public void DeleteTask ()
 		{
 			if (currentTask.ID >= 0)
 				TaskManager.DeleteTask (currentTask.ID);
-			NavigationController.PopViewControllerAnimated (true);
+			NavigationController.PopViewController (true);
 		}
 
 		public override void ViewWillAppear (bool animated)
@@ -74,7 +74,7 @@ namespace Tasky.Screens {
 				}
 			}; 
 		}
-		public override void Selected (MonoTouch.Foundation.NSIndexPath indexPath)
+		public override void Selected (Foundation.NSIndexPath indexPath)
 		{
 			var task = tasks[indexPath.Row];
 			ShowTaskDetails(task);
