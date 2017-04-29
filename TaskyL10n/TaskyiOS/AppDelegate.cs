@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 using Tasky.BL.Managers;
 using Tasky.DL.SQLite;
 using System.IO;
@@ -63,7 +63,6 @@ namespace Tasky {
 			navController.PushViewController(homeViewController, false);
 			window.RootViewController = navController;
 			window.MakeKeyAndVisible ();
-
 
 			//
 			// https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoTouch.UIKit;
+using UIKit;
 using MonoTouch.Dialog;
 using Tasky.AL;
 using Tasky.BL;
@@ -32,7 +32,7 @@ namespace Tasky.Screens.iPhone.Home {
 			currentTask = task;
 			taskDialog = new TaskDialog (task);
 			
-			var title = MonoTouch.Foundation.NSBundle.MainBundle.LocalizedString ("Task Details", "Task Details");
+			var title = Foundation.NSBundle.MainBundle.LocalizedString ("Task Details", "Task Details");
 			context = new LocalizableBindingContext (this, taskDialog, title);
 			detailsScreen = new DialogViewController (context.Root, true);
 			ActivateController(detailsScreen);
@@ -44,14 +44,14 @@ namespace Tasky.Screens.iPhone.Home {
 			currentTask.Notes = taskDialog.Notes;
 			currentTask.Done = taskDialog.Done;
 			AppDelegate.Current.TaskMgr.SaveTodo(currentTask);
-			NavigationController.PopViewControllerAnimated (true);
+			NavigationController.PopViewController (true);
 			context.Dispose (); // per documentation
 		}
 		public void DeleteTask ()
 		{
 			if (currentTask.ID >= 0)
 				AppDelegate.Current.TaskMgr.DeleteTodo (currentTask.ID);
-			NavigationController.PopViewControllerAnimated (true);
+			NavigationController.PopViewController (true);
 		}
 
 
@@ -67,7 +67,7 @@ namespace Tasky.Screens.iPhone.Home {
 		protected void PopulateTable ()
 		{
 			tasks = AppDelegate.Current.TaskMgr.GetTodos ().ToList ();
-			var newTask = MonoTouch.Foundation.NSBundle.MainBundle.LocalizedString ("<new task>", "<new task>");
+			var newTask = Foundation.NSBundle.MainBundle.LocalizedString ("<new task>", "<new task>");
 			Root = new RootElement ("Tasky") {
 				new Section() {
 					from t in tasks
@@ -75,7 +75,7 @@ namespace Tasky.Screens.iPhone.Home {
 				}
 			}; 
 		}
-		public override void Selected (MonoTouch.Foundation.NSIndexPath indexPath)
+		public override void Selected (Foundation.NSIndexPath indexPath)
 		{
 			var task = tasks[indexPath.Row];
 			ShowTaskDetails(task);
