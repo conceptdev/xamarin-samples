@@ -4,7 +4,7 @@
 // actions made in the Xcode designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoTouch.Foundation;
+using Foundation;
 
 namespace PhonewordiOS
 {
@@ -12,13 +12,13 @@ namespace PhonewordiOS
 	partial class PhonewordiOSViewController
 	{
 		[Outlet]
-		MonoTouch.UIKit.UITextField PhoneNumberText { get; set; }
+		UIKit.UITextField PhoneNumberText { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UIButton TranslateButton { get; set; }
+		UIKit.UIButton TranslateButton { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UIButton CallButton { get; set; }
+		UIKit.UIButton CallButton { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
