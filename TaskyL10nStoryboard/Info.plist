@@ -23,7 +23,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>MinimumOSVersion</key>
-	<string>9.0</string>
+	<string>10.0</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.conceptdevelopment.oboT</string>
 	<key>CFBundleShortVersionString</key>
@@ -32,5 +32,7 @@
 	<string>Todo</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>CFBundleName</key>
+	<string>Todo</string>
 </dict>
 </plist>
