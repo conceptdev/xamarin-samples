@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 using System.IO;
 using NDCPortable;
 
@@ -33,20 +33,20 @@ namespace iOSTodo
 //			TaskMgr = new TodoItemManager();
 
 			// XML
-//			var sqliteFilename = "TodoList.xml";
-//			string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
-//			string libraryPath = Path.Combine (documentsPath, "..","Library"); // Library folder
-//			var path = Path.Combine(libraryPath, sqliteFilename);
-//			var xmlStorage = new XmlStorageImplementation ();
-//			TaskMgr = new TodoItemManager(path, xmlStorage);
+			var sqliteFilename = "TodoList.xml";
+			string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
+			string libraryPath = Path.Combine (documentsPath, "..","Library"); // Library folder
+			var path = Path.Combine(libraryPath, sqliteFilename);
+			var xmlStorage = new XmlStorageImplementation ();
+			TaskMgr = new TodoItemManager(path, xmlStorage);
 
             // ADO.NET
-            var sqliteFilename = "TodoADODB.db3";
-            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); // Documents folder
-            string libraryPath = Path.Combine(documentsPath, "..", "Library"); // Library folder
-            var path = Path.Combine(libraryPath, sqliteFilename);
-            var db = new ADODatabase(path);
-            TaskMgr = new TodoItemManager(db);
+            //var sqliteFilename = "TodoADODB.db3";
+            //string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); // Documents folder
+            //string libraryPath = Path.Combine(documentsPath, "..", "Library"); // Library folder
+            //var path = Path.Combine(libraryPath, sqliteFilename);
+            //var db = new ADODatabase(path);
+            //TaskMgr = new TodoItemManager(db);
 
 			// SQLite
             //var sqliteFilename = "TodoSQLiteDB.db3";

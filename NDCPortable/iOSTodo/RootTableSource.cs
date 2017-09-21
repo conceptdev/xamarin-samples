@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 using NDCPortable;
 
 namespace iOSTodo {
@@ -19,11 +19,11 @@ namespace iOSTodo {
 			tableItems = items; 
 		}
 	    
-	    public override int RowsInSection (UITableView tableview, int section)
+	    public override nint RowsInSection (UITableView tableview, nint section)
 	    {
 	        return tableItems.Length;
 	    }
-	    public override UITableViewCell GetCell (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+	    public override UITableViewCell GetCell (UITableView tableView, Foundation.NSIndexPath indexPath)
 	    {
 			// in a Storyboard, Dequeue will ALWAYS return a cell, 
 	        UITableViewCell cell = tableView.DequeueReusableCell (cellIdentifier);
